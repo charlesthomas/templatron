@@ -2,4 +2,4 @@ build/
 reports/
 tmp/
 .python/
-filesync.log
+templatron.log

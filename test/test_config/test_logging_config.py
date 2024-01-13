@@ -5,7 +5,7 @@ Test config/logging_config.py
 from unittest import TestCase
 from unittest.mock import patch
 
-from filesync.config.logging_config import LoggingConfig
+from templatron.config.logging_config import LoggingConfig
 
 
 class TestLoggingConfig(TestCase):
@@ -15,7 +15,7 @@ class TestLoggingConfig(TestCase):
 
     def setUp(self):
         with patch(
-            "filesync.config.logging_config.BaseConfig.load_config"
+            "templatron.config.logging_config.BaseConfig.load_config"
         ) as mock_load:
             mock_load.return_value = {}
             self.log_class = LoggingConfig("/fake/config/path")

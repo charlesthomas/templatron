@@ -1,5 +1,5 @@
 """
-Unit tests for filesync/repo/repository.py
+Unit tests for templatron/repo/repository.py
 """
 # pylint: disable=protected-access,too-many-arguments,too-many-public-methods
 # pylint: disable=unused-argument
@@ -7,19 +7,19 @@ Unit tests for filesync/repo/repository.py
 from unittest import TestCase
 from unittest.mock import MagicMock, patch
 
-from filesync.exceptions import HookFailure
-from filesync.repo.repository import Repository
-from filesync.repo.template import Template
+from templatron.exceptions import HookFailure
+from templatron.repo.repository import Repository
+from templatron.repo.template import Template
 
 
 class TestRepository(TestCase):
     """
-    Tests for filesync.repo.template:Repository
+    Tests for templatron.repo.template:Repository
     """
 
     def setUp(self):
-        with patch("filesync.repo.template.BaseRepo.clone"):
-            with patch("filesync.repo.template.Template.load_template_config"):
+        with patch("templatron.repo.template.BaseRepo.clone"):
+            with patch("templatron.repo.template.Template.load_template_config"):
                 self.template = Template(
                     name="test_template",
                     token="fake_token",
@@ -34,7 +34,7 @@ class TestRepository(TestCase):
             template=self.template,
         )
 
-    @patch("filesync.repo.repository.commit_template")
+    @patch("templatron.repo.repository.commit_template")
     def test_commit_message(self, mock_template):
         """
         Tests Repository.commit_message, which is a wrapper function
@@ -78,7 +78,7 @@ class TestRepository(TestCase):
         self.assertTrue(self.test_repo.has_update_branch)
 
     @patch("yaml.safe_load")
-    @patch("filesync.repo.repository.open")
+    @patch("templatron.repo.repository.open")
     def test_template_version(self, _, mock_load):
         """
         Test Repository.template_version
@@ -143,15 +143,15 @@ class TestRepository(TestCase):
             "test/fake_template/abc123",
         )
 
-    @patch("filesync.repo.repository.Repository.close_pr")
-    @patch("filesync.repo.repository.Repository.delete_branch")
+    @patch("templatron.repo.repository.Repository.close_pr")
+    @patch("templatron.repo.repository.Repository.delete_branch")
     def test_clean_stale_branches(self, mock_delete, mock_close):
         """
         Test Repository.clean_stale_branches
         """
 
         mock_branch = MagicMock()
-        mock_branch.name = "filesync/test_template/fake"
+        mock_branch.name = "templatron/test_template/fake"
         mock_pr = MagicMock()
         mock_branch.commit.get_pulls.return_value = [mock_pr]
         self.test_repo.github.get_branches.return_value = [mock_branch]
@@ -179,7 +179,7 @@ class TestRepository(TestCase):
         self.test_repo.close_pr(test_pr)
         test_pr.edit.assert_called_with(state="closed")
 
-    @patch("filesync.repo.repository.Repository.git_cmd")
+    @patch("templatron.repo.repository.Repository.git_cmd")
     def test_confirm_changes_answers_file(self, mock_git):
         """
         Test Repository.confirm_changes() where answers file was the only
@@ -189,7 +189,7 @@ class TestRepository(TestCase):
         mock_git.return_value = '\n'.join([self.test_repo.answers_file, ''])
         self.assertFalse(self.test_repo.confirm_changes())
 
-    @patch("filesync.repo.repository.Repository.git_cmd")
+    @patch("templatron.repo.repository.Repository.git_cmd")
     def test_confirm_changes_anything_else(self, mock_git):
         """
         Test Repository.confirm_changes() where anything other than the
@@ -203,7 +203,7 @@ class TestRepository(TestCase):
         ])
         self.assertTrue(self.test_repo.confirm_changes())
 
-    @patch("filesync.repo.repository.Repository.git_cmd")
+    @patch("templatron.repo.repository.Repository.git_cmd")
     def test_delete_branch_dry_run(self, mock_git):
         """
         Test Repository.delete_branch() with a dry run.
@@ -215,7 +215,7 @@ class TestRepository(TestCase):
         self.test_repo.delete_branch(test_branch)
         mock_git.assert_not_called()
 
-    @patch("filesync.repo.repository.Repository.git_cmd")
+    @patch("templatron.repo.repository.Repository.git_cmd")
     def test_delete_branch_no_dry_run(self, mock_git):
         """
         Test Repository.delete_branch() without a dry run.
@@ -227,7 +227,7 @@ class TestRepository(TestCase):
         self.test_repo.delete_branch(test_branch)
         mock_git.assert_called_with("push", "origin", "--delete", "fake_branch")
 
-    @patch("filesync.repo.repository.Repository.update")
+    @patch("templatron.repo.repository.Repository.update")
     def test_fix(self, mock_update):
         """
         Test Repository.fix()
@@ -236,7 +236,7 @@ class TestRepository(TestCase):
         self.test_repo.fix()
         mock_update.assert_called_with(operation="fixing")
 
-    @patch("filesync.repo.repository.open")
+    @patch("templatron.repo.repository.open")
     @patch("yaml.safe_load")
     @patch("yaml.dump")
     def test_munge_answers(self, mock_dump, mock_load, mock_open):
@@ -256,7 +256,7 @@ class TestRepository(TestCase):
             mock_open().__enter__(),
         )
 
-    @patch("filesync.repo.repository.Repository.run_hook")
+    @patch("templatron.repo.repository.Repository.run_hook")
     def test_post_copier_hook(self, mock_hook):
         """
         Test Repository.post_copier_hook() which is a wrapper function
@@ -265,7 +265,7 @@ class TestRepository(TestCase):
         self.test_repo.post_copier_hook()
         mock_hook.assert_called_with("post-copier")
 
-    @patch("filesync.repo.repository.Repository.run_hook")
+    @patch("templatron.repo.repository.Repository.run_hook")
     def test_post_push_hook(self, mock_hook):
         """
         Test Repository.post_push_hook() which is a wrapper function
@@ -274,7 +274,7 @@ class TestRepository(TestCase):
         self.test_repo.post_push_hook()
         mock_hook.assert_called_with("post-push")
 
-    @patch("filesync.repo.repository.Repository.run_hook")
+    @patch("templatron.repo.repository.Repository.run_hook")
     def test_pre_clone_hook(self, mock_hook):
         """
         Test Repository.pre_clone_hook() which is a wrapper function
@@ -283,7 +283,7 @@ class TestRepository(TestCase):
         self.test_repo.pre_clone_hook()
         mock_hook.assert_called_with("pre-clone")
 
-    @patch("filesync.repo.repository.Repository.run_hook")
+    @patch("templatron.repo.repository.Repository.run_hook")
     def test_pre_copier_hook(self, mock_hook):
         """
         Test Repository.pre_copier_hook() which is a wrapper function
@@ -292,7 +292,7 @@ class TestRepository(TestCase):
         self.test_repo.pre_copier_hook()
         mock_hook.assert_called_with("pre-copier")
 
-    @patch("filesync.repo.repository.Repository.run_hook")
+    @patch("templatron.repo.repository.Repository.run_hook")
     def test_pre_push_hook(self, mock_hook):
         """
         Test Repository.pre_push_hook() which is a wrapper function
@@ -301,7 +301,7 @@ class TestRepository(TestCase):
         self.test_repo.pre_push_hook()
         mock_hook.assert_called_with("pre-push")
 
-    @patch("filesync.repo.repository.Repository.run_hook")
+    @patch("templatron.repo.repository.Repository.run_hook")
     def test_post_clone_hook(self, mock_hook):
         """
         Test Repository.post_clone_hook() which is a wrapper function
@@ -310,7 +310,7 @@ class TestRepository(TestCase):
         self.test_repo.post_clone_hook()
         mock_hook.assert_called_with("post-clone")
 
-    @patch("filesync.repo.repository.Repository.update")
+    @patch("templatron.repo.repository.Repository.update")
     def test_onboard(self, mock_update):
         """
         Test Repository.onboard() which is a wrapper function
@@ -360,7 +360,7 @@ class TestRepository(TestCase):
         )
 
     @patch.object(Repository, "commit_message", "1\n\n3\n4\n5")
-    @patch("filesync.repo.repository.Repository.git_cmd")
+    @patch("templatron.repo.repository.Repository.git_cmd")
     def test_push_changes_dry_run(self, mock_git):
         """
         Test Repository.push_changes() when dry_run == True
@@ -372,7 +372,7 @@ class TestRepository(TestCase):
 
     @patch.object(Repository, "commit_message", "1\n\n3\n4\n5")
     @patch.object(Repository, "update_branch_name", "def456")
-    @patch("filesync.repo.repository.Repository.git_cmd")
+    @patch("templatron.repo.repository.Repository.git_cmd")
     def test_push_changes_no_dry_run(self, mock_git):
         """
         Test Repository.push_changes() when dry_run == False
@@ -382,9 +382,9 @@ class TestRepository(TestCase):
         self.test_repo.push_changes()
         mock_git.assert_called_with("push")
 
-    @patch("filesync.repo.repository.copy")
-    @patch("filesync.repo.repository.Repository.munge_answers")
-    @patch("filesync.repo.template.Template.clone")
+    @patch("templatron.repo.repository.copy")
+    @patch("templatron.repo.repository.Repository.munge_answers")
+    @patch("templatron.repo.template.Template.clone")
     def test_run_copier_interactive(self, mock_clone, mock_munge, mock_copy):
         """
         Test Repository.run_copier() in interactive mode
@@ -401,9 +401,9 @@ class TestRepository(TestCase):
             vcs_ref=None,
         )
 
-    @patch("filesync.repo.repository.copy")
-    @patch("filesync.repo.repository.Repository.munge_answers")
-    @patch("filesync.repo.template.Template.clone")
+    @patch("templatron.repo.repository.copy")
+    @patch("templatron.repo.repository.Repository.munge_answers")
+    @patch("templatron.repo.template.Template.clone")
     def test_run_copier_noninteractive(self, mock_clone, mock_munge, mock_copy):
         """
         Test Repository.run_copier() in non-interactive mode
@@ -420,7 +420,7 @@ class TestRepository(TestCase):
             vcs_ref=None,
         )
 
-    @patch("filesync.repo.repository.subprocess.run")
+    @patch("templatron.repo.repository.subprocess.run")
     def test_run_hook_successful(self, mock_run):
         """
         Test Repository.run_hook()
@@ -441,7 +441,7 @@ class TestRepository(TestCase):
             capture_output=True,
         )
 
-    @patch("filesync.repo.repository.subprocess.run")
+    @patch("templatron.repo.repository.subprocess.run")
     def test_run_hook_no_hook(self, mock_run):
         """
         Test Repository.run_hook() when the given hook
@@ -452,7 +452,7 @@ class TestRepository(TestCase):
         self.test_repo.run_hook("fake-hook")
         mock_run.assert_not_called()
 
-    @patch("filesync.repo.repository.subprocess.run")
+    @patch("templatron.repo.repository.subprocess.run")
     def test_run_hook_failure(self, mock_run):
         """
         Test Repository.run_hook() when hook fails
@@ -474,7 +474,7 @@ class TestRepository(TestCase):
             capture_output=True,
         )
 
-    @patch("filesync.repo.repository.Repository.git_cmd")
+    @patch("templatron.repo.repository.Repository.git_cmd")
     def test_switch_to_update_branch_fixing(self, mock_git):
         """
         Docs
@@ -485,7 +485,7 @@ class TestRepository(TestCase):
         mock_git.assert_not_called()
 
     @patch.object(Repository, "update_branch_name", "fake_branch")
-    @patch("filesync.repo.repository.Repository.git_cmd")
+    @patch("templatron.repo.repository.Repository.git_cmd")
     def test_switch_to_update_branch_not_fixing(self, mock_git):
         """
         Docs
@@ -496,14 +496,14 @@ class TestRepository(TestCase):
         mock_git.assert_called_with("checkout", "-b", "fake_branch")
 
     @patch.object(Repository, "needs_update", True)
-    @patch("filesync.repo.repository.Repository.clean_stale_branches")
-    @patch("filesync.repo.repository.Repository.clone")
-    @patch("filesync.repo.repository.Repository.confirm_changes")
-    @patch("filesync.repo.repository.Repository.open_pull_request")
-    @patch("filesync.repo.repository.Repository.push_changes")
-    @patch("filesync.repo.repository.Repository.run_hook")
-    @patch("filesync.repo.repository.Repository.run_copier")
-    @patch("filesync.repo.repository.Repository.switch_to_update_branch")
+    @patch("templatron.repo.repository.Repository.clean_stale_branches")
+    @patch("templatron.repo.repository.Repository.clone")
+    @patch("templatron.repo.repository.Repository.confirm_changes")
+    @patch("templatron.repo.repository.Repository.open_pull_request")
+    @patch("templatron.repo.repository.Repository.push_changes")
+    @patch("templatron.repo.repository.Repository.run_hook")
+    @patch("templatron.repo.repository.Repository.run_copier")
+    @patch("templatron.repo.repository.Repository.switch_to_update_branch")
     def test_update_needs_update(
         self,
         mock_switch,
@@ -524,14 +524,14 @@ class TestRepository(TestCase):
         mock_hook.assert_called_with("post-push")
 
     @patch.object(Repository, "needs_update", True)
-    @patch("filesync.repo.repository.Repository.clean_stale_branches")
-    @patch("filesync.repo.repository.Repository.clone")
-    @patch("filesync.repo.repository.Repository.confirm_changes")
-    @patch("filesync.repo.repository.Repository.open_pull_request")
-    @patch("filesync.repo.repository.Repository.push_changes")
-    @patch("filesync.repo.repository.Repository.run_hook")
-    @patch("filesync.repo.repository.Repository.run_copier")
-    @patch("filesync.repo.repository.Repository.switch_to_update_branch")
+    @patch("templatron.repo.repository.Repository.clean_stale_branches")
+    @patch("templatron.repo.repository.Repository.clone")
+    @patch("templatron.repo.repository.Repository.confirm_changes")
+    @patch("templatron.repo.repository.Repository.open_pull_request")
+    @patch("templatron.repo.repository.Repository.push_changes")
+    @patch("templatron.repo.repository.Repository.run_hook")
+    @patch("templatron.repo.repository.Repository.run_copier")
+    @patch("templatron.repo.repository.Repository.switch_to_update_branch")
     def test_update_no_confirm_changes(
         self,
         mock_switch,
@@ -552,14 +552,14 @@ class TestRepository(TestCase):
         mock_push.assert_not_called()
 
     @patch.object(Repository, "needs_update", True)
-    @patch("filesync.repo.repository.Repository.clean_stale_branches")
-    @patch("filesync.repo.repository.Repository.clone")
-    @patch("filesync.repo.repository.Repository.confirm_changes")
-    @patch("filesync.repo.repository.Repository.open_pull_request")
-    @patch("filesync.repo.repository.Repository.push_changes")
-    @patch("filesync.repo.repository.Repository.run_hook")
-    @patch("filesync.repo.repository.Repository.run_copier")
-    @patch("filesync.repo.repository.Repository.switch_to_update_branch")
+    @patch("templatron.repo.repository.Repository.clean_stale_branches")
+    @patch("templatron.repo.repository.Repository.clone")
+    @patch("templatron.repo.repository.Repository.confirm_changes")
+    @patch("templatron.repo.repository.Repository.open_pull_request")
+    @patch("templatron.repo.repository.Repository.push_changes")
+    @patch("templatron.repo.repository.Repository.run_hook")
+    @patch("templatron.repo.repository.Repository.run_copier")
+    @patch("templatron.repo.repository.Repository.switch_to_update_branch")
     def test_update_fixing(
         self,
         mock_switch,

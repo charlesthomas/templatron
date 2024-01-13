@@ -5,7 +5,7 @@ Test config/base_config.py
 from unittest import TestCase
 from unittest.mock import MagicMock, patch
 
-from filesync.config.base_config import BaseConfig
+from templatron.config.base_config import BaseConfig
 
 
 class TestBaseConfig(TestCase):
@@ -26,7 +26,7 @@ class TestBaseConfig(TestCase):
         result = BaseConfig(None)
         self.assertEqual(result.config, self.test_defaults)
 
-    @patch("filesync.config.base_config.BaseConfig.load_config")
+    @patch("templatron.config.base_config.BaseConfig.load_config")
     def test_init_path_config_path(self, mock_load):
         """
         Test BaseConfig.__init__() with config_path set to a string
@@ -67,7 +67,7 @@ class TestBaseConfig(TestCase):
         )
 
     @staticmethod
-    @patch("filesync.config.base_config.logging.getLogger")
+    @patch("templatron.config.base_config.logging.getLogger")
     def test_log_config_logger_empty(mock_logging):
         """
         Test BaseConfig.log_config when `self.logger` is not set ahead of time.

@@ -1,26 +1,26 @@
 """
-Unit tests for filesync/repo/template.py
+Unit tests for templatron/repo/template.py
 """
 # pylint: disable=protected-access
 
 from unittest import TestCase
 from unittest.mock import MagicMock, patch
 
-from filesync.exceptions import (
+from templatron.exceptions import (
     MissingRequiredConfigError,
     TemplateConfigMissingError,
 )
-from filesync.repo.template import Template
+from templatron.repo.template import Template
 
 
 class TestTemplate(TestCase):
     """
-    Tests for filesync.repo.template:Template
+    Tests for templatron.repo.template:Template
     """
 
     def setUp(self):
-        with patch("filesync.repo.template.BaseRepo.clone"):
-            with patch("filesync.repo.template.Template.load_template_config"):
+        with patch("templatron.repo.template.BaseRepo.clone"):
+            with patch("templatron.repo.template.Template.load_template_config"):
                 self.template = Template(
                     name="test_template",
                     token="fake_token",
@@ -28,7 +28,7 @@ class TestTemplate(TestCase):
                     clone_root="fake_root",
                 )
 
-    @patch("filesync.repo.template.os.path")
+    @patch("templatron.repo.template.os.path")
     def test_load_template_config_path_does_not_exist(self, mock_path):
         """
         Test Template.load_template_config() where the given config path
@@ -39,10 +39,10 @@ class TestTemplate(TestCase):
         with self.assertRaises(TemplateConfigMissingError):
             self.template.load_template_config("fake_config")
 
-    @patch("filesync.repo.template.TemplateConfig")
-    @patch("filesync.repo.template.BaseRepo.maybe_switch_branch")
-    @patch("filesync.repo.template.Template.validate_template_config")
-    @patch("filesync.repo.template.os.path")
+    @patch("templatron.repo.template.TemplateConfig")
+    @patch("templatron.repo.template.BaseRepo.maybe_switch_branch")
+    @patch("templatron.repo.template.Template.validate_template_config")
+    @patch("templatron.repo.template.os.path")
     def test_load_template_config_template_branch_is_not_none(
         self,
         mock_path,
@@ -62,10 +62,10 @@ class TestTemplate(TestCase):
         mock_maybe.assert_called_with()
         self.assertEqual(self.template._base_branch, "fake_branch")
 
-    @patch("filesync.repo.template.TemplateConfig")
-    @patch("filesync.repo.template.BaseRepo.maybe_switch_branch")
-    @patch("filesync.repo.template.Template.validate_template_config")
-    @patch("filesync.repo.template.os.path")
+    @patch("templatron.repo.template.TemplateConfig")
+    @patch("templatron.repo.template.BaseRepo.maybe_switch_branch")
+    @patch("templatron.repo.template.Template.validate_template_config")
+    @patch("templatron.repo.template.os.path")
     def test_load_template_config_template_branch_is_none(
         self,
         mock_path,

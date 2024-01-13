@@ -9,18 +9,18 @@ from sys import exit
 from github import Github, GithubException
 from sh import ErrorReturnCode, git
 
-from filesync import __version__
-from filesync.exceptions import *
-from filesync.log_or_print import log_or_print
-from filesync.config.filesync_config import FilesyncConfig
-from filesync.config.logging_config import LoggingConfig
-from filesync.repo.repository import Repository
-from filesync.repo.template import Template
+from templatron import __version__
+from templatron.exceptions import *
+from templatron.log_or_print import log_or_print
+from templatron.config.templatron_config import TemplatronConfig
+from templatron.config.logging_config import LoggingConfig
+from templatron.repo.repository import Repository
+from templatron.repo.template import Template
 
 
-class FileSync(object):
+class Templatron(object):
     def __init__(self, **kwargs):
-        self.config = FilesyncConfig(**kwargs)
+        self.config = TemplatronConfig(**kwargs)
         self.template = None
         self.token = environ.get(self.config.token_variable_name)
 
@@ -60,7 +60,7 @@ class FileSync(object):
                 template_config=self.config.template_config,
                 operation=self.config.operation,
                 interactive=self.config.interactive)
-        except FilesyncException as error:
+        except TemplatronException as error:
             self.die(error)
 
         self.logger.debug('template initialization ok')
@@ -188,7 +188,7 @@ class FileSync(object):
         for dependency in ['github', 'plumbum', 'sh', 'urllib3']:
             logging.getLogger(dependency).setLevel(dep_level)
 
-        return logging.getLogger('FileSync')
+        return logging.getLogger('Templatron')
 
     def shard(self, repo_list):
         self.logger.debug("sharding repo list...")
@@ -242,7 +242,7 @@ class FileSync(object):
         self.config.log_config()
         try:
             self.validate_config()
-        except FilesyncException as error:
+        except TemplatronException as error:
             self.die(error)
 
         self.create_clone_root()
@@ -264,7 +264,7 @@ class FileSync(object):
             for repo in update_repos:
                 try:
                     repo.update()
-                except FilesyncException as ex:
+                except TemplatronException as ex:
                     self.logger.error(
                         f'repo {repo.name} failed with exception: {ex}')
             self.stop()
@@ -273,7 +273,7 @@ class FileSync(object):
             raise
 
     def validate_config(self):
-        self.logger.debug('validating filesync config...')
+        self.logger.debug('validating templatron config...')
         if self.token is None:
             raise GitConfigError(
                 'No token found! Is token-variable-name '

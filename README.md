@@ -1,9 +1,6 @@
-# filesync
-Repository for maintaining `filesync`
+# 🤖 templatron
 
-`filesync` is a harness for running [copier](https://copier.readthedocs.io/en/stable/).
-
-DISCLAIMER: This code repository provided for code sharing purposes and is so provided "as-is". Mezmo, Inc. does not guarantee its functionality. Additionally, some pieces must be supplied in order for builds to be successful, especially base container images for building.
+`templatron` is a harness for running [copier](https://copier.readthedocs.io/en/stable/).
 
 During an `update`, it performs the following actions, in order:
 
@@ -45,13 +42,13 @@ Example:
 
 ## Stale Branches
 
-Since `filesync` uses a deterministic branch name, it can find and clean up branches it has opened that were never merged. It can also identify the PRs associated with those branches and close them before deleting the branches.
+Since `templatron` uses a deterministic branch name, it can find and clean up branches it has opened that were never merged. It can also identify the PRs associated with those branches and close them before deleting the branches.
 
-The exception to this is if the repo's `branch-prefix` or `branch-separator` configuration changes. In that case, `filesync` may create a new branch for the same version of a repo's template or fail to clean up old branches and PRs, because the branch names it's looking for no longer match.
+The exception to this is if the repo's `branch-prefix` or `branch-separator` configuration changes. In that case, `templatron` may create a new branch for the same version of a repo's template or fail to clean up old branches and PRs, because the branch names it's looking for no longer match.
 
 # Commit Messages
 
-Currently, the commit message is controlled by `filesync/commit_template.py`
+Currently, the commit message is controlled by `templatron/commit_template.py`
 
 ```
 ci: update files from {template}
@@ -69,19 +66,9 @@ commit: {commit}
 
 # Running
 
-## A Template's `Jenkinsfile`
-
-The `Jenkinsfile` in a template repo should be configured to run `filesync`'s `update` command on itself any time changes to it are merged to its `main` / `master` branch.
-
-## Docker
-
-`docker <registry>/<org>/filesync:latest --help`
-
-## Python
-
 Example:
 ```
-python filesync --help
+python templatron --help
 ```
 
 Requirements are defined in `requirements.txt` if you want to `pip install -r
@@ -89,10 +76,10 @@ requirements.txt` manually. The preferred method of running natively is with
 [pipx](https://pypa.github.io/pipx/installation/):
 
 ```
-git clone git@github.com:mezmo/filesync $WORKDIR/tooling-filesync
-cd $WORKDIR/tooling-filesync
+git clone git@github.com:charlethomas/templatron $WORKDIR/templatron
+cd $WORKDIR/templatron
 pipx install -e .
-filesync --help
+templatron --help
 ```
 
 # Configuring
@@ -118,8 +105,8 @@ runtime. The others are core to `git` and can not be changed.
 ## cli
 
 ```
-$ filesync --help
-Usage: filesync [OPTIONS] TEMPLATE COMMAND [ARGS]...
+$ templatron --help
+Usage: templatron [OPTIONS] TEMPLATE COMMAND [ARGS]...
 
 Options:
   --autoclean / --no-autoclean    remove clones from disk after running
@@ -143,23 +130,23 @@ Commands:
 
 ## yaml
 
-`filesync` is configured in multiple places via yaml
+`templatron` is configured in multiple places via yaml
 
 ### `--config` path
 
-Anything that can be passed to `filesync` via command line options can be configured in a YAML file whose path can be passed via the `--config` flag.
+Anything that can be passed to `templatron` via command line options can be configured in a YAML file whose path can be passed via the `--config` flag.
 
-- `autoclean`: (default: `true`) determines whether `filesync` removes the cloned repos from disk
-  after running. You probably want this to be `true`, because `filesync` does
+- `autoclean`: (default: `true`) determines whether `templatron` removes the cloned repos from disk
+  after running. You probably want this to be `true`, because `templatron` does
   not attempt to change branches or pull before running. Setting to `false`
   should probably only be used for troubleshooting or inspecting changes.
-- `clone-root`: (default: `/tmp/filesync_clones`) is the root directory where
+- `clone-root`: (default: `/tmp/templatron_clones`) is the root directory where
   repos will be cloned. You **DO NOT** want this to be `$WORKDIR`, for
   the reasons stated in `autoclean` description.
 - `dry-run`: (default: `false`) enable `dry-run` mode for all repos. `dry-run`
   mode is special and has its own configuration sub-section below.
 - `template-branch`: (default: `main` or `master` depending on which the template repo uses) which branch of the template should be checked out and run to update desintation repos
-- `template-config`: (default: `filesync.yaml`) the path inside the template where the template's filesync config lives (see Template Config)
+- `template-config`: (default: `templatron.yaml`) the path inside the template where the template's templatron config lives (see Template Config)
 - `token-variable-name`: (default: `GITHUB_TOKEN`) the name of the environment
   variable where you've stored your Github API token.
 - `log-level`: (default: varies) the log level. if dry-run mode is enabled, defaults to `DEBUG`. if sub-command is `update` defaults to `INFO`. if sub-command is `onboard`, defaults to `ERROR`.
@@ -167,12 +154,12 @@ Anything that can be passed to `filesync` via command line options can be config
 
 ### Template Config
 
-Lives in the template repo (default location `filesync.yaml`). Config options:
+Lives in the template repo (default location `templatron.yaml`). Config options:
 - `answers-file`: (default: `.copier-answers.yml`) the path in the destination repo where the config for how this template is applied to it by `copier` is stored
 - `autoscan`: (default: `False`) if enabled, `autoscan` clones every repo in the default `org` that isn't a fork, and isn't archived. if that repo has an `answers-file` it is added to the list of repos that will have the template run against them.
-- `branch-prefix`: (default: `filesync`) See Branch Names above
+- `branch-prefix`: (default: `templatron`) See Branch Names above
 - `branch-separator`: (default: `/`) See Branch Names above
-- `dry-run`: (default: `False`) run `filesync` in dry-run mode
+- `dry-run`: (default: `False`) run `templatron` in dry-run mode
 - `org`: the default GitHub organization if one isn't supplied on the CLI or in the `repos` list for a repo (see Determining Repos and Orgs)
 - `repos`: The list of repos this template should be applied to. Each repo can be just the name of the repo, or a map with its own config custom to it, whose keys match the ones in the top level of this config.
 
@@ -195,16 +182,14 @@ passed.
 
   Example output:
   ```
-  2021-06-18 11:40:56 WARNING - FileSync: DRY RUN MODE ENABLED!
-  2021-06-18 11:40:56 INFO    - FileSync: Nothing will be changed inside repos. No branches will be created, no PRs will be opened. Cloning and cleanup will happen as needed.
-  2021-06-18 11:40:56 INFO    - FileSync: started!
+  2021-06-18 11:40:56 WARNING - Templatron: DRY RUN MODE ENABLED!
+  2021-06-18 11:40:56 INFO    - Templatron: Nothing will be changed inside repos. No branches will be created, no PRs will be opened. Cloning and cleanup will happen as needed.
+  2021-06-18 11:40:56 INFO    - Templatron: started!
   ```
-- `level` (default: `info`) log level for `filesync`
+- `level` (default: `info`) log level for `templatron`
 - `dependency-level` (default: `warn`) log level for imported dependencies.
-  Note that these are [manually re-configured in the
-  code](https://github.com/mezmo/filesync/blob/main/filesync/filesync.py#L131),
-  so if dependencies are added, they may not be impacted by `dependency-level`
-  without code changes.
+  Note that these are manually re-configured in the code, so if dependencies are
+  added, they may not be impacted by `dependency-level` without code changes.
 
 ## Determining Repos and Orgs
 

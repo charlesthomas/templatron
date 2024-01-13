@@ -1,14 +1,14 @@
 from pprint import pformat
 
-from filesync.config.base_config import BaseConfig
-from filesync.exceptions import UnrecognizedRepoConfigError
+from templatron.config.base_config import BaseConfig
+from templatron.exceptions import UnrecognizedRepoConfigError
 
 
 class TemplateConfig(BaseConfig):
     SAFE_DEFAULTS = {
         'answers_file': '.copier-answers.yml',
         'autoscan': False,
-        'branch_prefix': 'filesync',
+        'branch_prefix': 'templatron',
         'branch_separator': '/',
         'repos': [],
         'hooks': {},

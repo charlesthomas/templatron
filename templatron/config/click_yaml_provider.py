@@ -1,4 +1,4 @@
-from filesync.config.base_config import BaseConfig
+from templatron.config.base_config import BaseConfig
 
 
 def click_yaml_provider(file_path, cmd_name):

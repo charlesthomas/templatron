@@ -1,7 +1,7 @@
-from filesync.config.base_config import BaseConfig
+from templatron.config.base_config import BaseConfig
 
 
-class FilesyncConfig(BaseConfig):
+class TemplatronConfig(BaseConfig):
     def __init__(self, *args, **kwargs):
         self.config = dict()
         for key, val in kwargs.items():

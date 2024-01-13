@@ -5,10 +5,10 @@ import subprocess
 import yaml
 from copier import copy
 
-from filesync.commit_template import commit_template
-from filesync.exceptions import HookFailure
-from filesync.log_or_print import log_or_print
-from filesync.repo.base_repo import BaseRepo
+from templatron.commit_template import commit_template
+from templatron.exceptions import HookFailure
+from templatron.log_or_print import log_or_print
+from templatron.repo.base_repo import BaseRepo
 
 
 def string_representer(dumper, data):
@@ -31,7 +31,7 @@ class Repository(BaseRepo):
     def __init__(self, name, token, github, clone_root, template,
                  base_branch=None, dry_run=False,
                  answers_file='.copier-answers.yml',
-                 branch_prefix='filesync',
+                 branch_prefix='templatron',
                  branch_separator='/',
                  interactive=False,
                  hooks=None):

@@ -1,9 +1,9 @@
 from setuptools import setup, find_packages
 from sys import path
 
-from filesync import __version__
+from templatron import __version__
 
-NAME = "filesync"
+NAME = "templatron"
 if __name__ == "__main__":
 
     with open('requirements.txt') as f:
@@ -21,6 +21,6 @@ if __name__ == "__main__":
         description="sync templated common files across repos",
         install_requires=REQS,
         entry_points={
-            'console_scripts': ['filesync = filesync.cli:main'],
+            'console_scripts': ['templatron = templatron.cli:main'],
         }
     )

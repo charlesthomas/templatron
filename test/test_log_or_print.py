@@ -7,7 +7,7 @@ import logging
 from unittest import TestCase
 from unittest.mock import MagicMock, patch
 
-from filesync.log_or_print import log_or_print
+from templatron.log_or_print import log_or_print
 
 
 class TestLogOrPrint(TestCase):

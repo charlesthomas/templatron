@@ -5,12 +5,12 @@ from tempfile import gettempdir
 import click
 import click_config_file
 
-from filesync import __version__
-from filesync.filesync import FileSync
-from filesync.config.click_yaml_provider import click_yaml_provider
+from templatron import __version__
+from templatron.templatron import Templatron
+from templatron.config.click_yaml_provider import click_yaml_provider
 
 
-DEFAULT_CLONE_ROOT = os.path.join(gettempdir(), 'filesync_clones')
+DEFAULT_CLONE_ROOT = os.path.join(gettempdir(), 'templatron_clones')
 
 
 @click.group()
@@ -30,7 +30,7 @@ DEFAULT_CLONE_ROOT = os.path.join(gettempdir(), 'filesync_clones')
               help='path to logging_config.yaml')
 @click.option('--template-branch', '-b',
               help='branch of the template to sync from')
-@click.option('--template-config', '-t', default='filesync.yaml',
+@click.option('--template-config', '-t', default='templatron.yaml',
               help='path inside the template repo where its config is stored')
 @click.option('--token-variable-name', '-e', default='GITHUB_TOKEN',
               help='name of the environment variable storing the GitHub token')
@@ -41,7 +41,7 @@ def main(ctx, template, autoclean, clone_root, dry_run, template_branch,
          template_config, token_variable_name, log_level, logging_config,
          interactive):
 
-    ctx.obj = FileSync(template=template, autoclean=autoclean,
+    ctx.obj = Templatron(template=template, autoclean=autoclean,
                        clone_root=clone_root, dry_run=dry_run,
                        template_branch=template_branch,
                        template_config=template_config,
@@ -57,16 +57,16 @@ def main(ctx, template, autoclean, clone_root, dry_run, template_branch,
 @click.option('--cache', '-c',
               help="don't query the GitHub API; use a cached list of repos")
 def update(ctx, single_repo, cache):
-    filesync = ctx.obj
-    filesync.update(single_repo, cache)
+    templatron = ctx.obj
+    templatron.update(single_repo, cache)
 
 
 @main.command(help='onboard a repo to be updated by a template')
 @click.pass_context
 @click.argument('onboarding_repo')
 def onboard(ctx, onboarding_repo):
-    filesync = ctx.obj
-    filesync.onboard(onboarding_repo)
+    templatron = ctx.obj
+    templatron.onboard(onboarding_repo)
 
 
 @main.command(help='fix an existing template PR')
@@ -74,8 +74,8 @@ def onboard(ctx, onboarding_repo):
 @click.argument('repo')
 @click.argument('existing_branch')
 def fix(ctx, repo, existing_branch):
-    filesync = ctx.obj
-    filesync.fix(repo, existing_branch)
+    templatron = ctx.obj
+    templatron.fix(repo, existing_branch)
 
 
 if __name__ == '__main__':

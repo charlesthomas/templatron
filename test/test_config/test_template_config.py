@@ -5,8 +5,8 @@ Test config/template_config.py
 from unittest import TestCase
 from unittest.mock import patch
 
-from filesync.config.template_config import TemplateConfig
-from filesync.exceptions import UnrecognizedRepoConfigError
+from templatron.config.template_config import TemplateConfig
+from templatron.exceptions import UnrecognizedRepoConfigError
 
 
 class TestTemplateConfig(TestCase):
@@ -16,7 +16,7 @@ class TestTemplateConfig(TestCase):
 
     def setUp(self):
         with patch(
-            "filesync.config.template_config.BaseConfig.load_config"
+            "templatron.config.template_config.BaseConfig.load_config"
         ) as mock_load:
             mock_load.return_value = {}
             self.template_class = TemplateConfig("/fake/config/path")

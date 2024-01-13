@@ -3,7 +3,7 @@ import os.path
 
 from sh import ErrorReturnCode, git
 
-from filesync.exceptions import DirtyRepoError, UnrecognizableBaseBranchError
+from templatron.exceptions import DirtyRepoError, UnrecognizableBaseBranchError
 
 
 class BaseRepo(object):

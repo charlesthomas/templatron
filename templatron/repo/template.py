@@ -1,14 +1,14 @@
 import os.path
 
-from filesync.config.template_config import TemplateConfig
-from filesync.exceptions import MissingRequiredConfigError, \
-                                TemplateConfigMissingError
-from filesync.repo.base_repo import BaseRepo
+from templatron.config.template_config import TemplateConfig
+from templatron.exceptions import MissingRequiredConfigError, \
+                                  TemplateConfigMissingError
+from templatron.repo.base_repo import BaseRepo
 
 
 class Template(BaseRepo):
     def __init__(self, name, token, github, clone_root, base_branch=None,
-                 dry_run=False, template_config='filesync.yaml',
+                 dry_run=False, template_config='templatron.yaml',
                  operation='updating', interactive=False):
 
         super().__init__(name, token, github, clone_root, base_branch, dry_run,

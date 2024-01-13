@@ -1,5 +1,5 @@
 """
-Unit tests for filesync/repo/base_repo.py
+Unit tests for templatron/repo/base_repo.py
 """
 
 # pylint: disable=protected-access,too-many-public-methods
@@ -9,13 +9,13 @@ from unittest.mock import MagicMock, patch
 
 from sh import ErrorReturnCode
 
-from filesync.exceptions import DirtyRepoError, UnrecognizableBaseBranchError
-from filesync.repo.base_repo import BaseRepo
+from templatron.exceptions import DirtyRepoError, UnrecognizableBaseBranchError
+from templatron.repo.base_repo import BaseRepo
 
 
 class TestBaseRepo(TestCase):
     """
-    Tests for filesync.repo.base_repo:BaseRepo
+    Tests for templatron.repo.base_repo:BaseRepo
     """
 
     def setUp(self):
@@ -26,7 +26,7 @@ class TestBaseRepo(TestCase):
             clone_root="/fake/root",
         )
 
-    @patch("filesync.repo.base_repo.BaseRepo.git_cmd")
+    @patch("templatron.repo.base_repo.BaseRepo.git_cmd")
     def test_active_branch_success(self, mock_git):
         """
         Test BaseRepo.active_branch
@@ -35,7 +35,7 @@ class TestBaseRepo(TestCase):
         mock_git.return_value = "fake_branch"
         self.assertEqual(self.test_repo.active_branch, "fake_branch")
 
-    @patch("filesync.repo.base_repo.BaseRepo.git_cmd")
+    @patch("templatron.repo.base_repo.BaseRepo.git_cmd")
     def test_active_branch_git_failure(self, mock_git):
         """
         Test BaseRepo.active_branch with a git failure
@@ -109,7 +109,7 @@ class TestBaseRepo(TestCase):
         self.test_repo.head  # pylint: disable=pointless-statement
         self.test_repo.github.get_branch.assert_called_with("fake_branch")
 
-    @patch("filesync.repo.base_repo.os.path.exists")
+    @patch("templatron.repo.base_repo.os.path.exists")
     def test_is_cloned(self, mock_exists):
         """
         Test BaseRepo.is_cloned
@@ -119,7 +119,7 @@ class TestBaseRepo(TestCase):
         self.assertFalse(self.test_repo.is_cloned)
         mock_exists.assert_called_with("/fake/root/fake repo")
 
-    @patch("filesync.repo.base_repo.BaseRepo.git_cmd")
+    @patch("templatron.repo.base_repo.BaseRepo.git_cmd")
     def test_is_dirty_clean(self, mock_git):
         """
         Test BaseRepo.is_dirty when clean
@@ -128,7 +128,7 @@ class TestBaseRepo(TestCase):
         mock_git.return_value = ""
         self.assertFalse(self.test_repo.is_dirty)
 
-    @patch("filesync.repo.base_repo.BaseRepo.git_cmd")
+    @patch("templatron.repo.base_repo.BaseRepo.git_cmd")
     def test_is_dirty_dirty(self, mock_git):
         """
         Test BaseRepo.is_dirty when dirty
@@ -164,8 +164,8 @@ class TestBaseRepo(TestCase):
 
     @patch.object(BaseRepo, "is_cloned", False)
     @patch.object(BaseRepo, "is_dirty", False)
-    @patch("filesync.repo.base_repo.BaseRepo.maybe_switch_branch")
-    @patch("filesync.repo.base_repo.BaseRepo.git_cmd")
+    @patch("templatron.repo.base_repo.BaseRepo.maybe_switch_branch")
+    @patch("templatron.repo.base_repo.BaseRepo.git_cmd")
     def test_clone_not_cloned(self, mock_git, mock_switch):
         """
         Test BaseRepo.clone() when the repo hasn't been cloned yet
@@ -183,7 +183,7 @@ class TestBaseRepo(TestCase):
 
     @patch.object(BaseRepo, "is_cloned", True)
     @patch.object(BaseRepo, "is_dirty", True)
-    @patch("filesync.repo.base_repo.BaseRepo.maybe_switch_branch")
+    @patch("templatron.repo.base_repo.BaseRepo.maybe_switch_branch")
     def test_clone_is_dirty(self, mock_switch):
         """
         Test BaseRepo.clone() when repo is dirty
@@ -195,7 +195,7 @@ class TestBaseRepo(TestCase):
 
     @patch.object(BaseRepo, "is_cloned", True)
     @patch.object(BaseRepo, "is_dirty", False)
-    @patch("filesync.repo.base_repo.BaseRepo.maybe_switch_branch")
+    @patch("templatron.repo.base_repo.BaseRepo.maybe_switch_branch")
     def test_clone_cloned_and_clean(self, mock_switch):
         """
         Test BaseRepo.clone() when repo has been previously cloned and is
@@ -205,7 +205,7 @@ class TestBaseRepo(TestCase):
         self.test_repo.clone()
         mock_switch.assert_called()
 
-    @patch("filesync.repo.base_repo.git")
+    @patch("templatron.repo.base_repo.git")
     def test_git_cmd_clone(self, mock_git):
         """
         Test BaseRepo.git_cmd() when cloning a repo
@@ -214,7 +214,7 @@ class TestBaseRepo(TestCase):
         self.test_repo.git_cmd("clone", "some args")
         mock_git.assert_called_with("clone", "some args")
 
-    @patch("filesync.repo.base_repo.git")
+    @patch("templatron.repo.base_repo.git")
     def test_git_cmd_no_clone(self, mock_git):
         """
         Test BaseRepo.git_cmd() when performing non-clone actions on a repo
@@ -227,7 +227,7 @@ class TestBaseRepo(TestCase):
 
     @patch.object(BaseRepo, "active_branch", "fake_branch")
     @patch.object(BaseRepo, "base_branch", "fake_branch")
-    @patch("filesync.repo.base_repo.BaseRepo.git_cmd")
+    @patch("templatron.repo.base_repo.BaseRepo.git_cmd")
     def test_maybe_switch_branch_no(self, mock_git):
         """
         Test BaseRepo.maybe_switch_branch() when active branch is already the
@@ -239,7 +239,7 @@ class TestBaseRepo(TestCase):
 
     @patch.object(BaseRepo, "active_branch", "other_branch")
     @patch.object(BaseRepo, "base_branch", "fake_branch")
-    @patch("filesync.repo.base_repo.BaseRepo.git_cmd")
+    @patch("templatron.repo.base_repo.BaseRepo.git_cmd")
     def test_maybe_switch_branch_yes(self, mock_git):
         """
         Test BaseRepo.maybe_switch_branch() when active branch is not the base
