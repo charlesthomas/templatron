@@ -36,10 +36,6 @@ branch-prefix/repo-template-name/repo-template-sha
 - `repo-template-name` is the name of the template that was applied to generate the branch
 - `repo-template-sha` is the commit hash of the HEAD of the repo template at the time it was applied
 
-Example:
-```
-```
-
 ## Stale Branches
 
 Since `templatron` uses a deterministic branch name, it can find and clean up branches it has opened that were never merged. It can also identify the PRs associated with those branches and close them before deleting the branches.
