@@ -233,7 +233,7 @@ vcs_ref={self.template.vcs_ref})''')
 
         run_copy(self.template.clone_path, self.clone_path,
                  answers_file=self.answers_file,
-                 force=force, quiet=quiet, vcs_ref=self.template.vcs_ref)
+                 quiet=quiet, vcs_ref=self.template.vcs_ref)
 
         self.munge_answers()
         self.logger.debug('copier done')
