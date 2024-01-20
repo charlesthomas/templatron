@@ -3,7 +3,7 @@ import os.path
 import subprocess
 
 import yaml
-from copier import copy
+from copier import run_copy
 
 from templatron.commit_template import commit_template
 from templatron.exceptions import HookFailure
@@ -227,13 +227,13 @@ class Repository(BaseRepo):
 
         self.logger.debug(f'''running copier to apply template...
 
-copy({self.template.clone_path}, {self.clone_path},
+run_copy({self.template.clone_path}, {self.clone_path},
 answers_file={self.answers_file}, force={force}, quiet={quiet},
 vcs_ref={self.template.vcs_ref})''')
 
-        copy(self.template.clone_path, self.clone_path,
-             answers_file=self.answers_file,
-             force=force, quiet=quiet, vcs_ref=self.template.vcs_ref)
+        run_copy(self.template.clone_path, self.clone_path,
+                 answers_file=self.answers_file,
+                 force=force, quiet=quiet, vcs_ref=self.template.vcs_ref)
 
         self.munge_answers()
         self.logger.debug('copier done')
