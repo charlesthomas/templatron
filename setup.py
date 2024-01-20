@@ -21,6 +21,9 @@ if __name__ == "__main__":
         description="sync templated common files across repos",
         install_requires=REQS,
         entry_points={
-            'console_scripts': ['templatron = templatron.cli:main'],
+            'console_scripts': [
+                'templatron = templatron.cli:main',
+                'tt = templatron.cli:main',
+            ],
         }
     )
