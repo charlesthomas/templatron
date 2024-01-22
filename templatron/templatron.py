@@ -26,7 +26,7 @@ class Templatron(object):
 
     def build_repo(self, repo, base_branch=None):
         name, org, kwargs = self.validate_repo(repo)
-        gh = self.github.get_organization(org).get_repo(name)
+        gh = self.github.get_user(org).get_repo(name)
         if base_branch is not None:
             kwargs['base_branch'] = base_branch
         return Repository(name, self.token, gh, self.config.clone_root,
@@ -51,7 +51,7 @@ class Templatron(object):
     def build_template(self, name):
         self.logger.debug(f'initializing template {name}...')
         org, name = self.split_org_and_name(name)
-        gh = self.github.get_organization(org).get_repo(name)
+        gh = self.github.get_user(org).get_repo(name)
         try:
             template = Template(
                 name, self.token, gh, self.config.clone_root,
@@ -81,7 +81,7 @@ class Templatron(object):
         if not self.template.config.autoscan:
             return repo_list
 
-        gh_org = self.github.get_organization(self.template.config.org)
+        gh_org = self.github.get_user(self.template.config.org)
         for repo in gh_org.get_repos():
             if repo.fork:
                 self.logger.debug(f"skipping {repo.name}; it's a fork")
