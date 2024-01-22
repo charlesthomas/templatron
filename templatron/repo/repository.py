@@ -3,7 +3,7 @@ import os.path
 import subprocess
 
 import yaml
-from copier import run_copy
+from copier import run_copy, run_update
 
 from templatron.commit_template import commit_template
 from templatron.exceptions import HookFailure
@@ -28,16 +28,18 @@ def string_representer(dumper, data):
 
 
 class Repository(BaseRepo):
-    def __init__(self, name, token, github, clone_root, template,
-                 base_branch=None, dry_run=False,
-                 answers_file='.copier-answers.yml',
-                 branch_prefix='templatron',
-                 branch_separator='/',
-                 interactive=False,
-                 hooks=None):
+    def __init__(
+        self, name, token, github, clone_root, template,
+        base_branch=None, dry_run=False,
+        answers_file='.copier-answers.yml',
+        branch_prefix='templatron',
+        branch_separator='/',
+        interactive=False,
+        hooks=None):
 
-        super().__init__(name, token, github, clone_root, base_branch, dry_run,
-                         interactive)
+        super().__init__(
+            name, token, github, clone_root, base_branch, dry_run, interactive
+        )
         self.template = template
         self.answers_file = answers_file
         self.branch_prefix = branch_prefix
@@ -51,10 +53,12 @@ class Repository(BaseRepo):
 
     @property
     def commit_message(self):
-        return commit_template.format(operation=self.operation,
-                                      template=self.template.name,
-                                      branch=self.template.base_branch,
-                                      commit=self.template.head)
+        return commit_template.format(
+            operation=self.operation,
+            template=self.template.name,
+            branch=self.template.base_branch,
+            commit=self.template.head
+        )
 
     @property
     def fixing(self):
@@ -68,8 +72,10 @@ class Repository(BaseRepo):
     def template_version(self):
         with open(self.answers_file_path) as fin:
             answers = yaml.safe_load(fin.read())
-        return answers.get('_template_version',
-                           '_template_version missing, force update')
+        return answers.get(
+            '_template_version',
+            '_template_version missing, force update'
+        )
 
     @property
     def onboarding(self):
@@ -144,22 +150,6 @@ class Repository(BaseRepo):
     def fix(self):
         self.update(operation='fixing')
 
-    def munge_answers(self):
-        # for some reason copier writes data to _commit that it can't actually
-        # use to run updates. but it runs fine if it's missing entirely
-        # so rename the field to something different so that we can still use
-        # it but copier doesn't see it
-        with open(self.answers_file_path) as fin:
-            y = yaml.safe_load(fin.read())
-        y['_template_version'] = y.pop('_commit')
-        y.pop('_src_path')
-
-        # support multi-line yaml w/the function at the top of this file
-        yaml.add_representer(str, string_representer)
-
-        with open(self.answers_file_path, 'w') as fout:
-            yaml.dump(y, fout)
-
     def post_clone_hook(self):
         self.run_hook('post-clone')
 
@@ -197,7 +187,7 @@ class Repository(BaseRepo):
             if self.dry_run:
                 return
             pr = self.github.create_pull(
-                 title=title, body=body, head=head, base=base)
+                title=title, body=body, head=head, base=base)
         log_or_print(self.logger, pr.html_url)
 
     def push_changes(self):
@@ -205,18 +195,23 @@ class Repository(BaseRepo):
         if self.dry_run:
             return
         self.git_cmd('push', 'origin', self.update_branch_name)
-        self.git_cmd('remote', 'set-branches', 'origin',
-                     self.update_branch_name)
-        self.git_cmd('fetch', '--depth', '1', 'origin',
-                     self.update_branch_name)
-        self.git_cmd('branch', '--set-upstream-to',
-                     f'origin/{self.update_branch_name}')
+        self.git_cmd(
+            'remote', 'set-branches', 'origin',
+            self.update_branch_name
+        )
+        self.git_cmd(
+            'fetch', '--depth', '1', 'origin',
+            self.update_branch_name
+        )
+        self.git_cmd(
+            'branch', '--set-upstream-to',
+            f'origin/{self.update_branch_name}'
+        )
         self.git_cmd('add', '-A')
         self.git_cmd('commit', '-m', self.commit_message)
         self.git_cmd('push')
 
     def run_copier(self):
-        force = not self.interactive
         if self.interactive:
             quiet = False
         else:
@@ -225,17 +220,39 @@ class Repository(BaseRepo):
         self.template.clone()
         # this is a no-op if it's already been cloned
 
-        self.logger.debug(f'''running copier to apply template...
+        if self.operation == 'updating':
+            self.logger.debug(f'''running copier to apply template...
 
-run_copy({self.template.clone_path}, {self.clone_path},
-answers_file={self.answers_file}, force={force}, quiet={quiet},
+run_update({self.template.clone_path}, {self.clone_path},
+answers_file={self.answers_file}, overwrite=True, quiet={quiet},
 vcs_ref={self.template.vcs_ref})''')
 
-        run_copy(self.template.clone_path, self.clone_path,
-                 answers_file=self.answers_file,
-                 quiet=quiet, vcs_ref=self.template.vcs_ref)
+            try:
+                run_update(
+                    self.clone_path,
+                    answers_file=self.answers_file,
+                    defaults=True,
+                    overwrite=True,
+                    quiet=quiet, src_path=self.template.clone_path,
+                    vcs_ref=self.template.vcs_ref
+                )
+            except Exception as fuck:
+                import pdb;pdb.set_trace()
+                raise
 
-        self.munge_answers()
+        else: # onboarding or fixing
+            self.logger.debug(f'''running copier to apply template...
+
+run_copy({self.template.clone_path}, {self.clone_path},
+answers_file={self.answers_file}, quiet={quiet},
+vcs_ref={self.template.vcs_ref})''')
+
+            run_copy(
+                self.template.clone_path, self.clone_path,
+                answers_file=self.answers_file,
+                quiet=quiet, vcs_ref=self.template.vcs_ref
+            )
+
         self.logger.debug('copier done')
 
     def run_hook(self, hook_name):
@@ -267,7 +284,7 @@ vcs_ref={self.template.vcs_ref})''')
         self.logger.info(f'{operation} {self.name}...')
 
         self.pre_clone_hook()
-        self.clone()
+        self.clone(shallow=True)
         self.post_clone_hook()
 
         self.switch_to_update_branch()
