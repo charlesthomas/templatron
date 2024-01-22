@@ -26,7 +26,7 @@ class Templatron(object):
 
     def build_repo(self, repo, base_branch=None):
         name, org, kwargs = self.validate_repo(repo)
-        gh = self.github.get_user(org).get_repo(name)
+        gh = self.get_org_or_user(org).get_repo(name)
         if base_branch is not None:
             kwargs['base_branch'] = base_branch
         return Repository(name, self.token, gh, self.config.clone_root,
@@ -51,7 +51,7 @@ class Templatron(object):
     def build_template(self, name):
         self.logger.debug(f'initializing template {name}...')
         org, name = self.split_org_and_name(name)
-        gh = self.github.get_user(org).get_repo(name)
+        gh = self.get_org_or_user(org).get_repo(name)
         try:
             template = Template(
                 name, self.token, gh, self.config.clone_root,
@@ -81,7 +81,7 @@ class Templatron(object):
         if not self.template.config.autoscan:
             return repo_list
 
-        gh_org = self.github.get_user(self.template.config.org)
+        gh_org = self.get_org_or_user(self.template.config.org)
         for repo in gh_org.get_repos():
             if repo.fork:
                 self.logger.debug(f"skipping {repo.name}; it's a fork")
@@ -112,6 +112,21 @@ class Templatron(object):
             self.maybe_clean()
             raise
         self.stop()
+
+    def get_org_or_user(self, org_or_user):
+        # GitHub API treats users and orgs differently, even though they have the same URL
+        # EG https://github./someone/some-repo
+        # someone could be an org, returned by Github.get_org("someone")
+        # or
+        # someone could be a user, returned by Github.get_user("someone")
+        # rather than make the user tell us, just assume it's an org unless get_organization 404s,
+        # and then try get_user instead
+        try:
+            return self.github.get_organization(org_or_user)
+        except GithubException as err:
+            if err.status != 404:
+                raise
+            return self.github.get_user(org_or_user)
 
     def has_answersfile(self, repo):
         # use the github API to try to get the answersfile
