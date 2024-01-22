@@ -7,8 +7,10 @@ from templatron.exceptions import DirtyRepoError, UnrecognizableBaseBranchError
 
 
 class BaseRepo(object):
-    def __init__(self, name, token, github, clone_root, base_branch=None,
-                 dry_run=False, interactive=False):
+    def __init__(
+        self, name, token, github, clone_root, base_branch=None,
+        dry_run=False, interactive=False
+    ):
 
         self.logger = logging.getLogger(f'{self.__class__.__name__}({name})')
 
@@ -73,13 +75,18 @@ class BaseRepo(object):
             return 'master'
         raise UnrecognizableBaseBranchError("unable to determine base branch!")
 
-    def clone(self):
+    def clone(self, shallow=False):
         if not self.is_cloned:
             self.logger.debug(f'cloning {self.name} to {self.clone_path}...')
             # it's fine to do shallow clones (--depth 1), as long as we change
             # branches correctly
-            self.git_cmd('clone', '--depth', '1',
-                         self.clone_url, self.clone_path)
+            args = ['clone']
+            if shallow:
+                args.append('--depth')
+                args.append('1')
+            args.append(self.clone_url)
+            args.append(self.clone_path)
+            self.git_cmd(*args)
         if self.is_dirty:
             raise DirtyRepoError(
                 f"repo {self.name} is dirty! can't proceed")

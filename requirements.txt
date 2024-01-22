@@ -1,7 +1,5 @@
-markupsafe==2.0.1
-click==8.0.1
+click==8.1.7
 click-config-file==0.6.0
-copier==5.1.0
-PyGithub==1.55
-PyYAML==5.4.1
-sh==1.14.2
+copier==9.1.1
+PyGithub==2.1.1
+sh==2.0.6

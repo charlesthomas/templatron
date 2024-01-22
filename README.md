@@ -156,9 +156,11 @@ Lives in the template repo (default location `templatron.yaml`). Config options:
 - `branch-prefix`: (default: `templatron`) See Branch Names above
 - `branch-separator`: (default: `/`) See Branch Names above
 - `dry-run`: (default: `False`) run `templatron` in dry-run mode
-- `org`: the default GitHub organization if one isn't supplied on the CLI or in the `repos` list for a repo (see Determining Repos and Orgs)
+- `hooks`: hooks can run scripts at certain points during the onboarding and / or updating operations. see [hooks](#hooks) for more details
+- `old-answers-files`: this is a `list` of answersfiles that _used to be, but are no longer used_. when running autoscan, `tempaltron` will run against a repo if the current answers file is missing, but one of the `old-answers-files` is present. You'll need to include a `pre-copier` hook to `git mv` the old answers file to the current location, or else your answers **WILL NOT** be loaded during the update.
+- `org`: the default GitHub organization or user if one isn't supplied on the CLI or in the `repos` list for a repo (see Determining Repos and Orgs). `templatron` assumes all repos belong to a GitHub organization (rather than a user) when making API calls. If GitHub's API returns a `404` when making a `get_organization` call, `templatron` will automatically retry with `get_user` instead.
 - `repos`: The list of repos this template should be applied to. Each repo can be just the name of the repo, or a map with its own config custom to it, whose keys match the ones in the top level of this config.
-
+- `shard`: Shard setting can be `weekly` or `monthly`. Sharding can be used to reduce the number of repos that will be updated when running `templatron update`. The expectation is that a `shard`-ed config is running daily via CI, and that either 1/7th or 1/30th of the repos should be updated per day.
 
 ### Logging Config
 
@@ -198,3 +200,37 @@ repos:
       org: a-different-github-org
   - a-third-github-org/some-other-repo
 ```
+
+## Hooks
+
+There are 6 different hooks:
+
+1. `pre-clone`: runs immediately before a repo is cloned
+1. `post-clone`: runs immediately after a repo is cloned
+1. `pre-copier-hook`: runs immediately before `copier` runs to apply the template
+1. `post-copier-hook`: runs immediately after `copier` runs to apply the template
+1. `pre-push-hook`: runs imediately before the git commit is pushed to origin
+1. `post-push-hook`: runs immediately after the git commit ish pushed to origin
+
+Hooks shell out to run whatever the value of the key is.
+
+Example:
+
+```yaml
+hooks:
+  pre-copier-hook: my-hook.sh
+```
+
+With the above hook config, `templatron` will run `my-hook.sh` and then run `copier` to apply the template to the repo.
+
+It is expected that hook scripts can receive these four arguments, in order:
+1. operation: either `onboard` or `update`. can be used to only run a hook on updates or only run a hook when onboarding a new repo
+1. clone root: the location `templatron` is cloning repos to. for hook scripts to be able to access the correct files on disk
+1. repo name: the name of the repo the hook is running against. can be used along with clone root to access files inside the repo.
+1. answers file: the path of the answers file relative to the root of the repo.
+
+Example:
+
+`my-hook.sh onboard /tmp/templatron-clones destination-repo src/answers.yaml`
+
+in this example, the full path to the answers file templatron cloned to disk and will read from is `/tmp/templatron-clones/destination-repo/src/answers.yaml`.
