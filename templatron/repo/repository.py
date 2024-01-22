@@ -227,18 +227,12 @@ run_update({self.template.clone_path}, {self.clone_path},
 answers_file={self.answers_file}, overwrite=True, quiet={quiet},
 vcs_ref={self.template.vcs_ref})''')
 
-            try:
-                run_update(
-                    self.clone_path,
-                    answers_file=self.answers_file,
-                    defaults=True,
-                    overwrite=True,
-                    quiet=quiet, src_path=self.template.clone_path,
-                    vcs_ref=self.template.vcs_ref
-                )
-            except Exception as fuck:
-                import pdb;pdb.set_trace()
-                raise
+            run_update(
+                self.clone_path, answers_file=self.answers_file,
+                defaults=True, overwrite=True, quiet=quiet,
+                src_path=self.template.clone_path,
+                vcs_ref=self.template.vcs_ref
+            )
 
         else: # onboarding or fixing
             self.logger.debug(f'''running copier to apply template...
