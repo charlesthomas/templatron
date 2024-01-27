@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "templatron"
+version = "0.2.2"
+description = "🤖 templatron is a harness for automatically running copier when your templates are updated"
+authors = ["Charles Thomas <ch@rlesthom.as>"]
+license = "Apache-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+click = "8.1.7"
+click-config-file = "0.6.0"
+copier = "9.1.1"
+PyGithub = "2.1.1"
+sh = "2.0.6"
+
+[tool.poetry.scripts]
+templatron = "templatron.cli:main"
+tt = "templatron.cli:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
