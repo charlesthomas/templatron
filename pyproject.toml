@@ -29,6 +29,7 @@ major_on_zero = false
 tag_format = "v{version}"
 version_toml = [
     "pyproject.toml:tool.poetry.version",
+    "templatron/__init__.py:__version__",
 ]
 
 [tool.semantic_release.branches.main]
