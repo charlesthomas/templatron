@@ -116,17 +116,17 @@ class Templatron(object):
     def get_org_or_user(self, org_or_user):
         # GitHub API treats users and orgs differently, even though they have the same URL
         # EG https://github./someone/some-repo
-        # someone could be an org, returned by Github.get_org("someone")
-        # or
         # someone could be a user, returned by Github.get_user("someone")
+        # or
+        # someone could be an org, returned by Github.get_org("someone")
         # rather than make the user tell us, just assume it's an org unless get_organization 404s,
         # and then try get_user instead
         try:
-            return self.github.get_organization(org_or_user)
+            return self.github.get_user(org_or_user)
         except GithubException as err:
             if err.status != 404:
                 raise
-            return self.github.get_user(org_or_user)
+            return self.github.get_organization(org_or_user)
 
     def has_answersfile(self, repo):
         # use the github API to try to get the answersfile
