@@ -2,6 +2,13 @@
 
 
 
+## v0.2.6 (2024-01-27)
+
+### Fix
+
+* fix(build): try to make a GitHub Release myself ([`263a5e5`](https://github.com/charlesthomas/templatron/commit/263a5e5b14b9eb40ba864a0768f66cf2861f46a5))
+
+
 ## v0.2.5 (2024-01-27)
 
 ### Fix
