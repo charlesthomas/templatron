@@ -29,12 +29,12 @@ During an `update`, it performs the following actions, in order:
 Branch names are deterministic. They follow this pattern:
 
 ```
-branch-prefix/repo-template-name/repo-template-sha
+branchPrefix-repoTemplateName-repoTemplateShortSha
 ```
 
-- `branch-prefix` is configurable, as is the `branch-separator` (though `/`, shown above, is the default)
+- `branch-prefix` is configurable, as is the `branch-separator` (though `-`, shown above, is the default)
 - `repo-template-name` is the name of the template that was applied to generate the branch
-- `repo-template-sha` is the commit hash of the HEAD of the repo template at the time it was applied
+- `repo-template-sha` is the short commit hash of the HEAD of the repo template at the time it was applied
 
 ## Stale Branches
 
@@ -62,20 +62,41 @@ commit: {commit}
 
 # Running
 
-Example:
-```
-python templatron --help
-```
+This repo uses [`poetry`](https://python-poetry.org/), and defines user (normal) and dev dependencies.
 
-Requirements are defined in `requirements.txt` if you want to `pip install -r
-requirements.txt` manually. The preferred method of running natively is with
-[pipx](https://pypa.github.io/pipx/installation/):
+To install them all:
 
 ```
-git clone git@github.com:charlethomas/templatron $WORKDIR/templatron
-cd $WORKDIR/templatron
-pipx install -e .
+poetry install
+poetry run templatron --help
+```
+
+To install only the user dependencies (and not the dev dependencies):
+
+```
+poetry install --without dev
+poetry run templatron --help
+```
+
+If you don't want to bother with poetry, you can use [`pipx`](https://pipx.pypa.io/latest/installation/) instead:
+
+```
+pipx install .
 templatron --help
+```
+
+🤖 templatron also installs as `tt`:
+
+```
+poetry install
+tt --help
+```
+
+or
+
+```
+pipx install .
+tt --help
 ```
 
 # Configuring
