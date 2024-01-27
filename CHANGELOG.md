@@ -2,6 +2,13 @@
 
 
 
+## v0.2.5 (2024-01-27)
+
+### Fix
+
+* fix(ci): try to disable vcs release in github actions ([`b2877ac`](https://github.com/charlesthomas/templatron/commit/b2877ac0aee077f4c9a88574833f1f8c3c13c43f))
+
+
 ## v0.2.4 (2024-01-27)
 
 ### Fix
