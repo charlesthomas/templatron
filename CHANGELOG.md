@@ -2,6 +2,15 @@
 
 
 
+## v0.2.4 (2024-01-27)
+
+### Fix
+
+* fix(build): disable GH Releases
+
+[pending bug fix](https://github.com/python-semantic-release/python-semantic-release/issues/818) ([`0fcd3cd`](https://github.com/charlesthomas/templatron/commit/0fcd3cdf98bade3537e2237ba44716f2aeb792f6))
+
+
 ## v0.2.3 (2024-01-27)
 
 ### Fix
