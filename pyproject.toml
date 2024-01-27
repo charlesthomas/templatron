@@ -74,7 +74,6 @@ ignore_token_for_push = false
 env = "GITHUB_TOKEN"
 
 [tool.semantic_release.publish]
-dist_glob_patterns = []
 upload_to_vcs_release = false
 
 [build-system]
