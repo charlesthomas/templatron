@@ -2,6 +2,13 @@
 
 
 
+## v0.2.7 (2024-01-27)
+
+### Chore
+
+* chore(ci): Create dependabot.yml ([`24d79c4`](https://github.com/charlesthomas/templatron/commit/24d79c43f60c9ee023b5204e2a6731d85c7096ea))
+
+
 ## v0.2.6 (2024-01-27)
 
 ### Fix
