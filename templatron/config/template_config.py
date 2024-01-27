@@ -9,7 +9,7 @@ class TemplateConfig(BaseConfig):
         'answers_file': '.copier-answers.yml',
         'autoscan': False,
         'branch_prefix': 'templatron',
-        'branch_separator': '/',
+        'branch_separator': '-',
         'repos': [],
         'hooks': {},
     }

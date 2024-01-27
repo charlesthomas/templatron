@@ -102,7 +102,7 @@ class Repository(BaseRepo):
         return self.branch_separator.join([
             self.branch_prefix,
             self.template.name,
-            self.template.head
+            self.template.head[:7]
         ])
 
     @property
