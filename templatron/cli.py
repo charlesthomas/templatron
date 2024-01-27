@@ -16,7 +16,7 @@ DEFAULT_CLONE_ROOT = os.path.join(gettempdir(), 'templatron_clones')
 @click.group()
 @click.pass_context
 @click.argument('template')
-@click.option('--autoclean/--no-autoclean', default=True,
+@click.option('--autoclean/--no-autoclean', default=False,
               help='remove clones from disk after running')
 @click.option('--clone-root', '-r', default=DEFAULT_CLONE_ROOT,
               help='path to clone repos')
