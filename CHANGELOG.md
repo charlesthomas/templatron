@@ -2,6 +2,23 @@
 
 
 
+## v0.3.0 (2024-01-27)
+
+### Chore
+
+* chore: assume user first
+
+try user, fail to org; rather than the other way around ([`3565e9f`](https://github.com/charlesthomas/templatron/commit/3565e9ff299fcb5b77d9ca77df0423403f3710e4))
+
+### Feature
+
+* feat: stop defaulting `--autoclean` ([`843463a`](https://github.com/charlesthomas/templatron/commit/843463aed66b3a78a6f6ec1732f0e047de5e280c))
+
+### Unknown
+
+* doc: fix README ([`bb0ff6b`](https://github.com/charlesthomas/templatron/commit/bb0ff6be678af8484c1d4af9dd6faf4cdeebc339))
+
+
 ## v0.2.7 (2024-01-27)
 
 ### Chore
