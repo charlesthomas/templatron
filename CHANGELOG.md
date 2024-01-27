@@ -2,6 +2,13 @@
 
 
 
+## v0.2.3 (2024-01-27)
+
+### Fix
+
+* fix: re-add __version__ for `templatron --version` option ([`086cf62`](https://github.com/charlesthomas/templatron/commit/086cf62bfaab8ba3465d74679b4808bf97615662))
+
+
 ## v0.2.2 (2024-01-27)
 
 ### Fix
