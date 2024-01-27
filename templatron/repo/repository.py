@@ -168,6 +168,16 @@ class Repository(BaseRepo):
     def pre_push_hook(self):
         self.run_hook('pre-push')
 
+    def pretty_print_answers_file(self):
+        # support multi-line yaml w/the function at the top of this file
+        yaml.add_representer(str, string_representer)
+
+        with open(self.answers_file_path) as fin:
+            y = yaml.safe_load(fin.read())
+
+        with open(self.answers_file_path, 'w') as fout:
+            yaml.dump(y, fout)
+
     def onboard(self):
         self.update(operation='onboarding')
 
@@ -247,6 +257,7 @@ vcs_ref={self.template.vcs_ref})''')
                 quiet=quiet, vcs_ref=self.template.vcs_ref
             )
 
+        self.pretty_print_answers_file()
         self.logger.debug('copier done')
 
     def run_hook(self, hook_name):
