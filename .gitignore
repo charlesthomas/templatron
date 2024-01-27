@@ -3,3 +3,4 @@ reports/
 tmp/
 .python/
 templatron.log
+__pycache__
