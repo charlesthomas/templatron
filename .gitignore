@@ -4,3 +4,4 @@ tmp/
 .python/
 templatron.log
 __pycache__
+templatron.egg-info/
