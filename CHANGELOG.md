@@ -2,6 +2,21 @@
 
 
 
+## v0.3.3 (2024-02-17)
+
+### Chore
+
+* chore: egg-info in gitignore ([`9bbb318`](https://github.com/charlesthomas/templatron/commit/9bbb318222ed52a737865b97b644542df514f793))
+
+### Ci
+
+* ci: testing misconfiguration fix ([`a4a4447`](https://github.com/charlesthomas/templatron/commit/a4a444721042ddf8ceeb9c7d0c1e95e92abddb1a))
+
+### Fix
+
+* fix: ci cleanup ([`0c58951`](https://github.com/charlesthomas/templatron/commit/0c589513e871a5f315446020371e9b023c1ed2b8))
+
+
 ## v0.3.2 (2024-02-15)
 
 ### Chore
