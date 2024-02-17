@@ -23,10 +23,3 @@ jobs:
       uses: python-semantic-release/python-semantic-release@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    #     vcs_release: "false"
-
-    # - name: GitHub Release
-    #   env:
-    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    #   run: |
-    #     gh release create ${{ steps.release.outputs.tag }}
