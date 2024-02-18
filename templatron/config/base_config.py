@@ -35,8 +35,8 @@ class BaseConfig(object):
             if not from_yaml:
                 return {}
             for yaml_key, val in from_yaml.items():
-                key = yaml_key.replace('-', '_')
-                if type(val) == str and val == '':
+                key = yaml_key.replace("-", "_")
+                if type(val) == str and val == "":
                     # make our lives easier so we don't have to always check
                     # if value is None or value == '':
                     # everywhere we check the config
@@ -47,6 +47,6 @@ class BaseConfig(object):
     def log_config(self):
         if self.logger is None:
             self.logger = logging.getLogger(self.__class__.__name__)
-        self.logger.info(f'config path loaded: {self.config_path}')
+        self.logger.info(f"config path loaded: {self.config_path}")
         filtered = {k: v for (k, v) in self.config.items() if v is not None}
-        self.logger.info(f'with config:\n{pformat(filtered)}')
+        self.logger.info(f"with config:\n{pformat(filtered)}")

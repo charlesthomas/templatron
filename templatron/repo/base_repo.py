@@ -8,11 +8,17 @@ from templatron.exceptions import DirtyRepoError, UnrecognizableBaseBranchError
 
 class BaseRepo(object):
     def __init__(
-        self, name, token, github, clone_root, base_branch=None,
-        dry_run=False, interactive=False
+        self,
+        name,
+        token,
+        github,
+        clone_root,
+        base_branch=None,
+        dry_run=False,
+        interactive=False,
     ):
 
-        self.logger = logging.getLogger(f'{self.__class__.__name__}({name})')
+        self.logger = logging.getLogger(f"{self.__class__.__name__}({name})")
 
         self.name = name
         self.token = token
@@ -30,10 +36,9 @@ class BaseRepo(object):
     @property
     def active_branch(self):
         try:
-            return self.git_cmd('rev-parse', '--abbrev-ref', 'HEAD').strip()
+            return self.git_cmd("rev-parse", "--abbrev-ref", "HEAD").strip()
         except Exception as error:
-            raise UnrecognizableBaseBranchError(
-                "unable to determine active branch!")
+            raise UnrecognizableBaseBranchError("unable to determine active branch!")
 
     @property
     def base_branch(self):
@@ -47,9 +52,7 @@ class BaseRepo(object):
 
     @property
     def clone_url(self):
-        return self.github.clone_url.replace(
-            'github.com', f'{self.token}@github.com'
-        )
+        return self.github.clone_url.replace("github.com", f"{self.token}@github.com")
 
     @property
     def head(self):
@@ -62,39 +65,38 @@ class BaseRepo(object):
     @property
     def is_dirty(self):
         try:
-            result = self.git_cmd('diff', '--quiet')
+            result = self.git_cmd("diff", "--quiet")
             return False
         except ErrorReturnCode as err:
             return True
 
     @property
     def main(self):
-        if 'main' in self.branches:
-            return 'main'
-        if 'master' in self.branches:
-            return 'master'
+        if "main" in self.branches:
+            return "main"
+        if "master" in self.branches:
+            return "master"
         raise UnrecognizableBaseBranchError("unable to determine base branch!")
 
     def clone(self, shallow=False):
         if not self.is_cloned:
-            self.logger.debug(f'cloning {self.name} to {self.clone_path}...')
+            self.logger.debug(f"cloning {self.name} to {self.clone_path}...")
             # it's fine to do shallow clones (--depth 1), as long as we change
             # branches correctly
-            args = ['clone']
+            args = ["clone"]
             if shallow:
-                args.append('--depth')
-                args.append('1')
+                args.append("--depth")
+                args.append("1")
             args.append(self.clone_url)
             args.append(self.clone_path)
             self.git_cmd(*args)
         if self.is_dirty:
-            raise DirtyRepoError(
-                f"repo {self.name} is dirty! can't proceed")
+            raise DirtyRepoError(f"repo {self.name} is dirty! can't proceed")
         self.maybe_switch_branch()
-        self.logger.debug(f'cloning {self.name} complete')
+        self.logger.debug(f"cloning {self.name} complete")
 
     def git_cmd(self, cmd, *args):
-        if cmd == 'clone':
+        if cmd == "clone":
             # clone is special because _cwd doesn't exist yet
             return git(cmd, *args)
         return git(cmd, *args, _cwd=self.clone_path)
@@ -102,8 +104,7 @@ class BaseRepo(object):
     def maybe_switch_branch(self):
         if self.active_branch == self.base_branch:
             return
-        self.logger.info(
-            f'switching from {self.active_branch} to {self.base_branch}')
-        self.git_cmd('remote', 'set-branches', 'origin', self.base_branch)
-        self.git_cmd('fetch', '--depth', '1', 'origin', self.base_branch)
-        self.git_cmd('checkout', self.base_branch)
+        self.logger.info(f"switching from {self.active_branch} to {self.base_branch}")
+        self.git_cmd("remote", "set-branches", "origin", self.base_branch)
+        self.git_cmd("fetch", "--depth", "1", "origin", self.base_branch)
+        self.git_cmd("checkout", self.base_branch)

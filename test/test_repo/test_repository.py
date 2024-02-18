@@ -1,6 +1,7 @@
 """
 Unit tests for templatron/repo/repository.py
 """
+
 # pylint: disable=protected-access,too-many-arguments,too-many-public-methods
 # pylint: disable=unused-argument
 
@@ -186,7 +187,7 @@ class TestRepository(TestCase):
         change.
         """
 
-        mock_git.return_value = '\n'.join([self.test_repo.answers_file, ''])
+        mock_git.return_value = "\n".join([self.test_repo.answers_file, ""])
         self.assertFalse(self.test_repo.confirm_changes())
 
     @patch("templatron.repo.repository.Repository.git_cmd")
@@ -196,11 +197,9 @@ class TestRepository(TestCase):
         answers file was changed.
         """
 
-        mock_git.return_value = '\n'.join([
-            self.test_repo.answers_file,
-            "/fake/file",
-            ''
-        ])
+        mock_git.return_value = "\n".join(
+            [self.test_repo.answers_file, "/fake/file", ""]
+        )
         self.assertTrue(self.test_repo.confirm_changes())
 
     @patch("templatron.repo.repository.Repository.git_cmd")
@@ -394,7 +393,7 @@ class TestRepository(TestCase):
             return
 
         self.test_repo.interactive = False
-        self.test_repo.operation = 'updating'
+        self.test_repo.operation = "updating"
         self.test_repo.pretty_print_answers_file = noop
         self.test_repo.run_copier()
         mock_copy.assert_called_with(

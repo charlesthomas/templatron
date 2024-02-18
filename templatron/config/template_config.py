@@ -6,12 +6,12 @@ from templatron.exceptions import UnrecognizedRepoConfigError
 
 class TemplateConfig(BaseConfig):
     SAFE_DEFAULTS = {
-        'answers_file': '.copier-answers.yml',
-        'autoscan': False,
-        'branch_prefix': 'templatron',
-        'branch_separator': '-',
-        'repos': [],
-        'hooks': {},
+        "answers_file": ".copier-answers.yml",
+        "autoscan": False,
+        "branch_prefix": "templatron",
+        "branch_separator": "-",
+        "repos": [],
+        "hooks": {},
     }
 
     def __init__(self, config_path):
@@ -23,7 +23,7 @@ class TemplateConfig(BaseConfig):
         # because yaml, each repo in the config file could either be a string
         # or a dict; just make them all dicts now
         repos = dict()
-        for repo in self.config.get('repos', []):
+        for repo in self.config.get("repos", []):
             if type(repo) == str:
                 name = repo
                 repos[name] = dict()
@@ -31,16 +31,16 @@ class TemplateConfig(BaseConfig):
                 keys = list(repo.keys())
                 if len(keys) != 1:
                     raise UnrecognizedRepoConfigError(
-                        'Something is misconfigured! '
-                        'This should have exactly one key.'
-                        f'\n{pformat(repo)}'
+                        "Something is misconfigured! "
+                        "This should have exactly one key."
+                        f"\n{pformat(repo)}"
                     )
                 name = keys[0]
                 repos[name] = repo[name]
             else:
                 raise UnrecognizedRepoConfigError(
-                    'Something is misconfigured! '
-                    'Unrecognized repo config type.'
-                    f'\n{pformat(repo)}'
+                    "Something is misconfigured! "
+                    "Unrecognized repo config type."
+                    f"\n{pformat(repo)}"
                 )
         return repos
