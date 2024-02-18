@@ -236,26 +236,6 @@ class TestRepository(TestCase):
         self.test_repo.fix()
         mock_update.assert_called_with(operation="fixing")
 
-    @patch("templatron.repo.repository.open")
-    @patch("yaml.safe_load")
-    @patch("yaml.dump")
-    def test_munge_answers(self, mock_dump, mock_load, mock_open):
-        """
-        Ensure Repository.munge_answers() updates _template_version
-        and removes _commit from answers_file
-        """
-
-        mock_load.return_value = {
-            "_commit": "abc123",
-            "test": "value",
-            "_src_path": "/tmp/dne"
-        }
-        self.test_repo.munge_answers()
-        mock_dump.assert_called_with(
-            {"_template_version": "abc123", "test": "value"},
-            mock_open().__enter__(),
-        )
-
     @patch("templatron.repo.repository.Repository.run_hook")
     def test_post_copier_hook(self, mock_hook):
         """
@@ -382,41 +362,48 @@ class TestRepository(TestCase):
         self.test_repo.push_changes()
         mock_git.assert_called_with("push")
 
-    @patch("templatron.repo.repository.copy")
-    @patch("templatron.repo.repository.Repository.munge_answers")
+    @patch("templatron.repo.repository.run_copy")
     @patch("templatron.repo.template.Template.clone")
-    def test_run_copier_interactive(self, mock_clone, mock_munge, mock_copy):
+    def test_run_copier_interactive(self, mock_clone, mock_copy):
         """
         Test Repository.run_copier() in interactive mode
         """
 
+        def noop():
+            return
+
         self.test_repo.interactive = True
+        self.test_repo.pretty_print_answers_file = noop
         self.test_repo.run_copier()
         mock_copy.assert_called_with(
             "fake_root/test_template",
             "/fake/root/fake repo",
             answers_file=".copier-answers.yml",
-            force=False,
             quiet=False,
             vcs_ref=None,
         )
 
-    @patch("templatron.repo.repository.copy")
-    @patch("templatron.repo.repository.Repository.munge_answers")
+    @patch("templatron.repo.repository.run_update")
     @patch("templatron.repo.template.Template.clone")
-    def test_run_copier_noninteractive(self, mock_clone, mock_munge, mock_copy):
+    def test_run_copier_noninteractive(self, mock_clone, mock_copy):
         """
         Test Repository.run_copier() in non-interactive mode
         """
 
+        def noop():
+            return
+
         self.test_repo.interactive = False
+        self.test_repo.operation = 'updating'
+        self.test_repo.pretty_print_answers_file = noop
         self.test_repo.run_copier()
         mock_copy.assert_called_with(
-            "fake_root/test_template",
             "/fake/root/fake repo",
             answers_file=".copier-answers.yml",
-            force=True,
+            defaults=True,
             quiet=True,
+            overwrite=True,
+            src_path="fake_root/test_template",
             vcs_ref=None,
         )
 
