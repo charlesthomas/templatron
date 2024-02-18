@@ -7,6 +7,7 @@ from unittest import TestCase
 from unittest.mock import MagicMock, patch
 
 from sh import ErrorReturnCode
+
 # from sh import TimeoutException
 
 from templatron.exceptions import (
@@ -21,9 +22,7 @@ from templatron.templatron import Templatron
 # pylint: disable=too-many-public-methods
 
 
-class TestTemplatronBuildRepo(
-    TestCase
-):  # pylint: disable=too-many-instance-attributes
+class TestTemplatronBuildRepo(TestCase):  # pylint: disable=too-many-instance-attributes
     """
     Test build_repo() method in Templatron class
     """
@@ -42,9 +41,7 @@ class TestTemplatronBuildRepo(
             token_variable_name="FAKE_TOKEN", clone_root=self.fake_clone_root
         )
         self.templatron.github = MagicMock()
-        self.templatron.github.get_user().get_repo.return_value = (
-            self.fake_github_repo
-        )
+        self.templatron.github.get_user().get_repo.return_value = self.fake_github_repo
 
     @patch("templatron.templatron.Templatron.validate_repo")
     @patch("templatron.templatron.Repository")
@@ -112,9 +109,7 @@ class TestBuildRepos(TestCase):
         mock_build_repo.assert_any_call("fake3")
 
 
-class TestBuildTemplate(
-    TestCase
-):  # pylint: disable=too-many-instance-attributes
+class TestBuildTemplate(TestCase):  # pylint: disable=too-many-instance-attributes
     """
     Test Templatron.build_template()
     """
@@ -144,9 +139,7 @@ class TestBuildTemplate(
         )
         self.templatron.logger = MagicMock()
         self.templatron.github = MagicMock()
-        self.templatron.github.get_user().get_repo.return_value = (
-            self.fake_github_repo
-        )
+        self.templatron.github.get_user().get_repo.return_value = self.fake_github_repo
 
     @patch("templatron.templatron.Templatron.split_org_and_name")
     @patch("templatron.templatron.Template")
@@ -176,9 +169,7 @@ class TestBuildTemplate(
     @patch("templatron.templatron.Templatron.die")
     @patch("templatron.templatron.Templatron.split_org_and_name")
     @patch("templatron.templatron.Template")
-    def test_build_template_with_error(
-        self, mock_template, mock_split, mock_die
-    ):
+    def test_build_template_with_error(self, mock_template, mock_split, mock_die):
         """
         Test valid build_template() call
         """
@@ -229,9 +220,7 @@ class TestFetchRepoList(TestCase):
         fake_repo.fork = False
         fake_repo.archived = False
         fake_repo.name = "not_the_repo_youre_looking_for"
-        self.templatron.github.get_user().get_repos.return_value = [
-            fake_repo
-        ]
+        self.templatron.github.get_user().get_repos.return_value = [fake_repo]
         self.templatron.has_answersfile = MagicMock()
         self.templatron.has_answersfile.return_value = True
 
@@ -261,9 +250,7 @@ class TestFetchRepoList(TestCase):
         fake_repo.fork = True
         fake_repo.archived = False
         fake_repo.name = "not_the_repo_youre_looking_for"
-        self.templatron.github.get_user().get_repos.return_value = [
-            fake_repo
-        ]
+        self.templatron.github.get_user().get_repos.return_value = [fake_repo]
 
         repo_list = self.templatron.fetch_repo_list()
         self.assertEqual(repo_list, [])
@@ -280,9 +267,7 @@ class TestFetchRepoList(TestCase):
         fake_repo.fork = False
         fake_repo.archived = True
         fake_repo.name = "not_the_repo_youre_looking_for"
-        self.templatron.github.get_user().get_repos.return_value = [
-            fake_repo
-        ]
+        self.templatron.github.get_user().get_repos.return_value = [fake_repo]
 
         repo_list = self.templatron.fetch_repo_list()
         self.assertEqual(repo_list, [])
@@ -299,9 +284,7 @@ class TestFetchRepoList(TestCase):
         fake_repo.fork = False
         fake_repo.archived = False
         fake_repo.name = "fake_repo321"
-        self.templatron.github.get_user().get_repos.return_value = [
-            fake_repo
-        ]
+        self.templatron.github.get_user().get_repos.return_value = [fake_repo]
 
         repo_list = self.templatron.fetch_repo_list()
         self.assertEqual(repo_list, [])
@@ -362,9 +345,7 @@ class TestFetchRepoList(TestCase):
     @patch("templatron.templatron.Templatron.start")
     @patch("templatron.templatron.Templatron.build_repo")
     @patch("templatron.templatron.Templatron.stop")
-    def test_fix_keyboard_int(
-        self, mock_stop, mock_build, mock_start, mock_clean
-    ):
+    def test_fix_keyboard_int(self, mock_stop, mock_build, mock_start, mock_clean):
         """
         Test Templatron.fix() with keyboard interrupt
         """
@@ -499,9 +480,7 @@ class TestFetchRepoList(TestCase):
     @patch("templatron.templatron.Templatron.start")
     @patch("templatron.templatron.Templatron.build_repo")
     @patch("templatron.templatron.Templatron.stop")
-    def test_onboard_keyboard_int(
-        self, mock_stop, mock_build, mock_start, mock_clean
-    ):
+    def test_onboard_keyboard_int(self, mock_stop, mock_build, mock_start, mock_clean):
         """
         Test Templatron.onboard() with keyboard interrupt
         """

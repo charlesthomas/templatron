@@ -220,9 +220,7 @@ class TestBaseRepo(TestCase):
         """
 
         self.test_repo.git_cmd("commit", "some args")
-        mock_git.assert_called_with(
-            "commit", "some args", _cwd="/fake/root/fake repo"
-        )
+        mock_git.assert_called_with("commit", "some args", _cwd="/fake/root/fake repo")
 
     @patch.object(BaseRepo, "active_branch", "fake_branch")
     @patch.object(BaseRepo, "base_branch", "fake_branch")

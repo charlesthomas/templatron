@@ -62,9 +62,7 @@ class TestBaseConfig(TestCase):
         obj = BaseConfig(None)
         obj.logger = MagicMock()
         obj.log_config()
-        obj.logger.info.assert_called_with(
-            f"with config:\n{self.test_defaults}"
-        )
+        obj.logger.info.assert_called_with(f"with config:\n{self.test_defaults}")
 
     @staticmethod
     @patch("templatron.config.base_config.logging.getLogger")

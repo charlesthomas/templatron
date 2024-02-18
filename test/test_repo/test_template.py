@@ -1,6 +1,7 @@
 """
 Unit tests for templatron/repo/template.py
 """
+
 # pylint: disable=protected-access
 
 from unittest import TestCase
