@@ -2,6 +2,13 @@
 
 
 
+## v0.3.5 (2024-02-18)
+
+### Chore
+
+* chore: ran black ([`9c7cb85`](https://github.com/charlesthomas/templatron/commit/9c7cb85e496a1bfbdeb602bef2ca8842c34603f0))
+
+
 ## v0.3.4 (2024-02-18)
 
 ### Ci
