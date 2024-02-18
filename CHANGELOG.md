@@ -2,6 +2,24 @@
 
 
 
+## v0.3.4 (2024-02-18)
+
+### Ci
+
+* ci: add pytest ([`f18183b`](https://github.com/charlesthomas/templatron/commit/f18183b574ad5dcb5f0d11256390639f7c3adbb3))
+
+* ci: add black ([`1c3af1f`](https://github.com/charlesthomas/templatron/commit/1c3af1f7a4c1d66c3078abe2573c07964d70d654))
+
+### Test
+
+* test: get tests passing again (mostly)
+
+there&#39;s a warning that appears to be coming from
+inside the `GitHub` module, and
+two tests had to be commented out entirely due to
+what i think is a bug in `sh` ([`523d7dd`](https://github.com/charlesthomas/templatron/commit/523d7dd089fc62713d57c0da262bbf2d7f075b74))
+
+
 ## v0.3.3 (2024-02-17)
 
 ### Chore
