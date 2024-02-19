@@ -2,6 +2,13 @@
 
 
 
+## v0.4.1 (2024-02-19)
+
+### Fix
+
+* fix: image tags ([`ed9264f`](https://github.com/charlesthomas/templatron/commit/ed9264f511687b2ba244434fa0139f9615662fc0))
+
+
 ## v0.4.0 (2024-02-19)
 
 ### Feature
