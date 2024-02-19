@@ -397,12 +397,11 @@ class TestRepository(TestCase):
         self.test_repo.pretty_print_answers_file = noop
         self.test_repo.run_copier()
         mock_copy.assert_called_with(
-            "/fake/root/fake repo",
+            dst_path="/fake/root/fake repo",
             answers_file=".copier-answers.yml",
             defaults=True,
             quiet=True,
             overwrite=True,
-            src_path="fake_root/test_template",
             vcs_ref=None,
         )
 

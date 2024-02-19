@@ -231,12 +231,11 @@ vcs_ref={self.template.vcs_ref})"""
             )
 
             run_update(
-                self.clone_path,
+                dst_path=self.clone_path,
                 answers_file=self.answers_file,
                 defaults=True,
                 overwrite=True,
                 quiet=quiet,
-                src_path=self.template.clone_path,
                 vcs_ref=self.template.vcs_ref,
             )
 
