@@ -2,6 +2,13 @@
 
 
 
+## v0.4.4 (2024-02-19)
+
+### Ci
+
+* ci: add linting with black and testing with pytest ([`4aa79aa`](https://github.com/charlesthomas/templatron/commit/4aa79aa14c1e49472ca231424a97a2d4793e74d2))
+
+
 ## v0.4.3 (2024-02-19)
 
 ### Fix
