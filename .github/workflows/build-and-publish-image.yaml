@@ -1,0 +1,52 @@
+name: Build and Publish Image
+
+on:
+  workflow_run:
+    workflows: ["Semantic Release"]
+    types:
+      - completed
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          depth: 0
+
+      - name: Set up qemu
+        uses: docker/setup-qemu-action@v3
+      - name: Set up Docker buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: registry auth
+        uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: image metadata
+        id: meta
+        uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
+        with:
+          flavor: |
+            latest=true
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=semver,enable=true,pattern={{version}}
+
+      - name: build & push image
+        uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
+        with:
+          build-args: UPSTREAM_VERSION=${{ env.UPSTREAM_VERSION }}
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
