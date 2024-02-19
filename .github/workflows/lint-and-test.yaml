@@ -1,0 +1,29 @@
+name: Lint and Test
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  lint-and-test:
+    name: Lint and Test
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+
+    - name: Install dependencies
+      run: pip install poetry && poetry install --with=dev
+
+    - name: lint
+      run: poetry run black --check .
+
+    - name: test
+      run: poetry run pytest
