@@ -2,6 +2,13 @@
 
 
 
+## v0.4.2 (2024-02-19)
+
+### Fix
+
+* fix: try on push tags instead ([`dcb3fe2`](https://github.com/charlesthomas/templatron/commit/dcb3fe243ba1cb4aa2c3b8e60417741e2e988701))
+
+
 ## v0.4.1 (2024-02-19)
 
 ### Fix
