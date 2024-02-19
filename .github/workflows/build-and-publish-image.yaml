@@ -1,10 +1,9 @@
 name: Build and Publish Image
 
 on:
-  workflow_run:
-    workflows: ["Semantic Release"]
-    types:
-      - completed
+  push:
+    tags:
+      - v**
 
 env:
   REGISTRY: ghcr.io
