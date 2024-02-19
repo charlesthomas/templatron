@@ -17,7 +17,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
         with:
-          depth: 0
+          fetch-tags: true
 
       - name: Set up qemu
         uses: docker/setup-qemu-action@v3
