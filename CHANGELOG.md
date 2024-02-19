@@ -2,6 +2,17 @@
 
 
 
+## v0.4.0 (2024-02-19)
+
+### Feature
+
+* feat: add image ([`e2b4b2d`](https://github.com/charlesthomas/templatron/commit/e2b4b2dd8fe24c5e4d496b67bbdc5a9b7319ee64))
+
+### Fix
+
+* fix: update command ([`09051a0`](https://github.com/charlesthomas/templatron/commit/09051a08ac79eb943be2a0209210a929914d9800))
+
+
 ## v0.3.5 (2024-02-18)
 
 ### Chore
