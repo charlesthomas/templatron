@@ -2,6 +2,13 @@
 
 
 
+## v0.4.3 (2024-02-19)
+
+### Fix
+
+* fix: ok may this&#39;ll do it ([`bb05fa0`](https://github.com/charlesthomas/templatron/commit/bb05fa0759f50752f68d41a059fb634311949311))
+
+
 ## v0.4.2 (2024-02-19)
 
 ### Fix
