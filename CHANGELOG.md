@@ -2,6 +2,43 @@
 
 
 
+## v0.4.5 (2024-02-26)
+
+### Chore
+
+* chore(deps-dev): bump pytest from 8.0.1 to 8.0.2
+
+Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.0.1 to 8.0.2.
+- [Release notes](https://github.com/pytest-dev/pytest/releases)
+- [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
+- [Commits](https://github.com/pytest-dev/pytest/compare/8.0.1...8.0.2)
+
+---
+updated-dependencies:
+- dependency-name: pytest
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`456926b`](https://github.com/charlesthomas/templatron/commit/456926bf62cf8c08470ec4563da37b5332168b04))
+
+* chore(deps-dev): bump python-semantic-release from 9.1.0 to 9.1.1
+
+Bumps [python-semantic-release](https://github.com/python-semantic-release/python-semantic-release) from 9.1.0 to 9.1.1.
+- [Release notes](https://github.com/python-semantic-release/python-semantic-release/releases)
+- [Changelog](https://github.com/python-semantic-release/python-semantic-release/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.1.0...v9.1.1)
+
+---
+updated-dependencies:
+- dependency-name: python-semantic-release
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`b1aed51`](https://github.com/charlesthomas/templatron/commit/b1aed51776d85f44f857b732f81c843bf57604a1))
+
+
 ## v0.4.4 (2024-02-19)
 
 ### Ci
