@@ -2,6 +2,41 @@
 
 
 
+## v0.4.8 (2024-03-04)
+
+### Chore
+
+* chore(deps): bump docker/build-push-action
+
+Bumps [docker/build-push-action](https://github.com/docker/build-push-action) from f2a1d5e99d037542a71f64918e516c093c6f3fc4 to 831ca179d3cf91cf0c90ca465a408fa61e2129a2.
+- [Release notes](https://github.com/docker/build-push-action/releases)
+- [Commits](https://github.com/docker/build-push-action/compare/f2a1d5e99d037542a71f64918e516c093c6f3fc4...831ca179d3cf91cf0c90ca465a408fa61e2129a2)
+
+---
+updated-dependencies:
+- dependency-name: docker/build-push-action
+  dependency-type: direct:production
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`72b9af2`](https://github.com/charlesthomas/templatron/commit/72b9af2152c878e4e4293b8a5ea3c6d09aa170bf))
+
+* chore(deps): bump actions/checkout from 2 to 4
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 2 to 4.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/v2...v4)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-major
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`83451a9`](https://github.com/charlesthomas/templatron/commit/83451a9ab85087d6c4fabaeb3f642f1550a9c308))
+
+
 ## v0.4.7 (2024-03-04)
 
 ### Chore
