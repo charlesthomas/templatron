@@ -2,6 +2,26 @@
 
 
 
+## v0.4.11 (2024-03-04)
+
+### Chore
+
+* chore(deps): bump actions/setup-python from 2 to 5
+
+Bumps [actions/setup-python](https://github.com/actions/setup-python) from 2 to 5.
+- [Release notes](https://github.com/actions/setup-python/releases)
+- [Commits](https://github.com/actions/setup-python/compare/v2...v5)
+
+---
+updated-dependencies:
+- dependency-name: actions/setup-python
+  dependency-type: direct:production
+  update-type: version-update:semver-major
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`69b659f`](https://github.com/charlesthomas/templatron/commit/69b659fb0c9d73f7982b1bcdc60f2c54b5c66b41))
+
+
 ## v0.4.10 (2024-03-04)
 
 ### Chore
