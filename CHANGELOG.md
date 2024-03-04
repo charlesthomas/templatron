@@ -2,6 +2,15 @@
 
 
 
+## v0.4.7 (2024-03-04)
+
+### Chore
+
+* chore: use dependabot to update github actions
+
+Sent from my iPhone ([`9a2486a`](https://github.com/charlesthomas/templatron/commit/9a2486a6db97a5637e2ba783975fda6d6384b479))
+
+
 ## v0.4.6 (2024-03-04)
 
 ### Chore
