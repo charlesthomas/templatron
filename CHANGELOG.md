@@ -2,6 +2,25 @@
 
 
 
+## v0.4.13 (2024-03-16)
+
+### Chore
+
+* chore(deps): bump docker/build-push-action
+
+Bumps [docker/build-push-action](https://github.com/docker/build-push-action) from 831ca179d3cf91cf0c90ca465a408fa61e2129a2 to af5a7ed5ba88268d5278f7203fb52cd833f66d6e.
+- [Release notes](https://github.com/docker/build-push-action/releases)
+- [Commits](https://github.com/docker/build-push-action/compare/831ca179d3cf91cf0c90ca465a408fa61e2129a2...af5a7ed5ba88268d5278f7203fb52cd833f66d6e)
+
+---
+updated-dependencies:
+- dependency-name: docker/build-push-action
+  dependency-type: direct:production
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`acf874e`](https://github.com/charlesthomas/templatron/commit/acf874e0f9ba7a8e760dd9f4cf38f2d117b79bdb))
+
+
 ## v0.4.12 (2024-03-15)
 
 ### Chore
