@@ -2,6 +2,27 @@
 
 
 
+## v0.4.14 (2024-03-20)
+
+### Chore
+
+* chore(deps-dev): bump black from 24.2.0 to 24.3.0
+
+Bumps [black](https://github.com/psf/black) from 24.2.0 to 24.3.0.
+- [Release notes](https://github.com/psf/black/releases)
+- [Changelog](https://github.com/psf/black/blob/main/CHANGES.md)
+- [Commits](https://github.com/psf/black/compare/24.2.0...24.3.0)
+
+---
+updated-dependencies:
+- dependency-name: black
+  dependency-type: direct:development
+  update-type: version-update:semver-minor
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`456ad05`](https://github.com/charlesthomas/templatron/commit/456ad05a6afac2d6801b28a43766526a6c56a02c))
+
+
 ## v0.4.13 (2024-03-16)
 
 ### Chore
@@ -400,14 +421,14 @@ try user, fail to org; rather than the other way around ([`3565e9f`](https://git
 * feat(ci): add automatic semantic versioning via GitHub Actions ([`1e4973f`](https://github.com/charlesthomas/templatron/commit/1e4973f27ac332de803a6e4c0db34536565f5d0c))
 
 
-## v0.2.1 (2024-01-23)
+## v0.2.1 (2024-01-22)
 
 ### Fix
 
 * fix: lol oops ([`68ba533`](https://github.com/charlesthomas/templatron/commit/68ba5337cad5f6a6eb175c0cf8163f7faae514ae))
 
 
-## v0.2.0 (2024-01-22)
+## v0.2.0 (2024-01-21)
 
 ### Feature
 
