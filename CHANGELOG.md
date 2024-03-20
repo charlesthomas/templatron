@@ -2,6 +2,25 @@
 
 
 
+## v0.4.17 (2024-03-20)
+
+### Chore
+
+* chore(deps): bump docker/login-action
+
+Bumps [docker/login-action](https://github.com/docker/login-action) from 5139682d94efc37792e6b54386b5b470a68a4737 to e92390c5fb421da1463c202d546fed0ec5c39f20.
+- [Release notes](https://github.com/docker/login-action/releases)
+- [Commits](https://github.com/docker/login-action/compare/5139682d94efc37792e6b54386b5b470a68a4737...e92390c5fb421da1463c202d546fed0ec5c39f20)
+
+---
+updated-dependencies:
+- dependency-name: docker/login-action
+  dependency-type: direct:production
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`65a4fe8`](https://github.com/charlesthomas/templatron/commit/65a4fe8999d794d33b556cef5e68d11b3f24ab2c))
+
+
 ## v0.4.16 (2024-03-20)
 
 ### Chore
