@@ -2,6 +2,25 @@
 
 
 
+## v0.4.19 (2024-03-26)
+
+### Chore
+
+* chore(deps): bump docker/metadata-action
+
+Bumps [docker/metadata-action](https://github.com/docker/metadata-action) from 75359341f62c2d990e0aa8543e545c74eec643ff to c314eea2b27e3cb3c7d7be0618510234d8f6178e.
+- [Release notes](https://github.com/docker/metadata-action/releases)
+- [Commits](https://github.com/docker/metadata-action/compare/75359341f62c2d990e0aa8543e545c74eec643ff...c314eea2b27e3cb3c7d7be0618510234d8f6178e)
+
+---
+updated-dependencies:
+- dependency-name: docker/metadata-action
+  dependency-type: direct:production
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`58c4689`](https://github.com/charlesthomas/templatron/commit/58c468953aa82e825d355671d4772a744bc39070))
+
+
 ## v0.4.18 (2024-03-26)
 
 ### Chore
