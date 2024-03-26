@@ -2,6 +2,27 @@
 
 
 
+## v0.4.18 (2024-03-26)
+
+### Chore
+
+* chore(deps): bump pygithub from 2.2.0 to 2.3.0
+
+Bumps [pygithub](https://github.com/pygithub/pygithub) from 2.2.0 to 2.3.0.
+- [Release notes](https://github.com/pygithub/pygithub/releases)
+- [Changelog](https://github.com/PyGithub/PyGithub/blob/main/doc/changes.rst)
+- [Commits](https://github.com/pygithub/pygithub/compare/v2.2.0...v2.3.0)
+
+---
+updated-dependencies:
+- dependency-name: pygithub
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`84d803d`](https://github.com/charlesthomas/templatron/commit/84d803da2773cc7f82854fa3f0e23d3e969d5160))
+
+
 ## v0.4.17 (2024-03-20)
 
 ### Chore
