@@ -10,7 +10,7 @@ readme = "README.md"
 python = "^3.11"
 click = "8.1.7"
 click-config-file = "0.6.0"
-copier = "9.1.1"
+copier = "9.2.0"
 PyGithub = "2.3.0"
 sh = "2.0.6"
 
