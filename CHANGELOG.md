@@ -2,6 +2,27 @@
 
 
 
+## v0.4.23 (2024-04-09)
+
+### Chore
+
+* chore(deps): bump copier from 9.1.1 to 9.2.0
+
+Bumps [copier](https://github.com/copier-org/copier) from 9.1.1 to 9.2.0.
+- [Release notes](https://github.com/copier-org/copier/releases)
+- [Changelog](https://github.com/copier-org/copier/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/copier-org/copier/compare/v9.1.1...v9.2.0)
+
+---
+updated-dependencies:
+- dependency-name: copier
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`0304989`](https://github.com/charlesthomas/templatron/commit/030498975ff4289237dbb7121c5eaa17eeba97b1))
+
+
 ## v0.4.22 (2024-04-09)
 
 ### Chore
