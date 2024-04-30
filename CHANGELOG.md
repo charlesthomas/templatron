@@ -2,6 +2,27 @@
 
 
 
+## v0.4.28 (2024-04-30)
+
+### Chore
+
+* chore(deps-dev): bump black from 24.4.0 to 24.4.2
+
+Bumps [black](https://github.com/psf/black) from 24.4.0 to 24.4.2.
+- [Release notes](https://github.com/psf/black/releases)
+- [Changelog](https://github.com/psf/black/blob/main/CHANGES.md)
+- [Commits](https://github.com/psf/black/compare/24.4.0...24.4.2)
+
+---
+updated-dependencies:
+- dependency-name: black
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`03a7d6a`](https://github.com/charlesthomas/templatron/commit/03a7d6a8c1c2069ed567dc81cac79e5be2a0d432))
+
+
 ## v0.4.27 (2024-04-30)
 
 ### Chore
