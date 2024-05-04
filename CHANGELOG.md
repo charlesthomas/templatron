@@ -2,6 +2,13 @@
 
 
 
+## v0.4.30 (2024-05-04)
+
+### Ci
+
+* ci: run dependabot on fridays ([`f3d81f3`](https://github.com/charlesthomas/templatron/commit/f3d81f3463e3d4c0f2dbe2caec32f8e7820cde9a))
+
+
 ## v0.4.29 (2024-04-30)
 
 ### Chore
