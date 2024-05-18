@@ -2,6 +2,27 @@
 
 
 
+## v0.4.34 (2024-05-18)
+
+### Chore
+
+* chore(deps-dev): bump python-semantic-release from 9.7.1 to 9.7.3
+
+Bumps [python-semantic-release](https://github.com/python-semantic-release/python-semantic-release) from 9.7.1 to 9.7.3.
+- [Release notes](https://github.com/python-semantic-release/python-semantic-release/releases)
+- [Changelog](https://github.com/python-semantic-release/python-semantic-release/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.7.1...v9.7.3)
+
+---
+updated-dependencies:
+- dependency-name: python-semantic-release
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`f52a406`](https://github.com/charlesthomas/templatron/commit/f52a4066458229f83fc79ce3b240a46659e769f7))
+
+
 ## v0.4.33 (2024-05-18)
 
 ### Chore
