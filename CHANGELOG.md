@@ -2,6 +2,27 @@
 
 
 
+## v0.4.35 (2024-05-24)
+
+### Chore
+
+* chore(deps-dev): bump pytest from 8.2.0 to 8.2.1
+
+Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.2.0 to 8.2.1.
+- [Release notes](https://github.com/pytest-dev/pytest/releases)
+- [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
+- [Commits](https://github.com/pytest-dev/pytest/compare/8.2.0...8.2.1)
+
+---
+updated-dependencies:
+- dependency-name: pytest
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`651bd68`](https://github.com/charlesthomas/templatron/commit/651bd68e89f18806e53a7b801058874b669ebfeb))
+
+
 ## v0.4.34 (2024-05-18)
 
 ### Chore
