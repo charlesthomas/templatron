@@ -17,7 +17,7 @@ sh = "2.0.6"
 [tool.poetry.group.dev.dependencies]
 python-semantic-release = "9.7.3"
 black = "24.4.2"
-pytest = "8.2.0"
+pytest = "8.2.1"
 
 [tool.poetry.scripts]
 templatron = "templatron.cli:main"
