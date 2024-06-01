@@ -2,6 +2,26 @@
 
 
 
+## v0.4.36 (2024-06-01)
+
+### Chore
+
+* chore(deps): bump docker/login-action from 3.1.0 to 3.2.0
+
+Bumps [docker/login-action](https://github.com/docker/login-action) from 3.1.0 to 3.2.0.
+- [Release notes](https://github.com/docker/login-action/releases)
+- [Commits](https://github.com/docker/login-action/compare/e92390c5fb421da1463c202d546fed0ec5c39f20...0d4c9c5ea7693da7b068278f7b52bda2a190a446)
+
+---
+updated-dependencies:
+- dependency-name: docker/login-action
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`dac126a`](https://github.com/charlesthomas/templatron/commit/dac126abba5c5eba502c18db295f7c11896fe44f))
+
+
 ## v0.4.35 (2024-05-24)
 
 ### Chore
