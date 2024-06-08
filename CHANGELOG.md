@@ -2,6 +2,27 @@
 
 
 
+## v0.4.38 (2024-06-08)
+
+### Chore
+
+* chore(deps): bump sh from 2.0.6 to 2.0.7
+
+Bumps [sh](https://github.com/amoffat/sh) from 2.0.6 to 2.0.7.
+- [Release notes](https://github.com/amoffat/sh/releases)
+- [Changelog](https://github.com/amoffat/sh/blob/develop/CHANGELOG.md)
+- [Commits](https://github.com/amoffat/sh/compare/2.0.6...2.0.7)
+
+---
+updated-dependencies:
+- dependency-name: sh
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`d48dfc9`](https://github.com/charlesthomas/templatron/commit/d48dfc994492258c0ba680a7c106bc32f01fb4f0))
+
+
 ## v0.4.37 (2024-06-01)
 
 ### Chore
