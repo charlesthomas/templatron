@@ -1,6 +1,24 @@
 # CHANGELOG
 
+## v0.4.42 (2024-06-21)
 
+### Chore
+
+* chore(deps-dev): bump python-semantic-release from 9.8.1 to 9.8.3
+
+Bumps [python-semantic-release](https://github.com/python-semantic-release/python-semantic-release) from 9.8.1 to 9.8.3.
+- [Release notes](https://github.com/python-semantic-release/python-semantic-release/releases)
+- [Changelog](https://github.com/python-semantic-release/python-semantic-release/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.8.1...v9.8.3)
+
+---
+updated-dependencies:
+- dependency-name: python-semantic-release
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`c35dab8`](https://github.com/charlesthomas/templatron/commit/c35dab89aeb30478d61f3cc13b91ea39672da9a7))
 
 ## v0.4.41 (2024-06-14)
 
@@ -20,7 +38,6 @@ updated-dependencies:
 ...
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`55e50f1`](https://github.com/charlesthomas/templatron/commit/55e50f1b4c69d5a597b53a953aec9a93b30da271))
-
 
 ## v0.4.40 (2024-06-08)
 
@@ -42,7 +59,6 @@ updated-dependencies:
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`08b041e`](https://github.com/charlesthomas/templatron/commit/08b041e386df4d15da939ff516bdecce1f2d157a))
 
-
 ## v0.4.39 (2024-06-08)
 
 ### Chore
@@ -62,7 +78,6 @@ updated-dependencies:
 ...
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`d865b4d`](https://github.com/charlesthomas/templatron/commit/d865b4dd7e9736398434e512835991c92e39b3d4))
-
 
 ## v0.4.38 (2024-06-08)
 
@@ -84,7 +99,6 @@ updated-dependencies:
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`d48dfc9`](https://github.com/charlesthomas/templatron/commit/d48dfc994492258c0ba680a7c106bc32f01fb4f0))
 
-
 ## v0.4.37 (2024-06-01)
 
 ### Chore
@@ -105,7 +119,6 @@ updated-dependencies:
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`17cf5af`](https://github.com/charlesthomas/templatron/commit/17cf5af7911c15a951910c20b53061855f717494))
 
-
 ## v0.4.36 (2024-06-01)
 
 ### Chore
@@ -124,7 +137,6 @@ updated-dependencies:
 ...
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`dac126a`](https://github.com/charlesthomas/templatron/commit/dac126abba5c5eba502c18db295f7c11896fe44f))
-
 
 ## v0.4.35 (2024-05-24)
 
@@ -146,7 +158,6 @@ updated-dependencies:
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`651bd68`](https://github.com/charlesthomas/templatron/commit/651bd68e89f18806e53a7b801058874b669ebfeb))
 
-
 ## v0.4.34 (2024-05-18)
 
 ### Chore
@@ -167,7 +178,6 @@ updated-dependencies:
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`f52a406`](https://github.com/charlesthomas/templatron/commit/f52a4066458229f83fc79ce3b240a46659e769f7))
 
-
 ## v0.4.33 (2024-05-18)
 
 ### Chore
@@ -185,7 +195,6 @@ updated-dependencies:
 ...
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`6b8c71a`](https://github.com/charlesthomas/templatron/commit/6b8c71a57d22417af5903e9d5d511504475b5557))
-
 
 ## v0.4.32 (2024-05-10)
 
@@ -207,7 +216,6 @@ updated-dependencies:
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`9d2283e`](https://github.com/charlesthomas/templatron/commit/9d2283e62ec99fb07a57e172e28f1a289b1fc4ec))
 
-
 ## v0.4.31 (2024-05-10)
 
 ### Chore
@@ -226,13 +234,11 @@ updated-dependencies:
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`3e8f345`](https://github.com/charlesthomas/templatron/commit/3e8f345a8b8ea549f9f517ffa4328d974ca16e65))
 
-
 ## v0.4.30 (2024-05-04)
 
 ### Ci
 
 * ci: run dependabot on fridays ([`f3d81f3`](https://github.com/charlesthomas/templatron/commit/f3d81f3463e3d4c0f2dbe2caec32f8e7820cde9a))
-
 
 ## v0.4.29 (2024-04-30)
 
@@ -254,7 +260,6 @@ updated-dependencies:
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`aff10e2`](https://github.com/charlesthomas/templatron/commit/aff10e28a90e27301e8f47d90752b876dd5c9d2a))
 
-
 ## v0.4.28 (2024-04-30)
 
 ### Chore
@@ -274,7 +279,6 @@ updated-dependencies:
 ...
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`03a7d6a`](https://github.com/charlesthomas/templatron/commit/03a7d6a8c1c2069ed567dc81cac79e5be2a0d432))
-
 
 ## v0.4.27 (2024-04-30)
 
@@ -296,7 +300,6 @@ updated-dependencies:
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`a3020d0`](https://github.com/charlesthomas/templatron/commit/a3020d097c549f1731d3b9322f6fc8e41bd66e9b))
 
-
 ## v0.4.26 (2024-04-16)
 
 ### Chore
@@ -314,7 +317,6 @@ updated-dependencies:
 ...
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`0a03e0c`](https://github.com/charlesthomas/templatron/commit/0a03e0c3ec41dd06816f10021cfb16613ac01b10))
-
 
 ## v0.4.25 (2024-04-16)
 
@@ -336,7 +338,6 @@ updated-dependencies:
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`fd21eb4`](https://github.com/charlesthomas/templatron/commit/fd21eb49b394e649f3811d134ed31f586591856f))
 
-
 ## v0.4.24 (2024-04-16)
 
 ### Chore
@@ -356,7 +357,6 @@ updated-dependencies:
 ...
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`9ac1473`](https://github.com/charlesthomas/templatron/commit/9ac14731a26cc3c724813f8549cb4787c6f0e128))
-
 
 ## v0.4.23 (2024-04-09)
 
@@ -378,7 +378,6 @@ updated-dependencies:
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`0304989`](https://github.com/charlesthomas/templatron/commit/030498975ff4289237dbb7121c5eaa17eeba97b1))
 
-
 ## v0.4.22 (2024-04-09)
 
 ### Chore
@@ -398,7 +397,6 @@ updated-dependencies:
 ...
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`0ecccc1`](https://github.com/charlesthomas/templatron/commit/0ecccc1e7e412f2d636e8ad6c77b480b6418a12d))
-
 
 ## v0.4.21 (2024-04-06)
 
@@ -420,7 +418,6 @@ updated-dependencies:
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`f0f09f7`](https://github.com/charlesthomas/templatron/commit/f0f09f7e1cb7d261e2fd647c54fa3e9769067a82))
 
-
 ## v0.4.20 (2024-03-26)
 
 ### Chore
@@ -441,7 +438,6 @@ updated-dependencies:
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`ee2cb59`](https://github.com/charlesthomas/templatron/commit/ee2cb597025901198d329acf68782eca7ae5ffea))
 
-
 ## v0.4.19 (2024-03-26)
 
 ### Chore
@@ -459,7 +455,6 @@ updated-dependencies:
 ...
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`58c4689`](https://github.com/charlesthomas/templatron/commit/58c468953aa82e825d355671d4772a744bc39070))
-
 
 ## v0.4.18 (2024-03-26)
 
@@ -481,7 +476,6 @@ updated-dependencies:
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`84d803d`](https://github.com/charlesthomas/templatron/commit/84d803da2773cc7f82854fa3f0e23d3e969d5160))
 
-
 ## v0.4.17 (2024-03-20)
 
 ### Chore
@@ -499,7 +493,6 @@ updated-dependencies:
 ...
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`65a4fe8`](https://github.com/charlesthomas/templatron/commit/65a4fe8999d794d33b556cef5e68d11b3f24ab2c))
-
 
 ## v0.4.16 (2024-03-20)
 
@@ -519,7 +512,6 @@ updated-dependencies:
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`f6da3ba`](https://github.com/charlesthomas/templatron/commit/f6da3ba9f31e9da74862581a8d030d3780cdd155))
 
-
 ## v0.4.15 (2024-03-20)
 
 ### Chore
@@ -538,7 +530,6 @@ updated-dependencies:
 ...
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`dd751f3`](https://github.com/charlesthomas/templatron/commit/dd751f35a41a8478ce87cf70021001130c08cb92))
-
 
 ## v0.4.14 (2024-03-20)
 
@@ -560,7 +551,6 @@ updated-dependencies:
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`456ad05`](https://github.com/charlesthomas/templatron/commit/456ad05a6afac2d6801b28a43766526a6c56a02c))
 
-
 ## v0.4.13 (2024-03-16)
 
 ### Chore
@@ -578,7 +568,6 @@ updated-dependencies:
 ...
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`acf874e`](https://github.com/charlesthomas/templatron/commit/acf874e0f9ba7a8e760dd9f4cf38f2d117b79bdb))
-
 
 ## v0.4.12 (2024-03-15)
 
@@ -600,7 +589,6 @@ updated-dependencies:
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`267b0c5`](https://github.com/charlesthomas/templatron/commit/267b0c52554adb35a1638e1cfb2ec6644e349b01))
 
-
 ## v0.4.11 (2024-03-04)
 
 ### Chore
@@ -620,7 +608,6 @@ updated-dependencies:
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`69b659f`](https://github.com/charlesthomas/templatron/commit/69b659fb0c9d73f7982b1bcdc60f2c54b5c66b41))
 
-
 ## v0.4.10 (2024-03-04)
 
 ### Chore
@@ -639,7 +626,6 @@ updated-dependencies:
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`f3e8e16`](https://github.com/charlesthomas/templatron/commit/f3e8e16fd99686c19b80b50f7ff005ad59747271))
 
-
 ## v0.4.9 (2024-03-04)
 
 ### Chore
@@ -657,7 +643,6 @@ updated-dependencies:
 ...
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`5e3a005`](https://github.com/charlesthomas/templatron/commit/5e3a005904dfd7e6355c316c70b41058ad2db640))
-
 
 ## v0.4.8 (2024-03-04)
 
@@ -693,7 +678,6 @@ updated-dependencies:
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`83451a9`](https://github.com/charlesthomas/templatron/commit/83451a9ab85087d6c4fabaeb3f642f1550a9c308))
 
-
 ## v0.4.7 (2024-03-04)
 
 ### Chore
@@ -701,7 +685,6 @@ Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`83451a9`](https://g
 * chore: use dependabot to update github actions
 
 Sent from my iPhone ([`9a2486a`](https://github.com/charlesthomas/templatron/commit/9a2486a6db97a5637e2ba783975fda6d6384b479))
-
 
 ## v0.4.6 (2024-03-04)
 
@@ -722,7 +705,6 @@ updated-dependencies:
 ...
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`59d3732`](https://github.com/charlesthomas/templatron/commit/59d3732a371faccbd6a2211157a6e130287dced4))
-
 
 ## v0.4.5 (2024-02-26)
 
@@ -760,13 +742,11 @@ updated-dependencies:
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`b1aed51`](https://github.com/charlesthomas/templatron/commit/b1aed51776d85f44f857b732f81c843bf57604a1))
 
-
 ## v0.4.4 (2024-02-19)
 
 ### Ci
 
 * ci: add linting with black and testing with pytest ([`4aa79aa`](https://github.com/charlesthomas/templatron/commit/4aa79aa14c1e49472ca231424a97a2d4793e74d2))
-
 
 ## v0.4.3 (2024-02-19)
 
@@ -774,20 +754,17 @@ Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`b1aed51`](https://g
 
 * fix: ok may this&#39;ll do it ([`bb05fa0`](https://github.com/charlesthomas/templatron/commit/bb05fa0759f50752f68d41a059fb634311949311))
 
-
 ## v0.4.2 (2024-02-19)
 
 ### Fix
 
 * fix: try on push tags instead ([`dcb3fe2`](https://github.com/charlesthomas/templatron/commit/dcb3fe243ba1cb4aa2c3b8e60417741e2e988701))
 
-
 ## v0.4.1 (2024-02-19)
 
 ### Fix
 
 * fix: image tags ([`ed9264f`](https://github.com/charlesthomas/templatron/commit/ed9264f511687b2ba244434fa0139f9615662fc0))
-
 
 ## v0.4.0 (2024-02-19)
 
@@ -799,13 +776,11 @@ Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`b1aed51`](https://g
 
 * fix: update command ([`09051a0`](https://github.com/charlesthomas/templatron/commit/09051a08ac79eb943be2a0209210a929914d9800))
 
-
 ## v0.3.5 (2024-02-18)
 
 ### Chore
 
 * chore: ran black ([`9c7cb85`](https://github.com/charlesthomas/templatron/commit/9c7cb85e496a1bfbdeb602bef2ca8842c34603f0))
-
 
 ## v0.3.4 (2024-02-18)
 
@@ -824,7 +799,6 @@ inside the `GitHub` module, and
 two tests had to be commented out entirely due to
 what i think is a bug in `sh` ([`523d7dd`](https://github.com/charlesthomas/templatron/commit/523d7dd089fc62713d57c0da262bbf2d7f075b74))
 
-
 ## v0.3.3 (2024-02-17)
 
 ### Chore
@@ -838,7 +812,6 @@ what i think is a bug in `sh` ([`523d7dd`](https://github.com/charlesthomas/temp
 ### Fix
 
 * fix: ci cleanup ([`0c58951`](https://github.com/charlesthomas/templatron/commit/0c589513e871a5f315446020371e9b023c1ed2b8))
-
 
 ## v0.3.2 (2024-02-15)
 
@@ -860,7 +833,6 @@ updated-dependencies:
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`2319350`](https://github.com/charlesthomas/templatron/commit/231935089b79c0264a2b9dd464ca65675f66f5d4))
 
-
 ## v0.3.1 (2024-02-15)
 
 ### Chore
@@ -881,7 +853,6 @@ updated-dependencies:
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`bb2c29b`](https://github.com/charlesthomas/templatron/commit/bb2c29bbdb59fb3a8c687d45c7ab26d622541844))
 
-
 ## v0.3.0 (2024-01-27)
 
 ### Chore
@@ -898,13 +869,11 @@ try user, fail to org; rather than the other way around ([`3565e9f`](https://git
 
 * doc: fix README ([`bb0ff6b`](https://github.com/charlesthomas/templatron/commit/bb0ff6be678af8484c1d4af9dd6faf4cdeebc339))
 
-
 ## v0.2.7 (2024-01-27)
 
 ### Chore
 
 * chore(ci): Create dependabot.yml ([`24d79c4`](https://github.com/charlesthomas/templatron/commit/24d79c43f60c9ee023b5204e2a6731d85c7096ea))
-
 
 ## v0.2.6 (2024-01-27)
 
@@ -912,13 +881,11 @@ try user, fail to org; rather than the other way around ([`3565e9f`](https://git
 
 * fix(build): try to make a GitHub Release myself ([`263a5e5`](https://github.com/charlesthomas/templatron/commit/263a5e5b14b9eb40ba864a0768f66cf2861f46a5))
 
-
 ## v0.2.5 (2024-01-27)
 
 ### Fix
 
 * fix(ci): try to disable vcs release in github actions ([`b2877ac`](https://github.com/charlesthomas/templatron/commit/b2877ac0aee077f4c9a88574833f1f8c3c13c43f))
-
 
 ## v0.2.4 (2024-01-27)
 
@@ -928,13 +895,11 @@ try user, fail to org; rather than the other way around ([`3565e9f`](https://git
 
 [pending bug fix](https://github.com/python-semantic-release/python-semantic-release/issues/818) ([`0fcd3cd`](https://github.com/charlesthomas/templatron/commit/0fcd3cdf98bade3537e2237ba44716f2aeb792f6))
 
-
 ## v0.2.3 (2024-01-27)
 
 ### Fix
 
 * fix: re-add __version__ for `templatron --version` option ([`086cf62`](https://github.com/charlesthomas/templatron/commit/086cf62bfaab8ba3465d74679b4808bf97615662))
-
 
 ## v0.2.2 (2024-01-27)
 
@@ -958,13 +923,11 @@ try user, fail to org; rather than the other way around ([`3565e9f`](https://git
 
 * feat(ci): add automatic semantic versioning via GitHub Actions ([`1e4973f`](https://github.com/charlesthomas/templatron/commit/1e4973f27ac332de803a6e4c0db34536565f5d0c))
 
-
 ## v0.2.1 (2024-01-22)
 
 ### Fix
 
 * fix: lol oops ([`68ba533`](https://github.com/charlesthomas/templatron/commit/68ba5337cad5f6a6eb175c0cf8163f7faae514ae))
-
 
 ## v0.2.0 (2024-01-21)
 
