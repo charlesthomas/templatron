@@ -16,7 +16,7 @@ sh = "2.0.7"
 
 [tool.poetry.group.dev.dependencies]
 python-semantic-release = "9.8.6"
-black = "24.4.2"
+black = "24.8.0"
 pytest = "8.3.2"
 
 [tool.poetry.scripts]
