@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## v0.4.61 (2024-09-07)
+
+### Fix
+
+* fix: log hook output ([`84977cc`](https://github.com/charlesthomas/templatron/commit/84977cc5195a252014b47f4bd50de9f71cdc8efb))
+
+### Unknown
+
+* doc: fix hook names in README ([`d6d1586`](https://github.com/charlesthomas/templatron/commit/d6d15865b8487dc721b8543b67adf99ff20f737f))
+
 ## v0.4.60 (2024-09-06)
 
 ### Chore
