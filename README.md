@@ -228,10 +228,10 @@ There are 6 different hooks:
 
 1. `pre-clone`: runs immediately before a repo is cloned
 1. `post-clone`: runs immediately after a repo is cloned
-1. `pre-copier-hook`: runs immediately before `copier` runs to apply the template
-1. `post-copier-hook`: runs immediately after `copier` runs to apply the template
-1. `pre-push-hook`: runs imediately before the git commit is pushed to origin
-1. `post-push-hook`: runs immediately after the git commit ish pushed to origin
+1. `pre-copier`: runs immediately before `copier` runs to apply the template
+1. `post-copier`: runs immediately after `copier` runs to apply the template
+1. `pre-push`: runs imediately before the git commit is pushed to origin
+1. `post-push`: runs immediately after the git commit ish pushed to origin
 
 Hooks shell out to run whatever the value of the key is.
 
