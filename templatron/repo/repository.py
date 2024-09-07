@@ -272,10 +272,12 @@ vcs_ref={self.template.vcs_ref})"""
         ]
         self.logger.info(f'running {hook_name} hook: {hook} {" ".join(args[1:])}')
         res = subprocess.run(args, capture_output=True)
-        self.logger.info(f'{hook_name} stdout:')
-        self.logger.info(f'{res.stdout.decode("UTF-8").strip()}')
-        self.logger.error(f'{hook_name} stderr:')
-        self.logger.error(f'{res.stderr.decode("UTF-8").strip()}')
+        if res.stdout != "":
+            self.logger.info(f'{hook_name} stdout:')
+            self.logger.info(f'{res.stdout.decode("UTF-8").strip()}')
+        if res.stderr != "":
+            self.logger.error(f'{hook_name} stderr:')
+            self.logger.error(f'{res.stderr.decode("UTF-8").strip()}')
         if res.returncode != 0:
             raise HookFailure(
                 f"{hook_name} hook {hook} failed with exit code {res.returncode}"
