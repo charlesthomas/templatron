@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.4.62 (2024-09-07)
+
+### Fix
+
+* fix: don&#39;t print hook output if there isn&#39;t any ([`c5c8ffc`](https://github.com/charlesthomas/templatron/commit/c5c8ffca716da2ec55da0262f149e8e23e699d30))
+
 ## v0.4.61 (2024-09-07)
 
 ### Fix
