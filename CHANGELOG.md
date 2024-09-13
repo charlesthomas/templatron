@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.4.63 (2024-09-13)
+
+### Chore
+
+* chore: linting ([`033483d`](https://github.com/charlesthomas/templatron/commit/033483d303fd3460c3f2097ca9626eeeb271cfd3))
+
 ## v0.4.62 (2024-09-07)
 
 ### Fix
