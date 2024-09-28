@@ -1,5 +1,6 @@
 import logging
 import os.path
+import shutil
 import subprocess
 
 import yaml
@@ -316,4 +317,20 @@ vcs_ref={self.template.vcs_ref})"""
         self.open_pull_request()
         self.post_push_hook()
 
+        self.update_dependents()
+
         self.logger.info(f"{self.name} complete")
+
+    def update_dependents(self):
+        for dep in self.template.config.dependents:
+            repo = Repository(
+                dep, self.token, self.github, self.clone_root,
+                self.template, branch_prefix=self.name)
+            repo.clone()
+            repo.switch_to_update_branch()
+            shutil.copy(
+                os.path.join(self.clone_path, dep['from']),
+                os.path.join(repo.clone_path, dep['to'])
+            )
+            repo.push_changes()
+            repo.open_pull_request()

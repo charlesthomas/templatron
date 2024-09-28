@@ -10,6 +10,7 @@ class TemplateConfig(BaseConfig):
         "autoscan": False,
         "branch_prefix": "templatron",
         "branch_separator": "-",
+        "dependents": {},
         "repos": [],
         "hooks": {},
     }
