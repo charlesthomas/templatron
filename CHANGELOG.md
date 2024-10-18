@@ -1,6 +1,27 @@
 # CHANGELOG
 
 
+## v0.4.73 (2024-10-18)
+
+### Chores
+
+* chore(deps): bump copier from 9.3.1 to 9.4.0
+
+Bumps [copier](https://github.com/copier-org/copier) from 9.3.1 to 9.4.0.
+- [Release notes](https://github.com/copier-org/copier/releases)
+- [Changelog](https://github.com/copier-org/copier/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/copier-org/copier/compare/v9.3.1...v9.4.0)
+
+---
+updated-dependencies:
+- dependency-name: copier
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([`da23a3a`](https://github.com/charlesthomas/templatron/commit/da23a3ae622a1153e5636285a1fdb04eaf53b960))
+
+
 ## v0.4.72 (2024-10-11)
 
 ### Chores
@@ -195,14 +216,14 @@ Signed-off-by: dependabot[bot] <support@github.com> ([`c51952d`](https://github.
 
 ## v0.4.62 (2024-09-07)
 
-### Fixes
+### Bug Fixes
 
 * fix: don't print hook output if there isn't any ([`c5c8ffc`](https://github.com/charlesthomas/templatron/commit/c5c8ffca716da2ec55da0262f149e8e23e699d30))
 
 
 ## v0.4.61 (2024-09-07)
 
-### Fixes
+### Bug Fixes
 
 * fix: log hook output ([`84977cc`](https://github.com/charlesthomas/templatron/commit/84977cc5195a252014b47f4bd50de9f71cdc8efb))
 
@@ -1368,34 +1389,34 @@ Signed-off-by: dependabot[bot] <support@github.com> ([`b1aed51`](https://github.
 
 ## v0.4.3 (2024-02-19)
 
-### Fixes
+### Bug Fixes
 
 * fix: ok may this'll do it ([`bb05fa0`](https://github.com/charlesthomas/templatron/commit/bb05fa0759f50752f68d41a059fb634311949311))
 
 
 ## v0.4.2 (2024-02-19)
 
-### Fixes
+### Bug Fixes
 
 * fix: try on push tags instead ([`dcb3fe2`](https://github.com/charlesthomas/templatron/commit/dcb3fe243ba1cb4aa2c3b8e60417741e2e988701))
 
 
 ## v0.4.1 (2024-02-19)
 
-### Fixes
+### Bug Fixes
 
 * fix: image tags ([`ed9264f`](https://github.com/charlesthomas/templatron/commit/ed9264f511687b2ba244434fa0139f9615662fc0))
 
 
 ## v0.4.0 (2024-02-19)
 
+### Bug Fixes
+
+* fix: update command ([`09051a0`](https://github.com/charlesthomas/templatron/commit/09051a08ac79eb943be2a0209210a929914d9800))
+
 ### Features
 
 * feat: add image ([`e2b4b2d`](https://github.com/charlesthomas/templatron/commit/e2b4b2dd8fe24c5e4d496b67bbdc5a9b7319ee64))
-
-### Fixes
-
-* fix: update command ([`09051a0`](https://github.com/charlesthomas/templatron/commit/09051a08ac79eb943be2a0209210a929914d9800))
 
 
 ## v0.3.5 (2024-02-18)
@@ -1425,6 +1446,10 @@ what i think is a bug in `sh` ([`523d7dd`](https://github.com/charlesthomas/temp
 
 ## v0.3.3 (2024-02-17)
 
+### Bug Fixes
+
+* fix: ci cleanup ([`0c58951`](https://github.com/charlesthomas/templatron/commit/0c589513e871a5f315446020371e9b023c1ed2b8))
+
 ### Chores
 
 * chore: egg-info in gitignore ([`9bbb318`](https://github.com/charlesthomas/templatron/commit/9bbb318222ed52a737865b97b644542df514f793))
@@ -1432,10 +1457,6 @@ what i think is a bug in `sh` ([`523d7dd`](https://github.com/charlesthomas/temp
 ### Continuous Integration
 
 * ci: testing misconfiguration fix ([`a4a4447`](https://github.com/charlesthomas/templatron/commit/a4a444721042ddf8ceeb9c7d0c1e95e92abddb1a))
-
-### Fixes
-
-* fix: ci cleanup ([`0c58951`](https://github.com/charlesthomas/templatron/commit/0c589513e871a5f315446020371e9b023c1ed2b8))
 
 
 ## v0.3.2 (2024-02-15)
@@ -1506,21 +1527,21 @@ try user, fail to org; rather than the other way around ([`3565e9f`](https://git
 
 ## v0.2.6 (2024-01-27)
 
-### Fixes
+### Bug Fixes
 
 * fix(build): try to make a GitHub Release myself ([`263a5e5`](https://github.com/charlesthomas/templatron/commit/263a5e5b14b9eb40ba864a0768f66cf2861f46a5))
 
 
 ## v0.2.5 (2024-01-27)
 
-### Fixes
+### Bug Fixes
 
 * fix(ci): try to disable vcs release in github actions ([`b2877ac`](https://github.com/charlesthomas/templatron/commit/b2877ac0aee077f4c9a88574833f1f8c3c13c43f))
 
 
 ## v0.2.4 (2024-01-27)
 
-### Fixes
+### Bug Fixes
 
 * fix(build): disable GH Releases
 
@@ -1529,14 +1550,14 @@ try user, fail to org; rather than the other way around ([`3565e9f`](https://git
 
 ## v0.2.3 (2024-01-27)
 
-### Fixes
+### Bug Fixes
 
 * fix: re-add __version__ for `templatron --version` option ([`086cf62`](https://github.com/charlesthomas/templatron/commit/086cf62bfaab8ba3465d74679b4808bf97615662))
 
 
 ## v0.2.2 (2024-01-27)
 
-### Fixes
+### Bug Fixes
 
 * fix: misc
 
@@ -1559,7 +1580,7 @@ try user, fail to org; rather than the other way around ([`3565e9f`](https://git
 
 ## v0.2.1 (2024-01-22)
 
-### Fixes
+### Bug Fixes
 
 * fix: lol oops ([`68ba533`](https://github.com/charlesthomas/templatron/commit/68ba5337cad5f6a6eb175c0cf8163f7faae514ae))
 
