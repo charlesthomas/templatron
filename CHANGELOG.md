@@ -1,11 +1,29 @@
 # CHANGELOG
 
 
+## v0.4.79 (2024-11-15)
+
+### Chores
+
+- **deps**: Bump docker/metadata-action
+  ([`8ea250c`](https://github.com/charlesthomas/templatron/commit/8ea250cf19ceede6dd1df0ebf8a18795d28bd745))
+
+Bumps [docker/metadata-action](https://github.com/docker/metadata-action) from
+  0de3687b53cd804b63dd87819f7bda043569ce4a to 44d81d6d2a5a935e1a481942268529623f1f5ccd. - [Release
+  notes](https://github.com/docker/metadata-action/releases) -
+  [Commits](https://github.com/docker/metadata-action/compare/0de3687b53cd804b63dd87819f7bda043569ce4a...44d81d6d2a5a935e1a481942268529623f1f5ccd)
+
+--- updated-dependencies: - dependency-name: docker/metadata-action dependency-type:
+  direct:production ...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+
+
 ## v0.4.78 (2024-11-08)
 
 ### Chores
 
-- Bump python-semantic-release from 9.12.0 to 9.12.2
+- **deps-dev**: Bump python-semantic-release from 9.12.0 to 9.12.2
   ([`43ebdef`](https://github.com/charlesthomas/templatron/commit/43ebdef4e0210221b7d64854310746f99270f4ca))
 
 Bumps [python-semantic-release](https://github.com/python-semantic-release/python-semantic-release)
@@ -25,7 +43,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump pygithub from 2.4.0 to 2.5.0
+- **deps**: Bump pygithub from 2.4.0 to 2.5.0
   ([`2017141`](https://github.com/charlesthomas/templatron/commit/2017141b2bcf1928885c38081a56614c117801c6))
 
 Bumps [pygithub](https://github.com/pygithub/pygithub) from 2.4.0 to 2.5.0. - [Release
@@ -43,7 +61,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump docker/metadata-action
+- **deps**: Bump docker/metadata-action
   ([`2d22c02`](https://github.com/charlesthomas/templatron/commit/2d22c021ceb46dca7a46dcec5a113140ad71e858))
 
 Bumps [docker/metadata-action](https://github.com/docker/metadata-action) from
@@ -61,7 +79,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump copier from 9.4.0 to 9.4.1
+- **deps**: Bump copier from 9.4.0 to 9.4.1
   ([`ff28ec4`](https://github.com/charlesthomas/templatron/commit/ff28ec449a069ffb0c1ae3667ca96ebb39c37476))
 
 Bumps [copier](https://github.com/copier-org/copier) from 9.4.0 to 9.4.1. - [Release
@@ -79,7 +97,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump python-semantic-release from 9.10.1 to 9.12.0
+- **deps-dev**: Bump python-semantic-release from 9.10.1 to 9.12.0
   ([`de68823`](https://github.com/charlesthomas/templatron/commit/de6882387a42eb9b749507d7312dccf649f63e2c))
 
 Bumps [python-semantic-release](https://github.com/python-semantic-release/python-semantic-release)
@@ -99,7 +117,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump copier from 9.3.1 to 9.4.0
+- **deps**: Bump copier from 9.3.1 to 9.4.0
   ([`da23a3a`](https://github.com/charlesthomas/templatron/commit/da23a3ae622a1153e5636285a1fdb04eaf53b960))
 
 Bumps [copier](https://github.com/copier-org/copier) from 9.3.1 to 9.4.0. - [Release
@@ -117,7 +135,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump sh from 2.0.7 to 2.1.0
+- **deps**: Bump sh from 2.0.7 to 2.1.0
   ([`94e5541`](https://github.com/charlesthomas/templatron/commit/94e55410574b6c4ef081196badcc74f07ccb6ba1))
 
 Bumps [sh](https://github.com/amoffat/sh) from 2.0.7 to 2.1.0. - [Release
@@ -135,7 +153,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump python-semantic-release from 9.9.0 to 9.10.1
+- **deps-dev**: Bump python-semantic-release from 9.9.0 to 9.10.1
   ([`f91161c`](https://github.com/charlesthomas/templatron/commit/f91161c7de4b53a9b0e1dec91f564699e2c6e1e6))
 
 Bumps [python-semantic-release](https://github.com/python-semantic-release/python-semantic-release)
@@ -155,7 +173,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump black from 24.8.0 to 24.10.0
+- **deps-dev**: Bump black from 24.8.0 to 24.10.0
   ([`ba4061a`](https://github.com/charlesthomas/templatron/commit/ba4061a44b345f2698d1e74e2d847eb82185a685))
 
 Bumps [black](https://github.com/psf/black) from 24.8.0 to 24.10.0. - [Release
@@ -173,7 +191,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump python-semantic-release from 9.8.9 to 9.9.0
+- **deps-dev**: Bump python-semantic-release from 9.8.9 to 9.9.0
   ([`36f0606`](https://github.com/charlesthomas/templatron/commit/36f06066d3637ea792e8c421f3ca4c9c2271fd47))
 
 Bumps [python-semantic-release](https://github.com/python-semantic-release/python-semantic-release)
@@ -193,7 +211,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump docker/build-push-action from 6.8.0 to 6.9.0
+- **deps**: Bump docker/build-push-action from 6.8.0 to 6.9.0
   ([`e4b37d3`](https://github.com/charlesthomas/templatron/commit/e4b37d3c979b7e839ee8475c28e491c8aa1b090c))
 
 Bumps [docker/build-push-action](https://github.com/docker/build-push-action) from 6.8.0 to 6.9.0. -
@@ -210,7 +228,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump docker/build-push-action from 6.7.0 to 6.8.0
+- **deps**: Bump docker/build-push-action from 6.7.0 to 6.8.0
   ([`8c4a875`](https://github.com/charlesthomas/templatron/commit/8c4a875cb07cf610cd5a660282b6d332c98e95ce))
 
 Bumps [docker/build-push-action](https://github.com/docker/build-push-action) from 6.7.0 to 6.8.0. -
@@ -227,7 +245,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump python-semantic-release from 9.8.8 to 9.8.9
+- **deps-dev**: Bump python-semantic-release from 9.8.8 to 9.8.9
   ([`939e65a`](https://github.com/charlesthomas/templatron/commit/939e65a42bfcfbdab36db65481b22e3c157c04c5))
 
 Bumps [python-semantic-release](https://github.com/python-semantic-release/python-semantic-release)
@@ -247,7 +265,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump pytest from 8.3.2 to 8.3.3
+- **deps-dev**: Bump pytest from 8.3.2 to 8.3.3
   ([`489bc21`](https://github.com/charlesthomas/templatron/commit/489bc213f2861709006aa865a4cffc2f017a158b))
 
 Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.3.2 to 8.3.3. - [Release
@@ -265,7 +283,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump docker/metadata-action
+- **deps**: Bump docker/metadata-action
   ([`c51952d`](https://github.com/charlesthomas/templatron/commit/c51952d6ff01ec29bf7fec417b9f15c9183222bf))
 
 Bumps [docker/metadata-action](https://github.com/docker/metadata-action) from
@@ -307,7 +325,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump python-semantic-release from 9.8.7 to 9.8.8
+- **deps-dev**: Bump python-semantic-release from 9.8.7 to 9.8.8
   ([`e7637ce`](https://github.com/charlesthomas/templatron/commit/e7637ce88ad14e0f988c7bdd8b073ed0611667e0))
 
 Bumps [python-semantic-release](https://github.com/python-semantic-release/python-semantic-release)
@@ -327,7 +345,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump pygithub from 2.3.0 to 2.4.0
+- **deps**: Bump pygithub from 2.3.0 to 2.4.0
   ([`8598aaa`](https://github.com/charlesthomas/templatron/commit/8598aaa7ad653eb6ebb45bc47ef07904fda99111))
 
 Bumps [pygithub](https://github.com/pygithub/pygithub) from 2.3.0 to 2.4.0. - [Release
@@ -345,7 +363,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump python-semantic-release from 9.8.6 to 9.8.7
+- **deps-dev**: Bump python-semantic-release from 9.8.6 to 9.8.7
   ([`e456758`](https://github.com/charlesthomas/templatron/commit/e45675818237501fd1a678affec50643ef56e1c7))
 
 Bumps [python-semantic-release](https://github.com/python-semantic-release/python-semantic-release)
@@ -365,7 +383,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump docker/build-push-action from 6.6.1 to 6.7.0
+- **deps**: Bump docker/build-push-action from 6.6.1 to 6.7.0
   ([`1769c3a`](https://github.com/charlesthomas/templatron/commit/1769c3aa7b8ea2595f736d468fb30408819e3b03))
 
 Bumps [docker/build-push-action](https://github.com/docker/build-push-action) from 6.6.1 to 6.7.0. -
@@ -382,7 +400,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump docker/build-push-action from 6.5.0 to 6.6.1
+- **deps**: Bump docker/build-push-action from 6.5.0 to 6.6.1
   ([`859f700`](https://github.com/charlesthomas/templatron/commit/859f7000367008c4b0f95703135e59536788e7d1))
 
 Bumps [docker/build-push-action](https://github.com/docker/build-push-action) from 6.5.0 to 6.6.1. -
@@ -399,7 +417,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump black from 24.4.2 to 24.8.0
+- **deps-dev**: Bump black from 24.4.2 to 24.8.0
   ([`511f645`](https://github.com/charlesthomas/templatron/commit/511f645089be1205ec18129e45dd255cc699643b))
 
 Bumps [black](https://github.com/psf/black) from 24.4.2 to 24.8.0. - [Release
@@ -417,7 +435,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump docker/login-action from 3.2.0 to 3.3.0
+- **deps**: Bump docker/login-action from 3.2.0 to 3.3.0
   ([`f8b23b1`](https://github.com/charlesthomas/templatron/commit/f8b23b1b65e232ade6783630d4fcdb9f4d402df2))
 
 Bumps [docker/login-action](https://github.com/docker/login-action) from 3.2.0 to 3.3.0. - [Release
@@ -434,7 +452,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump python-semantic-release from 9.8.5 to 9.8.6
+- **deps-dev**: Bump python-semantic-release from 9.8.5 to 9.8.6
   ([`0ecb8e5`](https://github.com/charlesthomas/templatron/commit/0ecb8e51058456ce4faf97e425312a7aab602db2))
 
 Bumps [python-semantic-release](https://github.com/python-semantic-release/python-semantic-release)
@@ -454,7 +472,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump docker/build-push-action from 6.4.1 to 6.5.0
+- **deps**: Bump docker/build-push-action from 6.4.1 to 6.5.0
   ([`6526263`](https://github.com/charlesthomas/templatron/commit/65262632105b96309b2d0a811d497bf31617ef2d))
 
 Bumps [docker/build-push-action](https://github.com/docker/build-push-action) from 6.4.1 to 6.5.0. -
@@ -471,7 +489,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump docker/metadata-action
+- **deps**: Bump docker/metadata-action
   ([`ec6db43`](https://github.com/charlesthomas/templatron/commit/ec6db438e710c558e32865a6cbb2146d77450c29))
 
 Bumps [docker/metadata-action](https://github.com/docker/metadata-action) from
@@ -489,7 +507,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump pytest from 8.2.2 to 8.3.2
+- **deps-dev**: Bump pytest from 8.2.2 to 8.3.2
   ([`acb0bf6`](https://github.com/charlesthomas/templatron/commit/acb0bf6c34afc3b0b5ef48858ab4d4afe58c20e2))
 
 Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.2.2 to 8.3.2. - [Release
@@ -507,7 +525,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump docker/build-push-action from 6.3.0 to 6.4.1
+- **deps**: Bump docker/build-push-action from 6.3.0 to 6.4.1
   ([`c92951d`](https://github.com/charlesthomas/templatron/commit/c92951d1c78a41219efb3d6a48803a174b5175c2))
 
 Bumps [docker/build-push-action](https://github.com/docker/build-push-action) from 6.3.0 to 6.4.1. -
@@ -524,7 +542,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump python-semantic-release from 9.8.4 to 9.8.5
+- **deps-dev**: Bump python-semantic-release from 9.8.4 to 9.8.5
   ([`bb0460e`](https://github.com/charlesthomas/templatron/commit/bb0460ed6b4c72f612d45307334647de213bebf5))
 
 Bumps [python-semantic-release](https://github.com/python-semantic-release/python-semantic-release)
@@ -544,7 +562,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump copier from 9.2.0 to 9.3.1
+- **deps**: Bump copier from 9.2.0 to 9.3.1
   ([`5bd5289`](https://github.com/charlesthomas/templatron/commit/5bd528992f6c248fa1aa6a91e9b55b1be5d3120b))
 
 Bumps [copier](https://github.com/copier-org/copier) from 9.2.0 to 9.3.1. - [Release
@@ -562,7 +580,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump python-semantic-release from 9.8.3 to 9.8.4
+- **deps-dev**: Bump python-semantic-release from 9.8.3 to 9.8.4
   ([`56ee8ee`](https://github.com/charlesthomas/templatron/commit/56ee8eed9b5de20a563b1a76ddfeff0fe0a7179f))
 
 Bumps [python-semantic-release](https://github.com/python-semantic-release/python-semantic-release)
@@ -582,7 +600,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump docker/build-push-action from 6.2.0 to 6.3.0
+- **deps**: Bump docker/build-push-action from 6.2.0 to 6.3.0
   ([`b5d9faf`](https://github.com/charlesthomas/templatron/commit/b5d9faf1c1fb473ff44adca1c5bf50322532ec3b))
 
 Bumps [docker/build-push-action](https://github.com/docker/build-push-action) from 6.2.0 to 6.3.0. -
@@ -599,7 +617,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump docker/build-push-action from 6.1.0 to 6.2.0
+- **deps**: Bump docker/build-push-action from 6.1.0 to 6.2.0
   ([`22b12e4`](https://github.com/charlesthomas/templatron/commit/22b12e478fcaa5a2d055ae4a73b38bf0a3d71447))
 
 Bumps [docker/build-push-action](https://github.com/docker/build-push-action) from 6.1.0 to 6.2.0. -
@@ -616,7 +634,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump docker/build-push-action from 5.4.0 to 6.1.0
+- **deps**: Bump docker/build-push-action from 5.4.0 to 6.1.0
   ([`6c3a8f9`](https://github.com/charlesthomas/templatron/commit/6c3a8f91da21a01313cfb217977e9ba77771cea0))
 
 Bumps [docker/build-push-action](https://github.com/docker/build-push-action) from 5.4.0 to 6.1.0. -
@@ -633,7 +651,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump python-semantic-release from 9.8.1 to 9.8.3
+- **deps-dev**: Bump python-semantic-release from 9.8.1 to 9.8.3
   ([`c35dab8`](https://github.com/charlesthomas/templatron/commit/c35dab89aeb30478d61f3cc13b91ea39672da9a7))
 
 Bumps [python-semantic-release](https://github.com/python-semantic-release/python-semantic-release)
@@ -653,7 +671,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump docker/build-push-action from 5.3.0 to 5.4.0
+- **deps**: Bump docker/build-push-action from 5.3.0 to 5.4.0
   ([`55e50f1`](https://github.com/charlesthomas/templatron/commit/55e50f1b4c69d5a597b53a953aec9a93b30da271))
 
 Bumps [docker/build-push-action](https://github.com/docker/build-push-action) from 5.3.0 to 5.4.0. -
@@ -670,7 +688,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump python-semantic-release from 9.8.0 to 9.8.1
+- **deps-dev**: Bump python-semantic-release from 9.8.0 to 9.8.1
   ([`08b041e`](https://github.com/charlesthomas/templatron/commit/08b041e386df4d15da939ff516bdecce1f2d157a))
 
 Bumps [python-semantic-release](https://github.com/python-semantic-release/python-semantic-release)
@@ -690,7 +708,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump pytest from 8.2.1 to 8.2.2
+- **deps-dev**: Bump pytest from 8.2.1 to 8.2.2
   ([`d865b4d`](https://github.com/charlesthomas/templatron/commit/d865b4dd7e9736398434e512835991c92e39b3d4))
 
 Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.2.1 to 8.2.2. - [Release
@@ -708,7 +726,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump sh from 2.0.6 to 2.0.7
+- **deps**: Bump sh from 2.0.6 to 2.0.7
   ([`d48dfc9`](https://github.com/charlesthomas/templatron/commit/d48dfc994492258c0ba680a7c106bc32f01fb4f0))
 
 Bumps [sh](https://github.com/amoffat/sh) from 2.0.6 to 2.0.7. - [Release
@@ -726,7 +744,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump python-semantic-release from 9.7.3 to 9.8.0
+- **deps-dev**: Bump python-semantic-release from 9.7.3 to 9.8.0
   ([`17cf5af`](https://github.com/charlesthomas/templatron/commit/17cf5af7911c15a951910c20b53061855f717494))
 
 Bumps [python-semantic-release](https://github.com/python-semantic-release/python-semantic-release)
@@ -746,7 +764,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump docker/login-action from 3.1.0 to 3.2.0
+- **deps**: Bump docker/login-action from 3.1.0 to 3.2.0
   ([`dac126a`](https://github.com/charlesthomas/templatron/commit/dac126abba5c5eba502c18db295f7c11896fe44f))
 
 Bumps [docker/login-action](https://github.com/docker/login-action) from 3.1.0 to 3.2.0. - [Release
@@ -763,7 +781,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump pytest from 8.2.0 to 8.2.1
+- **deps-dev**: Bump pytest from 8.2.0 to 8.2.1
   ([`651bd68`](https://github.com/charlesthomas/templatron/commit/651bd68e89f18806e53a7b801058874b669ebfeb))
 
 Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.2.0 to 8.2.1. - [Release
@@ -781,7 +799,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump python-semantic-release from 9.7.1 to 9.7.3
+- **deps-dev**: Bump python-semantic-release from 9.7.1 to 9.7.3
   ([`f52a406`](https://github.com/charlesthomas/templatron/commit/f52a4066458229f83fc79ce3b240a46659e769f7))
 
 Bumps [python-semantic-release](https://github.com/python-semantic-release/python-semantic-release)
@@ -801,7 +819,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump docker/metadata-action
+- **deps**: Bump docker/metadata-action
   ([`6b8c71a`](https://github.com/charlesthomas/templatron/commit/6b8c71a57d22417af5903e9d5d511504475b5557))
 
 Bumps [docker/metadata-action](https://github.com/docker/metadata-action) from
@@ -819,7 +837,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump python-semantic-release from 9.6.0 to 9.7.1
+- **deps-dev**: Bump python-semantic-release from 9.6.0 to 9.7.1
   ([`9d2283e`](https://github.com/charlesthomas/templatron/commit/9d2283e62ec99fb07a57e172e28f1a289b1fc4ec))
 
 Bumps [python-semantic-release](https://github.com/python-semantic-release/python-semantic-release)
@@ -839,7 +857,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump docker/metadata-action
+- **deps**: Bump docker/metadata-action
   ([`3e8f345`](https://github.com/charlesthomas/templatron/commit/3e8f345a8b8ea549f9f517ffa4328d974ca16e65))
 
 Bumps [docker/metadata-action](https://github.com/docker/metadata-action) from
@@ -865,7 +883,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump python-semantic-release from 9.4.2 to 9.6.0
+- **deps-dev**: Bump python-semantic-release from 9.4.2 to 9.6.0
   ([`aff10e2`](https://github.com/charlesthomas/templatron/commit/aff10e28a90e27301e8f47d90752b876dd5c9d2a))
 
 Bumps [python-semantic-release](https://github.com/python-semantic-release/python-semantic-release)
@@ -885,7 +903,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump black from 24.4.0 to 24.4.2
+- **deps-dev**: Bump black from 24.4.0 to 24.4.2
   ([`03a7d6a`](https://github.com/charlesthomas/templatron/commit/03a7d6a8c1c2069ed567dc81cac79e5be2a0d432))
 
 Bumps [black](https://github.com/psf/black) from 24.4.0 to 24.4.2. - [Release
@@ -903,7 +921,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump pytest from 8.1.1 to 8.2.0
+- **deps-dev**: Bump pytest from 8.1.1 to 8.2.0
   ([`a3020d0`](https://github.com/charlesthomas/templatron/commit/a3020d097c549f1731d3b9322f6fc8e41bd66e9b))
 
 Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.1.1 to 8.2.0. - [Release
@@ -921,7 +939,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump docker/metadata-action
+- **deps**: Bump docker/metadata-action
   ([`0a03e0c`](https://github.com/charlesthomas/templatron/commit/0a03e0c3ec41dd06816f10021cfb16613ac01b10))
 
 Bumps [docker/metadata-action](https://github.com/docker/metadata-action) from
@@ -939,7 +957,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump python-semantic-release from 9.4.1 to 9.4.2
+- **deps-dev**: Bump python-semantic-release from 9.4.1 to 9.4.2
   ([`fd21eb4`](https://github.com/charlesthomas/templatron/commit/fd21eb49b394e649f3811d134ed31f586591856f))
 
 Bumps [python-semantic-release](https://github.com/python-semantic-release/python-semantic-release)
@@ -959,7 +977,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump black from 24.3.0 to 24.4.0
+- **deps-dev**: Bump black from 24.3.0 to 24.4.0
   ([`9ac1473`](https://github.com/charlesthomas/templatron/commit/9ac14731a26cc3c724813f8549cb4787c6f0e128))
 
 Bumps [black](https://github.com/psf/black) from 24.3.0 to 24.4.0. - [Release
@@ -977,7 +995,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump copier from 9.1.1 to 9.2.0
+- **deps**: Bump copier from 9.1.1 to 9.2.0
   ([`0304989`](https://github.com/charlesthomas/templatron/commit/030498975ff4289237dbb7121c5eaa17eeba97b1))
 
 Bumps [copier](https://github.com/copier-org/copier) from 9.1.1 to 9.2.0. - [Release
@@ -995,7 +1013,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump python-semantic-release from 9.4.0 to 9.4.1
+- **deps-dev**: Bump python-semantic-release from 9.4.0 to 9.4.1
   ([`0ecccc1`](https://github.com/charlesthomas/templatron/commit/0ecccc1e7e412f2d636e8ad6c77b480b6418a12d))
 
 Bumps [python-semantic-release](https://github.com/python-semantic-release/python-semantic-release)
@@ -1015,7 +1033,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump python-semantic-release from 9.3.1 to 9.4.0
+- **deps-dev**: Bump python-semantic-release from 9.3.1 to 9.4.0
   ([`f0f09f7`](https://github.com/charlesthomas/templatron/commit/f0f09f7e1cb7d261e2fd647c54fa3e9769067a82))
 
 Bumps [python-semantic-release](https://github.com/python-semantic-release/python-semantic-release)
@@ -1035,7 +1053,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump python-semantic-release from 9.1.1 to 9.3.1
+- **deps-dev**: Bump python-semantic-release from 9.1.1 to 9.3.1
   ([`ee2cb59`](https://github.com/charlesthomas/templatron/commit/ee2cb597025901198d329acf68782eca7ae5ffea))
 
 Bumps [python-semantic-release](https://github.com/python-semantic-release/python-semantic-release)
@@ -1055,7 +1073,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump docker/metadata-action
+- **deps**: Bump docker/metadata-action
   ([`58c4689`](https://github.com/charlesthomas/templatron/commit/58c468953aa82e825d355671d4772a744bc39070))
 
 Bumps [docker/metadata-action](https://github.com/docker/metadata-action) from
@@ -1073,7 +1091,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump pygithub from 2.2.0 to 2.3.0
+- **deps**: Bump pygithub from 2.2.0 to 2.3.0
   ([`84d803d`](https://github.com/charlesthomas/templatron/commit/84d803da2773cc7f82854fa3f0e23d3e969d5160))
 
 Bumps [pygithub](https://github.com/pygithub/pygithub) from 2.2.0 to 2.3.0. - [Release
@@ -1091,7 +1109,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump docker/login-action
+- **deps**: Bump docker/login-action
   ([`65a4fe8`](https://github.com/charlesthomas/templatron/commit/65a4fe8999d794d33b556cef5e68d11b3f24ab2c))
 
 Bumps [docker/login-action](https://github.com/docker/login-action) from
@@ -1109,7 +1127,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump docker/metadata-action
+- **deps**: Bump docker/metadata-action
   ([`f6da3ba`](https://github.com/charlesthomas/templatron/commit/f6da3ba9f31e9da74862581a8d030d3780cdd155))
 
 Bumps [docker/metadata-action](https://github.com/docker/metadata-action) from
@@ -1127,7 +1145,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump docker/build-push-action from 5.2.0 to 5.3.0
+- **deps**: Bump docker/build-push-action from 5.2.0 to 5.3.0
   ([`dd751f3`](https://github.com/charlesthomas/templatron/commit/dd751f35a41a8478ce87cf70021001130c08cb92))
 
 Bumps [docker/build-push-action](https://github.com/docker/build-push-action) from 5.2.0 to 5.3.0. -
@@ -1144,7 +1162,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump black from 24.2.0 to 24.3.0
+- **deps-dev**: Bump black from 24.2.0 to 24.3.0
   ([`456ad05`](https://github.com/charlesthomas/templatron/commit/456ad05a6afac2d6801b28a43766526a6c56a02c))
 
 Bumps [black](https://github.com/psf/black) from 24.2.0 to 24.3.0. - [Release
@@ -1162,7 +1180,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump docker/build-push-action
+- **deps**: Bump docker/build-push-action
   ([`acf874e`](https://github.com/charlesthomas/templatron/commit/acf874e0f9ba7a8e760dd9f4cf38f2d117b79bdb))
 
 Bumps [docker/build-push-action](https://github.com/docker/build-push-action) from
@@ -1180,7 +1198,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump pytest from 8.1.0 to 8.1.1
+- **deps-dev**: Bump pytest from 8.1.0 to 8.1.1
   ([`267b0c5`](https://github.com/charlesthomas/templatron/commit/267b0c52554adb35a1638e1cfb2ec6644e349b01))
 
 Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.1.0 to 8.1.1. - [Release
@@ -1198,7 +1216,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump actions/setup-python from 2 to 5
+- **deps**: Bump actions/setup-python from 2 to 5
   ([`69b659f`](https://github.com/charlesthomas/templatron/commit/69b659fb0c9d73f7982b1bcdc60f2c54b5c66b41))
 
 Bumps [actions/setup-python](https://github.com/actions/setup-python) from 2 to 5. - [Release
@@ -1215,7 +1233,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump docker/metadata-action
+- **deps**: Bump docker/metadata-action
   ([`f3e8e16`](https://github.com/charlesthomas/templatron/commit/f3e8e16fd99686c19b80b50f7ff005ad59747271))
 
 Bumps [docker/metadata-action](https://github.com/docker/metadata-action) from
@@ -1233,7 +1251,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump docker/login-action
+- **deps**: Bump docker/login-action
   ([`5e3a005`](https://github.com/charlesthomas/templatron/commit/5e3a005904dfd7e6355c316c70b41058ad2db640))
 
 Bumps [docker/login-action](https://github.com/docker/login-action) from
@@ -1251,7 +1269,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump docker/build-push-action
+- **deps**: Bump docker/build-push-action
   ([`72b9af2`](https://github.com/charlesthomas/templatron/commit/72b9af2152c878e4e4293b8a5ea3c6d09aa170bf))
 
 Bumps [docker/build-push-action](https://github.com/docker/build-push-action) from
@@ -1264,7 +1282,7 @@ Bumps [docker/build-push-action](https://github.com/docker/build-push-action) fr
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
-- Bump actions/checkout from 2 to 4
+- **deps**: Bump actions/checkout from 2 to 4
   ([`83451a9`](https://github.com/charlesthomas/templatron/commit/83451a9ab85087d6c4fabaeb3f642f1550a9c308))
 
 Bumps [actions/checkout](https://github.com/actions/checkout) from 2 to 4. - [Release
@@ -1292,7 +1310,7 @@ Sent from my iPhone
 
 ### Chores
 
-- Bump pytest from 8.0.2 to 8.1.0
+- **deps-dev**: Bump pytest from 8.0.2 to 8.1.0
   ([`59d3732`](https://github.com/charlesthomas/templatron/commit/59d3732a371faccbd6a2211157a6e130287dced4))
 
 Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.0.2 to 8.1.0. - [Release
@@ -1310,7 +1328,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump pytest from 8.0.1 to 8.0.2
+- **deps-dev**: Bump pytest from 8.0.1 to 8.0.2
   ([`456926b`](https://github.com/charlesthomas/templatron/commit/456926bf62cf8c08470ec4563da37b5332168b04))
 
 Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.0.1 to 8.0.2. - [Release
@@ -1323,7 +1341,7 @@ Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.0.1 to 8.0.2. - [Rel
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
-- Bump python-semantic-release from 9.1.0 to 9.1.1
+- **deps-dev**: Bump python-semantic-release from 9.1.0 to 9.1.1
   ([`b1aed51`](https://github.com/charlesthomas/templatron/commit/b1aed51776d85f44f857b732f81c843bf57604a1))
 
 Bumps [python-semantic-release](https://github.com/python-semantic-release/python-semantic-release)
@@ -1433,7 +1451,7 @@ there's a warning that appears to be coming from inside the `GitHub` module, and
 
 ### Chores
 
-- Bump python-semantic-release from 8.7.0 to 9.1.0
+- **deps-dev**: Bump python-semantic-release from 8.7.0 to 9.1.0
   ([`2319350`](https://github.com/charlesthomas/templatron/commit/231935089b79c0264a2b9dd464ca65675f66f5d4))
 
 Bumps [python-semantic-release](https://github.com/python-semantic-release/python-semantic-release)
@@ -1453,7 +1471,7 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Chores
 
-- Bump pygithub from 2.1.1 to 2.2.0
+- **deps**: Bump pygithub from 2.1.1 to 2.2.0
   ([`bb2c29b`](https://github.com/charlesthomas/templatron/commit/bb2c29bbdb59fb3a8c687d45c7ab26d622541844))
 
 Bumps [pygithub](https://github.com/pygithub/pygithub) from 2.1.1 to 2.2.0. - [Release
@@ -1486,7 +1504,7 @@ try user, fail to org; rather than the other way around
 
 ### Chores
 
-- Create dependabot.yml
+- **ci**: Create dependabot.yml
   ([`24d79c4`](https://github.com/charlesthomas/templatron/commit/24d79c43f60c9ee023b5204e2a6731d85c7096ea))
 
 
@@ -1494,7 +1512,7 @@ try user, fail to org; rather than the other way around
 
 ### Bug Fixes
 
-- Try to make a GitHub Release myself
+- **build**: Try to make a GitHub Release myself
   ([`263a5e5`](https://github.com/charlesthomas/templatron/commit/263a5e5b14b9eb40ba864a0768f66cf2861f46a5))
 
 
@@ -1502,7 +1520,7 @@ try user, fail to org; rather than the other way around
 
 ### Bug Fixes
 
-- Try to disable vcs release in github actions
+- **ci**: Try to disable vcs release in github actions
   ([`b2877ac`](https://github.com/charlesthomas/templatron/commit/b2877ac0aee077f4c9a88574833f1f8c3c13c43f))
 
 
@@ -1510,7 +1528,7 @@ try user, fail to org; rather than the other way around
 
 ### Bug Fixes
 
-- Disable GH Releases
+- **build**: Disable GH Releases
   ([`0fcd3cd`](https://github.com/charlesthomas/templatron/commit/0fcd3cdf98bade3537e2237ba44716f2aeb792f6))
 
 [pending bug fix](https://github.com/python-semantic-release/python-semantic-release/issues/818)
