@@ -1,6 +1,27 @@
 # CHANGELOG
 
 
+## v0.4.84 (2024-12-20)
+
+### Chores
+
+- **deps-dev**: Bump pytest from 8.3.3 to 8.3.4
+  ([`c98b40a`](https://github.com/charlesthomas/templatron/commit/c98b40a8041a5df1b19aa5f4df025e87561164a9))
+
+Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.3.3 to 8.3.4. - [Release
+  notes](https://github.com/pytest-dev/pytest/releases) -
+  [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst) -
+  [Commits](https://github.com/pytest-dev/pytest/compare/8.3.3...8.3.4)
+
+--- updated-dependencies: - dependency-name: pytest dependency-type: direct:development
+
+update-type: version-update:semver-patch
+
+...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+
+
 ## v0.4.83 (2024-12-20)
 
 ### Chores
