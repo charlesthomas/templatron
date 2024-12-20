@@ -15,7 +15,7 @@ PyGithub = "2.5.0"
 sh = "2.1.0"
 
 [tool.poetry.group.dev.dependencies]
-python-semantic-release = "9.14.0"
+python-semantic-release = "9.15.2"
 black = "24.10.0"
 pytest = "8.3.3"
 
