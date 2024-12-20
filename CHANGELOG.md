@@ -1,6 +1,30 @@
 # CHANGELOG
 
 
+## v0.4.83 (2024-12-20)
+
+### Chores
+
+- **deps-dev**: Bump python-semantic-release from 9.14.0 to 9.15.2
+  ([`ee73d49`](https://github.com/charlesthomas/templatron/commit/ee73d49bd1b3fb0550b1cbfe73befa01a42ba1c5))
+
+Bumps [python-semantic-release](https://github.com/python-semantic-release/python-semantic-release)
+  from 9.14.0 to 9.15.2. - [Release
+  notes](https://github.com/python-semantic-release/python-semantic-release/releases) -
+  [Changelog](https://github.com/python-semantic-release/python-semantic-release/blob/master/CHANGELOG.md)
+  -
+  [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.14...v9.15.2)
+
+--- updated-dependencies: - dependency-name: python-semantic-release dependency-type:
+  direct:development
+
+update-type: version-update:semver-minor
+
+...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+
+
 ## v0.4.82 (2024-11-29)
 
 ### Chores
@@ -13,7 +37,11 @@ Bumps [docker/build-push-action](https://github.com/docker/build-push-action) fr
   [Commits](https://github.com/docker/build-push-action/compare/4f58ea79222b3b9dc2c8bbdd6debcef730109a75...48aba3b46d1b1fec4febb7c5d0c644b249a11355)
 
 --- updated-dependencies: - dependency-name: docker/build-push-action dependency-type:
-  direct:production update-type: version-update:semver-minor ...
+  direct:production
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -31,7 +59,9 @@ Bumps [docker/metadata-action](https://github.com/docker/metadata-action) from
   [Commits](https://github.com/docker/metadata-action/compare/44d81d6d2a5a935e1a481942268529623f1f5ccd...369eb591f429131d6889c46b94e711f089e6ca96)
 
 --- updated-dependencies: - dependency-name: docker/metadata-action dependency-type:
-  direct:production ...
+  direct:production
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -51,7 +81,11 @@ Bumps [python-semantic-release](https://github.com/python-semantic-release/pytho
   [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.12.2...v9.14)
 
 --- updated-dependencies: - dependency-name: python-semantic-release dependency-type:
-  direct:development update-type: version-update:semver-minor ...
+  direct:development
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -69,7 +103,9 @@ Bumps [docker/metadata-action](https://github.com/docker/metadata-action) from
   [Commits](https://github.com/docker/metadata-action/compare/0de3687b53cd804b63dd87819f7bda043569ce4a...44d81d6d2a5a935e1a481942268529623f1f5ccd)
 
 --- updated-dependencies: - dependency-name: docker/metadata-action dependency-type:
-  direct:production ...
+  direct:production
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -89,7 +125,11 @@ Bumps [python-semantic-release](https://github.com/python-semantic-release/pytho
   [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.12...v9.12.2)
 
 --- updated-dependencies: - dependency-name: python-semantic-release dependency-type:
-  direct:development update-type: version-update:semver-patch ...
+  direct:development
+
+update-type: version-update:semver-patch
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -107,7 +147,10 @@ Bumps [pygithub](https://github.com/pygithub/pygithub) from 2.4.0 to 2.5.0. - [R
   [Commits](https://github.com/pygithub/pygithub/compare/v2.4.0...v2.5.0)
 
 --- updated-dependencies: - dependency-name: pygithub dependency-type: direct:production
-  update-type: version-update:semver-minor ...
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -125,7 +168,9 @@ Bumps [docker/metadata-action](https://github.com/docker/metadata-action) from
   [Commits](https://github.com/docker/metadata-action/compare/70b2cdc6480c1a8b86edf1777157f8f437de2166...0de3687b53cd804b63dd87819f7bda043569ce4a)
 
 --- updated-dependencies: - dependency-name: docker/metadata-action dependency-type:
-  direct:production ...
+  direct:production
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -142,8 +187,11 @@ Bumps [copier](https://github.com/copier-org/copier) from 9.4.0 to 9.4.1. - [Rel
   [Changelog](https://github.com/copier-org/copier/blob/master/CHANGELOG.md) -
   [Commits](https://github.com/copier-org/copier/compare/v9.4.0...v9.4.1)
 
---- updated-dependencies: - dependency-name: copier dependency-type: direct:production update-type:
-  version-update:semver-patch ...
+--- updated-dependencies: - dependency-name: copier dependency-type: direct:production
+
+update-type: version-update:semver-patch
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -163,7 +211,11 @@ Bumps [python-semantic-release](https://github.com/python-semantic-release/pytho
   [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.10.1...v9.12)
 
 --- updated-dependencies: - dependency-name: python-semantic-release dependency-type:
-  direct:development update-type: version-update:semver-minor ...
+  direct:development
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -180,8 +232,11 @@ Bumps [copier](https://github.com/copier-org/copier) from 9.3.1 to 9.4.0. - [Rel
   [Changelog](https://github.com/copier-org/copier/blob/master/CHANGELOG.md) -
   [Commits](https://github.com/copier-org/copier/compare/v9.3.1...v9.4.0)
 
---- updated-dependencies: - dependency-name: copier dependency-type: direct:production update-type:
-  version-update:semver-minor ...
+--- updated-dependencies: - dependency-name: copier dependency-type: direct:production
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -198,8 +253,11 @@ Bumps [sh](https://github.com/amoffat/sh) from 2.0.7 to 2.1.0. - [Release
   [Changelog](https://github.com/amoffat/sh/blob/develop/CHANGELOG.md) -
   [Commits](https://github.com/amoffat/sh/compare/2.0.7...2.1.0)
 
---- updated-dependencies: - dependency-name: sh dependency-type: direct:production update-type:
-  version-update:semver-minor ...
+--- updated-dependencies: - dependency-name: sh dependency-type: direct:production
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -219,7 +277,11 @@ Bumps [python-semantic-release](https://github.com/python-semantic-release/pytho
   [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.9...v9.10.1)
 
 --- updated-dependencies: - dependency-name: python-semantic-release dependency-type:
-  direct:development update-type: version-update:semver-minor ...
+  direct:development
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -236,8 +298,11 @@ Bumps [black](https://github.com/psf/black) from 24.8.0 to 24.10.0. - [Release
   [Changelog](https://github.com/psf/black/blob/main/CHANGES.md) -
   [Commits](https://github.com/psf/black/compare/24.8.0...24.10.0)
 
---- updated-dependencies: - dependency-name: black dependency-type: direct:development update-type:
-  version-update:semver-minor ...
+--- updated-dependencies: - dependency-name: black dependency-type: direct:development
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -257,7 +322,11 @@ Bumps [python-semantic-release](https://github.com/python-semantic-release/pytho
   [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.8.9...v9.9)
 
 --- updated-dependencies: - dependency-name: python-semantic-release dependency-type:
-  direct:development update-type: version-update:semver-minor ...
+  direct:development
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -274,7 +343,11 @@ Bumps [docker/build-push-action](https://github.com/docker/build-push-action) fr
   [Commits](https://github.com/docker/build-push-action/compare/32945a339266b759abcbdc89316275140b0fc960...4f58ea79222b3b9dc2c8bbdd6debcef730109a75)
 
 --- updated-dependencies: - dependency-name: docker/build-push-action dependency-type:
-  direct:production update-type: version-update:semver-minor ...
+  direct:production
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -291,7 +364,11 @@ Bumps [docker/build-push-action](https://github.com/docker/build-push-action) fr
   [Commits](https://github.com/docker/build-push-action/compare/5cd11c3a4ced054e52742c5fd54dca954e0edd85...32945a339266b759abcbdc89316275140b0fc960)
 
 --- updated-dependencies: - dependency-name: docker/build-push-action dependency-type:
-  direct:production update-type: version-update:semver-minor ...
+  direct:production
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -311,7 +388,11 @@ Bumps [python-semantic-release](https://github.com/python-semantic-release/pytho
   [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.8.8...v9.8.9)
 
 --- updated-dependencies: - dependency-name: python-semantic-release dependency-type:
-  direct:development update-type: version-update:semver-patch ...
+  direct:development
+
+update-type: version-update:semver-patch
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -328,8 +409,11 @@ Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.3.2 to 8.3.3. - [Rel
   [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst) -
   [Commits](https://github.com/pytest-dev/pytest/compare/8.3.2...8.3.3)
 
---- updated-dependencies: - dependency-name: pytest dependency-type: direct:development update-type:
-  version-update:semver-patch ...
+--- updated-dependencies: - dependency-name: pytest dependency-type: direct:development
+
+update-type: version-update:semver-patch
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -347,7 +431,9 @@ Bumps [docker/metadata-action](https://github.com/docker/metadata-action) from
   [Commits](https://github.com/docker/metadata-action/compare/60a0d343a0d8a18aedee9d34e62251f752153bdb...70b2cdc6480c1a8b86edf1777157f8f437de2166)
 
 --- updated-dependencies: - dependency-name: docker/metadata-action dependency-type:
-  direct:production ...
+  direct:production
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -391,7 +477,11 @@ Bumps [python-semantic-release](https://github.com/python-semantic-release/pytho
   [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.8.7...v9.8.8)
 
 --- updated-dependencies: - dependency-name: python-semantic-release dependency-type:
-  direct:development update-type: version-update:semver-patch ...
+  direct:development
+
+update-type: version-update:semver-patch
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -409,7 +499,10 @@ Bumps [pygithub](https://github.com/pygithub/pygithub) from 2.3.0 to 2.4.0. - [R
   [Commits](https://github.com/pygithub/pygithub/compare/v2.3.0...v2.4.0)
 
 --- updated-dependencies: - dependency-name: pygithub dependency-type: direct:production
-  update-type: version-update:semver-minor ...
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -429,7 +522,11 @@ Bumps [python-semantic-release](https://github.com/python-semantic-release/pytho
   [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.8.6...v9.8.7)
 
 --- updated-dependencies: - dependency-name: python-semantic-release dependency-type:
-  direct:development update-type: version-update:semver-patch ...
+  direct:development
+
+update-type: version-update:semver-patch
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -446,7 +543,11 @@ Bumps [docker/build-push-action](https://github.com/docker/build-push-action) fr
   [Commits](https://github.com/docker/build-push-action/compare/16ebe778df0e7752d2cfcbd924afdbbd89c1a755...5cd11c3a4ced054e52742c5fd54dca954e0edd85)
 
 --- updated-dependencies: - dependency-name: docker/build-push-action dependency-type:
-  direct:production update-type: version-update:semver-minor ...
+  direct:production
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -463,7 +564,11 @@ Bumps [docker/build-push-action](https://github.com/docker/build-push-action) fr
   [Commits](https://github.com/docker/build-push-action/compare/5176d81f87c23d6fc96624dfdbcd9f3830bbe445...16ebe778df0e7752d2cfcbd924afdbbd89c1a755)
 
 --- updated-dependencies: - dependency-name: docker/build-push-action dependency-type:
-  direct:production update-type: version-update:semver-minor ...
+  direct:production
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -480,8 +585,11 @@ Bumps [black](https://github.com/psf/black) from 24.4.2 to 24.8.0. - [Release
   [Changelog](https://github.com/psf/black/blob/main/CHANGES.md) -
   [Commits](https://github.com/psf/black/compare/24.4.2...24.8.0)
 
---- updated-dependencies: - dependency-name: black dependency-type: direct:development update-type:
-  version-update:semver-minor ...
+--- updated-dependencies: - dependency-name: black dependency-type: direct:development
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -498,7 +606,10 @@ Bumps [docker/login-action](https://github.com/docker/login-action) from 3.2.0 t
   [Commits](https://github.com/docker/login-action/compare/0d4c9c5ea7693da7b068278f7b52bda2a190a446...9780b0c442fbb1117ed29e0efdff1e18412f7567)
 
 --- updated-dependencies: - dependency-name: docker/login-action dependency-type: direct:production
-  update-type: version-update:semver-minor ...
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -518,7 +629,11 @@ Bumps [python-semantic-release](https://github.com/python-semantic-release/pytho
   [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.8.5...v9.8.6)
 
 --- updated-dependencies: - dependency-name: python-semantic-release dependency-type:
-  direct:development update-type: version-update:semver-patch ...
+  direct:development
+
+update-type: version-update:semver-patch
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -535,7 +650,11 @@ Bumps [docker/build-push-action](https://github.com/docker/build-push-action) fr
   [Commits](https://github.com/docker/build-push-action/compare/1ca370b3a9802c92e886402e0dd88098a2533b12...5176d81f87c23d6fc96624dfdbcd9f3830bbe445)
 
 --- updated-dependencies: - dependency-name: docker/build-push-action dependency-type:
-  direct:production update-type: version-update:semver-minor ...
+  direct:production
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -553,7 +672,9 @@ Bumps [docker/metadata-action](https://github.com/docker/metadata-action) from
   [Commits](https://github.com/docker/metadata-action/compare/f7b4ed12385588c3f9bc252f0a2b520d83b52d48...60a0d343a0d8a18aedee9d34e62251f752153bdb)
 
 --- updated-dependencies: - dependency-name: docker/metadata-action dependency-type:
-  direct:production ...
+  direct:production
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -570,8 +691,11 @@ Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.2.2 to 8.3.2. - [Rel
   [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst) -
   [Commits](https://github.com/pytest-dev/pytest/compare/8.2.2...8.3.2)
 
---- updated-dependencies: - dependency-name: pytest dependency-type: direct:development update-type:
-  version-update:semver-minor ...
+--- updated-dependencies: - dependency-name: pytest dependency-type: direct:development
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -588,7 +712,11 @@ Bumps [docker/build-push-action](https://github.com/docker/build-push-action) fr
   [Commits](https://github.com/docker/build-push-action/compare/1a162644f9a7e87d8f4b053101d1d9a712edc18c...1ca370b3a9802c92e886402e0dd88098a2533b12)
 
 --- updated-dependencies: - dependency-name: docker/build-push-action dependency-type:
-  direct:production update-type: version-update:semver-minor ...
+  direct:production
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -608,7 +736,11 @@ Bumps [python-semantic-release](https://github.com/python-semantic-release/pytho
   [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.8.4...v9.8.5)
 
 --- updated-dependencies: - dependency-name: python-semantic-release dependency-type:
-  direct:development update-type: version-update:semver-patch ...
+  direct:development
+
+update-type: version-update:semver-patch
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -625,8 +757,11 @@ Bumps [copier](https://github.com/copier-org/copier) from 9.2.0 to 9.3.1. - [Rel
   [Changelog](https://github.com/copier-org/copier/blob/master/CHANGELOG.md) -
   [Commits](https://github.com/copier-org/copier/compare/v9.2.0...v9.3.1)
 
---- updated-dependencies: - dependency-name: copier dependency-type: direct:production update-type:
-  version-update:semver-minor ...
+--- updated-dependencies: - dependency-name: copier dependency-type: direct:production
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -646,7 +781,11 @@ Bumps [python-semantic-release](https://github.com/python-semantic-release/pytho
   [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.8.3...v9.8.4)
 
 --- updated-dependencies: - dependency-name: python-semantic-release dependency-type:
-  direct:development update-type: version-update:semver-patch ...
+  direct:development
+
+update-type: version-update:semver-patch
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -663,7 +802,11 @@ Bumps [docker/build-push-action](https://github.com/docker/build-push-action) fr
   [Commits](https://github.com/docker/build-push-action/compare/15560696de535e4014efeff63c48f16952e52dd1...1a162644f9a7e87d8f4b053101d1d9a712edc18c)
 
 --- updated-dependencies: - dependency-name: docker/build-push-action dependency-type:
-  direct:production update-type: version-update:semver-minor ...
+  direct:production
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -680,7 +823,11 @@ Bumps [docker/build-push-action](https://github.com/docker/build-push-action) fr
   [Commits](https://github.com/docker/build-push-action/compare/31159d49c0d4756269a0940a750801a1ea5d7003...15560696de535e4014efeff63c48f16952e52dd1)
 
 --- updated-dependencies: - dependency-name: docker/build-push-action dependency-type:
-  direct:production update-type: version-update:semver-minor ...
+  direct:production
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -697,7 +844,11 @@ Bumps [docker/build-push-action](https://github.com/docker/build-push-action) fr
   [Commits](https://github.com/docker/build-push-action/compare/ca052bb54ab0790a636c9b5f226502c73d547a25...31159d49c0d4756269a0940a750801a1ea5d7003)
 
 --- updated-dependencies: - dependency-name: docker/build-push-action dependency-type:
-  direct:production update-type: version-update:semver-major ...
+  direct:production
+
+update-type: version-update:semver-major
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -717,7 +868,11 @@ Bumps [python-semantic-release](https://github.com/python-semantic-release/pytho
   [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.8.1...v9.8.3)
 
 --- updated-dependencies: - dependency-name: python-semantic-release dependency-type:
-  direct:development update-type: version-update:semver-patch ...
+  direct:development
+
+update-type: version-update:semver-patch
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -734,7 +889,11 @@ Bumps [docker/build-push-action](https://github.com/docker/build-push-action) fr
   [Commits](https://github.com/docker/build-push-action/compare/2cdde995de11925a030ce8070c3d77a52ffcf1c0...ca052bb54ab0790a636c9b5f226502c73d547a25)
 
 --- updated-dependencies: - dependency-name: docker/build-push-action dependency-type:
-  direct:production update-type: version-update:semver-minor ...
+  direct:production
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -754,7 +913,11 @@ Bumps [python-semantic-release](https://github.com/python-semantic-release/pytho
   [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.8.0...v9.8.1)
 
 --- updated-dependencies: - dependency-name: python-semantic-release dependency-type:
-  direct:development update-type: version-update:semver-patch ...
+  direct:development
+
+update-type: version-update:semver-patch
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -771,8 +934,11 @@ Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.2.1 to 8.2.2. - [Rel
   [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst) -
   [Commits](https://github.com/pytest-dev/pytest/compare/8.2.1...8.2.2)
 
---- updated-dependencies: - dependency-name: pytest dependency-type: direct:development update-type:
-  version-update:semver-patch ...
+--- updated-dependencies: - dependency-name: pytest dependency-type: direct:development
+
+update-type: version-update:semver-patch
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -789,8 +955,11 @@ Bumps [sh](https://github.com/amoffat/sh) from 2.0.6 to 2.0.7. - [Release
   [Changelog](https://github.com/amoffat/sh/blob/develop/CHANGELOG.md) -
   [Commits](https://github.com/amoffat/sh/compare/2.0.6...2.0.7)
 
---- updated-dependencies: - dependency-name: sh dependency-type: direct:production update-type:
-  version-update:semver-patch ...
+--- updated-dependencies: - dependency-name: sh dependency-type: direct:production
+
+update-type: version-update:semver-patch
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -810,7 +979,11 @@ Bumps [python-semantic-release](https://github.com/python-semantic-release/pytho
   [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.7.3...v9.8.0)
 
 --- updated-dependencies: - dependency-name: python-semantic-release dependency-type:
-  direct:development update-type: version-update:semver-minor ...
+  direct:development
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -827,7 +1000,10 @@ Bumps [docker/login-action](https://github.com/docker/login-action) from 3.1.0 t
   [Commits](https://github.com/docker/login-action/compare/e92390c5fb421da1463c202d546fed0ec5c39f20...0d4c9c5ea7693da7b068278f7b52bda2a190a446)
 
 --- updated-dependencies: - dependency-name: docker/login-action dependency-type: direct:production
-  update-type: version-update:semver-minor ...
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -844,8 +1020,11 @@ Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.2.0 to 8.2.1. - [Rel
   [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst) -
   [Commits](https://github.com/pytest-dev/pytest/compare/8.2.0...8.2.1)
 
---- updated-dependencies: - dependency-name: pytest dependency-type: direct:development update-type:
-  version-update:semver-patch ...
+--- updated-dependencies: - dependency-name: pytest dependency-type: direct:development
+
+update-type: version-update:semver-patch
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -865,7 +1044,11 @@ Bumps [python-semantic-release](https://github.com/python-semantic-release/pytho
   [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.7.1...v9.7.3)
 
 --- updated-dependencies: - dependency-name: python-semantic-release dependency-type:
-  direct:development update-type: version-update:semver-patch ...
+  direct:development
+
+update-type: version-update:semver-patch
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -883,7 +1066,9 @@ Bumps [docker/metadata-action](https://github.com/docker/metadata-action) from
   [Commits](https://github.com/docker/metadata-action/compare/2ee3d3070bb41b40bf7305d15233321e12c1dc5c...f7b4ed12385588c3f9bc252f0a2b520d83b52d48)
 
 --- updated-dependencies: - dependency-name: docker/metadata-action dependency-type:
-  direct:production ...
+  direct:production
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -903,7 +1088,11 @@ Bumps [python-semantic-release](https://github.com/python-semantic-release/pytho
   [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.6.0...v9.7.1)
 
 --- updated-dependencies: - dependency-name: python-semantic-release dependency-type:
-  direct:development update-type: version-update:semver-minor ...
+  direct:development
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -921,7 +1110,9 @@ Bumps [docker/metadata-action](https://github.com/docker/metadata-action) from
   [Commits](https://github.com/docker/metadata-action/compare/1294d94f8ee362ab42b6da04c35f4cd03a0e6af7...2ee3d3070bb41b40bf7305d15233321e12c1dc5c)
 
 --- updated-dependencies: - dependency-name: docker/metadata-action dependency-type:
-  direct:production ...
+  direct:production
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -949,7 +1140,11 @@ Bumps [python-semantic-release](https://github.com/python-semantic-release/pytho
   [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.4.2...v9.6.0)
 
 --- updated-dependencies: - dependency-name: python-semantic-release dependency-type:
-  direct:development update-type: version-update:semver-minor ...
+  direct:development
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -966,8 +1161,11 @@ Bumps [black](https://github.com/psf/black) from 24.4.0 to 24.4.2. - [Release
   [Changelog](https://github.com/psf/black/blob/main/CHANGES.md) -
   [Commits](https://github.com/psf/black/compare/24.4.0...24.4.2)
 
---- updated-dependencies: - dependency-name: black dependency-type: direct:development update-type:
-  version-update:semver-patch ...
+--- updated-dependencies: - dependency-name: black dependency-type: direct:development
+
+update-type: version-update:semver-patch
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -984,8 +1182,11 @@ Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.1.1 to 8.2.0. - [Rel
   [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst) -
   [Commits](https://github.com/pytest-dev/pytest/compare/8.1.1...8.2.0)
 
---- updated-dependencies: - dependency-name: pytest dependency-type: direct:development update-type:
-  version-update:semver-minor ...
+--- updated-dependencies: - dependency-name: pytest dependency-type: direct:development
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -1003,7 +1204,9 @@ Bumps [docker/metadata-action](https://github.com/docker/metadata-action) from
   [Commits](https://github.com/docker/metadata-action/compare/c314eea2b27e3cb3c7d7be0618510234d8f6178e...1294d94f8ee362ab42b6da04c35f4cd03a0e6af7)
 
 --- updated-dependencies: - dependency-name: docker/metadata-action dependency-type:
-  direct:production ...
+  direct:production
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -1023,7 +1226,11 @@ Bumps [python-semantic-release](https://github.com/python-semantic-release/pytho
   [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.4.1...v9.4.2)
 
 --- updated-dependencies: - dependency-name: python-semantic-release dependency-type:
-  direct:development update-type: version-update:semver-patch ...
+  direct:development
+
+update-type: version-update:semver-patch
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -1040,8 +1247,11 @@ Bumps [black](https://github.com/psf/black) from 24.3.0 to 24.4.0. - [Release
   [Changelog](https://github.com/psf/black/blob/main/CHANGES.md) -
   [Commits](https://github.com/psf/black/compare/24.3.0...24.4.0)
 
---- updated-dependencies: - dependency-name: black dependency-type: direct:development update-type:
-  version-update:semver-minor ...
+--- updated-dependencies: - dependency-name: black dependency-type: direct:development
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -1058,8 +1268,11 @@ Bumps [copier](https://github.com/copier-org/copier) from 9.1.1 to 9.2.0. - [Rel
   [Changelog](https://github.com/copier-org/copier/blob/master/CHANGELOG.md) -
   [Commits](https://github.com/copier-org/copier/compare/v9.1.1...v9.2.0)
 
---- updated-dependencies: - dependency-name: copier dependency-type: direct:production update-type:
-  version-update:semver-minor ...
+--- updated-dependencies: - dependency-name: copier dependency-type: direct:production
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -1079,7 +1292,11 @@ Bumps [python-semantic-release](https://github.com/python-semantic-release/pytho
   [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.4.0...v9.4.1)
 
 --- updated-dependencies: - dependency-name: python-semantic-release dependency-type:
-  direct:development update-type: version-update:semver-patch ...
+  direct:development
+
+update-type: version-update:semver-patch
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -1099,7 +1316,11 @@ Bumps [python-semantic-release](https://github.com/python-semantic-release/pytho
   [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.3.1...v9.4.0)
 
 --- updated-dependencies: - dependency-name: python-semantic-release dependency-type:
-  direct:development update-type: version-update:semver-minor ...
+  direct:development
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -1119,7 +1340,11 @@ Bumps [python-semantic-release](https://github.com/python-semantic-release/pytho
   [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.1.1...v9.3.1)
 
 --- updated-dependencies: - dependency-name: python-semantic-release dependency-type:
-  direct:development update-type: version-update:semver-minor ...
+  direct:development
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -1137,7 +1362,9 @@ Bumps [docker/metadata-action](https://github.com/docker/metadata-action) from
   [Commits](https://github.com/docker/metadata-action/compare/75359341f62c2d990e0aa8543e545c74eec643ff...c314eea2b27e3cb3c7d7be0618510234d8f6178e)
 
 --- updated-dependencies: - dependency-name: docker/metadata-action dependency-type:
-  direct:production ...
+  direct:production
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -1155,7 +1382,10 @@ Bumps [pygithub](https://github.com/pygithub/pygithub) from 2.2.0 to 2.3.0. - [R
   [Commits](https://github.com/pygithub/pygithub/compare/v2.2.0...v2.3.0)
 
 --- updated-dependencies: - dependency-name: pygithub dependency-type: direct:production
-  update-type: version-update:semver-minor ...
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -1173,7 +1403,8 @@ Bumps [docker/login-action](https://github.com/docker/login-action) from
   [Commits](https://github.com/docker/login-action/compare/5139682d94efc37792e6b54386b5b470a68a4737...e92390c5fb421da1463c202d546fed0ec5c39f20)
 
 --- updated-dependencies: - dependency-name: docker/login-action dependency-type: direct:production
-  ...
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -1191,7 +1422,9 @@ Bumps [docker/metadata-action](https://github.com/docker/metadata-action) from
   [Commits](https://github.com/docker/metadata-action/compare/232fc64e3a4e54539e087c5976439ea54be0959d...75359341f62c2d990e0aa8543e545c74eec643ff)
 
 --- updated-dependencies: - dependency-name: docker/metadata-action dependency-type:
-  direct:production ...
+  direct:production
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -1208,7 +1441,11 @@ Bumps [docker/build-push-action](https://github.com/docker/build-push-action) fr
   [Commits](https://github.com/docker/build-push-action/compare/af5a7ed5ba88268d5278f7203fb52cd833f66d6e...2cdde995de11925a030ce8070c3d77a52ffcf1c0)
 
 --- updated-dependencies: - dependency-name: docker/build-push-action dependency-type:
-  direct:production update-type: version-update:semver-minor ...
+  direct:production
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -1225,8 +1462,11 @@ Bumps [black](https://github.com/psf/black) from 24.2.0 to 24.3.0. - [Release
   [Changelog](https://github.com/psf/black/blob/main/CHANGES.md) -
   [Commits](https://github.com/psf/black/compare/24.2.0...24.3.0)
 
---- updated-dependencies: - dependency-name: black dependency-type: direct:development update-type:
-  version-update:semver-minor ...
+--- updated-dependencies: - dependency-name: black dependency-type: direct:development
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -1244,7 +1484,9 @@ Bumps [docker/build-push-action](https://github.com/docker/build-push-action) fr
   [Commits](https://github.com/docker/build-push-action/compare/831ca179d3cf91cf0c90ca465a408fa61e2129a2...af5a7ed5ba88268d5278f7203fb52cd833f66d6e)
 
 --- updated-dependencies: - dependency-name: docker/build-push-action dependency-type:
-  direct:production ...
+  direct:production
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -1261,8 +1503,11 @@ Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.1.0 to 8.1.1. - [Rel
   [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst) -
   [Commits](https://github.com/pytest-dev/pytest/compare/8.1.0...8.1.1)
 
---- updated-dependencies: - dependency-name: pytest dependency-type: direct:development update-type:
-  version-update:semver-patch ...
+--- updated-dependencies: - dependency-name: pytest dependency-type: direct:development
+
+update-type: version-update:semver-patch
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -1279,7 +1524,10 @@ Bumps [actions/setup-python](https://github.com/actions/setup-python) from 2 to 
   [Commits](https://github.com/actions/setup-python/compare/v2...v5)
 
 --- updated-dependencies: - dependency-name: actions/setup-python dependency-type: direct:production
-  update-type: version-update:semver-major ...
+
+update-type: version-update:semver-major
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -1297,7 +1545,9 @@ Bumps [docker/metadata-action](https://github.com/docker/metadata-action) from
   [Commits](https://github.com/docker/metadata-action/compare/9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7...232fc64e3a4e54539e087c5976439ea54be0959d)
 
 --- updated-dependencies: - dependency-name: docker/metadata-action dependency-type:
-  direct:production ...
+  direct:production
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -1315,7 +1565,8 @@ Bumps [docker/login-action](https://github.com/docker/login-action) from
   [Commits](https://github.com/docker/login-action/compare/65b78e6e13532edd9afa3aa52ac7964289d1a9c1...5139682d94efc37792e6b54386b5b470a68a4737)
 
 --- updated-dependencies: - dependency-name: docker/login-action dependency-type: direct:production
-  ...
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -1323,19 +1574,6 @@ Signed-off-by: dependabot[bot] <support@github.com>
 ## v0.4.8 (2024-03-04)
 
 ### Chores
-
-- **deps**: Bump docker/build-push-action
-  ([`72b9af2`](https://github.com/charlesthomas/templatron/commit/72b9af2152c878e4e4293b8a5ea3c6d09aa170bf))
-
-Bumps [docker/build-push-action](https://github.com/docker/build-push-action) from
-  f2a1d5e99d037542a71f64918e516c093c6f3fc4 to 831ca179d3cf91cf0c90ca465a408fa61e2129a2. - [Release
-  notes](https://github.com/docker/build-push-action/releases) -
-  [Commits](https://github.com/docker/build-push-action/compare/f2a1d5e99d037542a71f64918e516c093c6f3fc4...831ca179d3cf91cf0c90ca465a408fa61e2129a2)
-
---- updated-dependencies: - dependency-name: docker/build-push-action dependency-type:
-  direct:production ...
-
-Signed-off-by: dependabot[bot] <support@github.com>
 
 - **deps**: Bump actions/checkout from 2 to 4
   ([`83451a9`](https://github.com/charlesthomas/templatron/commit/83451a9ab85087d6c4fabaeb3f642f1550a9c308))
@@ -1346,7 +1584,25 @@ Bumps [actions/checkout](https://github.com/actions/checkout) from 2 to 4. - [Re
   [Commits](https://github.com/actions/checkout/compare/v2...v4)
 
 --- updated-dependencies: - dependency-name: actions/checkout dependency-type: direct:production
-  update-type: version-update:semver-major ...
+
+update-type: version-update:semver-major
+
+...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+
+- **deps**: Bump docker/build-push-action
+  ([`72b9af2`](https://github.com/charlesthomas/templatron/commit/72b9af2152c878e4e4293b8a5ea3c6d09aa170bf))
+
+Bumps [docker/build-push-action](https://github.com/docker/build-push-action) from
+  f2a1d5e99d037542a71f64918e516c093c6f3fc4 to 831ca179d3cf91cf0c90ca465a408fa61e2129a2. - [Release
+  notes](https://github.com/docker/build-push-action/releases) -
+  [Commits](https://github.com/docker/build-push-action/compare/f2a1d5e99d037542a71f64918e516c093c6f3fc4...831ca179d3cf91cf0c90ca465a408fa61e2129a2)
+
+--- updated-dependencies: - dependency-name: docker/build-push-action dependency-type:
+  direct:production
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -1373,8 +1629,11 @@ Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.0.2 to 8.1.0. - [Rel
   [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst) -
   [Commits](https://github.com/pytest-dev/pytest/compare/8.0.2...8.1.0)
 
---- updated-dependencies: - dependency-name: pytest dependency-type: direct:development update-type:
-  version-update:semver-minor ...
+--- updated-dependencies: - dependency-name: pytest dependency-type: direct:development
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -1391,8 +1650,11 @@ Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.0.1 to 8.0.2. - [Rel
   [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst) -
   [Commits](https://github.com/pytest-dev/pytest/compare/8.0.1...8.0.2)
 
---- updated-dependencies: - dependency-name: pytest dependency-type: direct:development update-type:
-  version-update:semver-patch ...
+--- updated-dependencies: - dependency-name: pytest dependency-type: direct:development
+
+update-type: version-update:semver-patch
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -1407,7 +1669,11 @@ Bumps [python-semantic-release](https://github.com/python-semantic-release/pytho
   [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.1.0...v9.1.1)
 
 --- updated-dependencies: - dependency-name: python-semantic-release dependency-type:
-  direct:development update-type: version-update:semver-patch ...
+  direct:development
+
+update-type: version-update:semver-patch
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -1469,11 +1735,11 @@ Signed-off-by: dependabot[bot] <support@github.com>
 
 ### Continuous Integration
 
-- Add pytest
-  ([`f18183b`](https://github.com/charlesthomas/templatron/commit/f18183b574ad5dcb5f0d11256390639f7c3adbb3))
-
 - Add black
   ([`1c3af1f`](https://github.com/charlesthomas/templatron/commit/1c3af1f7a4c1d66c3078abe2573c07964d70d654))
+
+- Add pytest
+  ([`f18183b`](https://github.com/charlesthomas/templatron/commit/f18183b574ad5dcb5f0d11256390639f7c3adbb3))
 
 ### Testing
 
@@ -1517,7 +1783,11 @@ Bumps [python-semantic-release](https://github.com/python-semantic-release/pytho
   [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v8.7.0...v9.1.0)
 
 --- updated-dependencies: - dependency-name: python-semantic-release dependency-type:
-  direct:development update-type: version-update:semver-major ...
+  direct:development
+
+update-type: version-update:semver-major
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
@@ -1535,7 +1805,10 @@ Bumps [pygithub](https://github.com/pygithub/pygithub) from 2.1.1 to 2.2.0. - [R
   [Commits](https://github.com/pygithub/pygithub/compare/v2.1.1...v2.2.0)
 
 --- updated-dependencies: - dependency-name: pygithub dependency-type: direct:production
-  update-type: version-update:semver-minor ...
+
+update-type: version-update:semver-minor
+
+...
 
 Signed-off-by: dependabot[bot] <support@github.com>
 
