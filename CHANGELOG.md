@@ -1,6 +1,27 @@
 # CHANGELOG
 
 
+## v0.4.86 (2025-01-10)
+
+### Chores
+
+- **deps**: Bump sh from 2.1.0 to 2.2.1
+  ([`01c7261`](https://github.com/charlesthomas/templatron/commit/01c7261b060fdf1e2cdf016e734bd0cb23931726))
+
+Bumps [sh](https://github.com/amoffat/sh) from 2.1.0 to 2.2.1. - [Release
+  notes](https://github.com/amoffat/sh/releases) -
+  [Changelog](https://github.com/amoffat/sh/blob/develop/CHANGELOG.md) -
+  [Commits](https://github.com/amoffat/sh/compare/2.1.0...2.2.1)
+
+--- updated-dependencies: - dependency-name: sh dependency-type: direct:production
+
+update-type: version-update:semver-minor
+
+...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+
+
 ## v0.4.85 (2024-12-27)
 
 ### Chores
