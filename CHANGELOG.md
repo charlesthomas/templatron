@@ -1,6 +1,25 @@
 # CHANGELOG
 
 
+## v0.4.96 (2025-02-28)
+
+### Chores
+
+- **deps**: Bump docker/metadata-action from 5.6.1 to 5.7.0
+  ([`5d4f4f7`](https://github.com/charlesthomas/templatron/commit/5d4f4f74039ef3dc3fe8a07a0c02439e9ae39b1f))
+
+Bumps [docker/metadata-action](https://github.com/docker/metadata-action) from 5.6.1 to 5.7.0. -
+  [Release notes](https://github.com/docker/metadata-action/releases) -
+  [Commits](https://github.com/docker/metadata-action/compare/369eb591f429131d6889c46b94e711f089e6ca96...902fa8ec7d6ecbf8d84d538b9b233a880e428804)
+
+--- updated-dependencies: - dependency-name: docker/metadata-action dependency-type:
+  direct:production
+
+update-type: version-update:semver-minor ...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+
+
 ## v0.4.95 (2025-02-28)
 
 ### Chores
