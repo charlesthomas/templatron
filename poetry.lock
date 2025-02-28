@@ -1215,13 +1215,13 @@ jupyter = ["ipywidgets (>=7.5.1,<9)"]
 
 [[package]]
 name = "sh"
-version = "2.2.1"
+version = "2.2.2"
 description = "Python subprocess replacement"
 optional = false
 python-versions = "<4.0,>=3.8.1"
 files = [
-    {file = "sh-2.2.1-py3-none-any.whl", hash = "sha256:c7369c4ae13729d8ea100b5e93af1a8be528a008433428e38651c9f2b5b5fe2c"},
-    {file = "sh-2.2.1.tar.gz", hash = "sha256:287021ae84183dea49787985e33797dda7fe769e4f95f2c94dff8e245ab4cb00"},
+    {file = "sh-2.2.2-py3-none-any.whl", hash = "sha256:e0b15b4ae8ffcd399bc8ffddcbd770a43c7a70a24b16773fbb34c001ad5d52af"},
+    {file = "sh-2.2.2.tar.gz", hash = "sha256:653227a7c41a284ec5302173fbc044ee817c7bad5e6e4d8d55741b9aeb9eb65b"},
 ]
 
 [[package]]
@@ -1387,4 +1387,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "bd211273205b1e4170da837204d2dc315077ed3b4f9d7527f5b94b8e5046e3d9"
+content-hash = "bc597f0f8525b6eb32e5a1aa6cbdbd88b9e19ebf38aac7d058bdc776c981b071"
