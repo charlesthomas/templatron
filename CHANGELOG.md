@@ -1,6 +1,26 @@
 # CHANGELOG
 
 
+## v0.4.101 (2025-04-25)
+
+### Chores
+
+- **deps**: Bump docker/build-push-action from 6.15.0 to 6.16.0
+  ([`0c9b78d`](https://github.com/charlesthomas/templatron/commit/0c9b78dc950533e71b3679d41833d5d17538df86))
+
+Bumps [docker/build-push-action](https://github.com/docker/build-push-action) from 6.15.0 to 6.16.0.
+  - [Release notes](https://github.com/docker/build-push-action/releases) -
+  [Commits](https://github.com/docker/build-push-action/compare/471d1dc4e07e5cdedd4c2171150001c434f0b7a4...14487ce63c7a62a4a324b0bfb37086795e31c6c1)
+
+--- updated-dependencies: - dependency-name: docker/build-push-action dependency-version: 6.16.0
+
+dependency-type: direct:production
+
+update-type: version-update:semver-minor ...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+
+
 ## v0.4.100 (2025-03-14)
 
 ### Chores
