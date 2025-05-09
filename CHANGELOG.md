@@ -1,6 +1,29 @@
 # CHANGELOG
 
 
+## v0.4.103 (2025-05-09)
+
+### Chores
+
+- **deps-dev**: Bump python-semantic-release from 9.21.0 to 9.21.1
+  ([`86651cd`](https://github.com/charlesthomas/templatron/commit/86651cd5a0d7b32f965be0aee3bc4bdec89d447d))
+
+Bumps [python-semantic-release](https://github.com/python-semantic-release/python-semantic-release)
+  from 9.21.0 to 9.21.1. - [Release
+  notes](https://github.com/python-semantic-release/python-semantic-release/releases) -
+  [Changelog](https://github.com/python-semantic-release/python-semantic-release/blob/master/CHANGELOG.rst)
+  -
+  [Commits](https://github.com/python-semantic-release/python-semantic-release/compare/v9.21...v9.21.1)
+
+--- updated-dependencies: - dependency-name: python-semantic-release dependency-version: 9.21.1
+
+dependency-type: direct:development
+
+update-type: version-update:semver-patch ...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+
+
 ## v0.4.102 (2025-04-25)
 
 ### Chores
