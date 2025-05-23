@@ -1,6 +1,27 @@
 # CHANGELOG
 
 
+## v0.4.106 (2025-05-23)
+
+### Chores
+
+- **deps**: Bump click from 8.2.0 to 8.2.1
+  ([`61f24ed`](https://github.com/charlesthomas/templatron/commit/61f24ed07b6811579750b1c96b42d0ca490848f3))
+
+Bumps [click](https://github.com/pallets/click) from 8.2.0 to 8.2.1. - [Release
+  notes](https://github.com/pallets/click/releases) -
+  [Changelog](https://github.com/pallets/click/blob/main/CHANGES.rst) -
+  [Commits](https://github.com/pallets/click/compare/8.2.0...8.2.1)
+
+--- updated-dependencies: - dependency-name: click dependency-version: 8.2.1
+
+dependency-type: direct:production
+
+update-type: version-update:semver-patch ...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+
+
 ## v0.4.105 (2025-05-16)
 
 ### Chores
