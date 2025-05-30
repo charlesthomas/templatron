@@ -1,6 +1,33 @@
 # CHANGELOG
 
 
+## v0.4.107 (2025-05-30)
+
+### Chores
+
+- **deps**: Bump docker/build-push-action from 6.17.0 to 6.18.0
+  ([`9c78db4`](https://github.com/charlesthomas/templatron/commit/9c78db4cbcb3b511b0162fb0ee5043231e24cae5))
+
+Bumps [docker/build-push-action](https://github.com/docker/build-push-action) from 6.17.0 to 6.18.0.
+  - [Release notes](https://github.com/docker/build-push-action/releases) -
+  [Commits](https://github.com/docker/build-push-action/compare/1dc73863535b631f98b2378be8619f83b136f4a0...263435318d21b8e681c14492fe198d362a7d2c83)
+
+--- updated-dependencies: - dependency-name: docker/build-push-action dependency-version: 6.18.0
+
+dependency-type: direct:production
+
+update-type: version-update:semver-minor ...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+
+### Continuous Integration
+
+- Version lock python-semantic-release below 10.0
+  ([`ac96c57`](https://github.com/charlesthomas/templatron/commit/ac96c57d2bb7478a1ad25fc2481c2322fdd2f7f4))
+
+so it doesn't cut a damn 1.0 release on a github action dependency update
+
+
 ## v0.4.106 (2025-05-23)
 
 ### Chores
