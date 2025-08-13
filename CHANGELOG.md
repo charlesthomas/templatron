@@ -1,6 +1,27 @@
 # CHANGELOG
 
 
+## v0.4.113 (2025-08-13)
+
+### Chores
+
+- **deps**: Bump pygithub from 2.6.1 to 2.7.0
+  ([`a88b4c0`](https://github.com/charlesthomas/templatron/commit/a88b4c0b8b8d2091f6107d94c5d0150761cd3461))
+
+Bumps [pygithub](https://github.com/pygithub/pygithub) from 2.6.1 to 2.7.0. - [Release
+  notes](https://github.com/pygithub/pygithub/releases) -
+  [Changelog](https://github.com/PyGithub/PyGithub/blob/main/doc/changes.rst) -
+  [Commits](https://github.com/pygithub/pygithub/compare/v2.6.1...v2.7.0)
+
+--- updated-dependencies: - dependency-name: pygithub dependency-version: 2.7.0
+
+dependency-type: direct:production
+
+update-type: version-update:semver-minor ...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+
+
 ## v0.4.112 (2025-08-13)
 
 ### Chores
