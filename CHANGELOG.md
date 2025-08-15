@@ -1,6 +1,27 @@
 # CHANGELOG
 
 
+## v0.4.115 (2025-08-15)
+
+### Chores
+
+- **deps**: Bump actions/checkout from 4 to 5
+  ([`d4e72e9`](https://github.com/charlesthomas/templatron/commit/d4e72e9b41c800bde81737cf31916937442078b6))
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4 to 5. - [Release
+  notes](https://github.com/actions/checkout/releases) -
+  [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md) -
+  [Commits](https://github.com/actions/checkout/compare/v4...v5)
+
+--- updated-dependencies: - dependency-name: actions/checkout dependency-version: '5'
+
+dependency-type: direct:production
+
+update-type: version-update:semver-major ...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+
+
 ## v0.4.114 (2025-08-13)
 
 ### Chores
