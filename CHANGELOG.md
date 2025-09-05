@@ -1,6 +1,27 @@
 # CHANGELOG
 
 
+## v0.4.119 (2025-09-05)
+
+### Chores
+
+- **deps**: Bump pygithub from 2.7.0 to 2.8.1
+  ([`74e5211`](https://github.com/charlesthomas/templatron/commit/74e5211e65dfdc303d233707e4b9927889ff2d57))
+
+Bumps [pygithub](https://github.com/pygithub/pygithub) from 2.7.0 to 2.8.1. - [Release
+  notes](https://github.com/pygithub/pygithub/releases) -
+  [Changelog](https://github.com/PyGithub/PyGithub/blob/main/doc/changes.rst) -
+  [Commits](https://github.com/pygithub/pygithub/compare/v2.7.0...v2.8.1)
+
+--- updated-dependencies: - dependency-name: pygithub dependency-version: 2.8.1
+
+dependency-type: direct:production
+
+update-type: version-update:semver-minor ...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+
+
 ## v0.4.118 (2025-09-05)
 
 ### Chores
