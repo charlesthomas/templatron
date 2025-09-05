@@ -1,6 +1,26 @@
 # CHANGELOG
 
 
+## v0.4.120 (2025-09-05)
+
+### Chores
+
+- **deps**: Bump actions/setup-python from 5 to 6
+  ([`df1e97c`](https://github.com/charlesthomas/templatron/commit/df1e97c45e4b19936b2d9aa957602e1d857a89df))
+
+Bumps [actions/setup-python](https://github.com/actions/setup-python) from 5 to 6. - [Release
+  notes](https://github.com/actions/setup-python/releases) -
+  [Commits](https://github.com/actions/setup-python/compare/v5...v6)
+
+--- updated-dependencies: - dependency-name: actions/setup-python dependency-version: '6'
+
+dependency-type: direct:production
+
+update-type: version-update:semver-major ...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+
+
 ## v0.4.119 (2025-09-05)
 
 ### Chores
