@@ -1,6 +1,27 @@
 # CHANGELOG
 
 
+## v0.4.121 (2025-09-15)
+
+### Chores
+
+- **deps**: Bump copier from 9.10.1 to 9.10.2
+  ([`8913644`](https://github.com/charlesthomas/templatron/commit/891364461d95e4b2fd1855eec14c3d9793d7dd5d))
+
+Bumps [copier](https://github.com/copier-org/copier) from 9.10.1 to 9.10.2. - [Release
+  notes](https://github.com/copier-org/copier/releases) -
+  [Changelog](https://github.com/copier-org/copier/blob/master/CHANGELOG.md) -
+  [Commits](https://github.com/copier-org/copier/compare/v9.10.1...v9.10.2)
+
+--- updated-dependencies: - dependency-name: copier dependency-version: 9.10.2
+
+dependency-type: direct:production
+
+update-type: version-update:semver-patch ...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+
+
 ## v0.4.120 (2025-09-05)
 
 ### Chores
