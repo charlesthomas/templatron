@@ -1,6 +1,27 @@
 # CHANGELOG
 
 
+## v0.4.126 (2026-01-11)
+
+### Chores
+
+- **deps**: Bump actions/checkout from 5 to 6
+  ([`9fc1dfc`](https://github.com/charlesthomas/templatron/commit/9fc1dfc5cb05c0a1b3bdffe79aeae5b95d6d7caa))
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 5 to 6. - [Release
+  notes](https://github.com/actions/checkout/releases) -
+  [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md) -
+  [Commits](https://github.com/actions/checkout/compare/v5...v6)
+
+--- updated-dependencies: - dependency-name: actions/checkout dependency-version: '6'
+
+dependency-type: direct:production
+
+update-type: version-update:semver-major ...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+
+
 ## v0.4.125 (2026-01-11)
 
 ### Continuous Integration
