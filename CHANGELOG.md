@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.4.125 (2026-01-11)
+
+### Continuous Integration
+
+- Fix `lint-and-test`
+  ([`2d95fb0`](https://github.com/charlesthomas/templatron/commit/2d95fb038ef4048371cece3fb4154443cf8ec184))
+
+
 ## v0.4.124 (2025-10-30)
 
 ### Chores
