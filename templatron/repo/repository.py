@@ -222,13 +222,11 @@ class Repository(BaseRepo):
         # this is a no-op if it's already been cloned
 
         if self.operation == "updating":
-            self.logger.debug(
-                f"""running copier to apply template...
+            self.logger.debug(f"""running copier to apply template...
 
 run_update({self.template.clone_path}, {self.clone_path},
 answers_file={self.answers_file}, overwrite=True, quiet={quiet},
-vcs_ref={self.template.vcs_ref})"""
-            )
+vcs_ref={self.template.vcs_ref})""")
 
             run_update(
                 dst_path=self.clone_path,
@@ -240,13 +238,11 @@ vcs_ref={self.template.vcs_ref})"""
             )
 
         else:  # onboarding or fixing
-            self.logger.debug(
-                f"""running copier to apply template...
+            self.logger.debug(f"""running copier to apply template...
 
 run_copy({self.template.clone_path}, {self.clone_path},
 answers_file={self.answers_file}, quiet={quiet},
-vcs_ref={self.template.vcs_ref})"""
-            )
+vcs_ref={self.template.vcs_ref})""")
 
             run_copy(
                 self.template.clone_path,
