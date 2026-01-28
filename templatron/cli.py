@@ -9,7 +9,6 @@ from templatron import __version__
 from templatron.templatron import Templatron
 from templatron.config.click_yaml_provider import click_yaml_provider
 
-
 DEFAULT_CLONE_ROOT = os.path.join(gettempdir(), "templatron_clones")
 
 
