@@ -97,7 +97,7 @@ class TestBaseRepo(TestCase):
         self.test_repo.clone_url  # pylint: disable=pointless-statement
         self.test_repo.github.clone_url.replace.assert_called_with(
             "github.com",
-            "fake_token@github.com",
+            "x-access-token:fake_token@github.com",
         )
 
     def test_head(self):
