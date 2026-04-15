@@ -52,7 +52,7 @@ class BaseRepo(object):
 
     @property
     def clone_url(self):
-        return self.github.clone_url.replace("github.com", f"{self.token}@github.com")
+        return self.github.clone_url.replace("github.com", f"x-access-token:{self.token}@github.com")
 
     @property
     def head(self):
