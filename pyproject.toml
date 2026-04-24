@@ -8,7 +8,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-click = "8.3.2"
+click = "8.3.3"
 click-config-file = "0.6.0"
 copier = "9.14.3"
 PyGithub = "2.9.1"
