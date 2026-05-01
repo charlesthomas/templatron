@@ -335,14 +335,14 @@ files = [
 
 [[package]]
 name = "copier"
-version = "9.14.3"
+version = "9.15.0"
 description = "A library for rendering project templates."
 optional = false
 python-versions = ">=3.10"
 groups = ["main"]
 files = [
-    {file = "copier-9.14.3-py3-none-any.whl", hash = "sha256:b237bb8a7fba91fbe0580ee54292e7a4c915028f08389f1ee99332fb70d2cab1"},
-    {file = "copier-9.14.3.tar.gz", hash = "sha256:8737a14af1540ad19d6a6d59a05ff07bb0a81b286cca9ee79163572352df6e5e"},
+    {file = "copier-9.15.0-py3-none-any.whl", hash = "sha256:0f59c2ea36df42f3ded85c091c3f1e2c8d3814b537504f0abc8c2e508f7e013d"},
+    {file = "copier-9.15.0.tar.gz", hash = "sha256:57b951d9f63b6b9d6ce3907fb1bd4672f60e2819a42393b971122d480059383f"},
 ]
 
 [package.dependencies]
@@ -1513,4 +1513,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "717bf2f638e49073d7d6aef822b5c83eb6dbdce2a97cafbd64f4d3fd13794fe1"
+content-hash = "f64eb3a62ed9dde065e29cb9a114329878ceb09a0774efbf8d6efb29d85515b4"
