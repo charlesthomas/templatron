@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "templatron"
-version = "1.0.30"
+version = "1.0.31"
 description = "🤖 templatron is a harness for automatically running copier when your templates are updated"
 authors = ["Charles Thomas <ch@rlesthom.as>"]
 license = "Apache-2.0"
