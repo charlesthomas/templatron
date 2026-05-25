@@ -15,6 +15,7 @@ from templatron.exceptions import (
     TemplatronException,
     GitConfigError,
     MissingRequiredConfigError,
+    StaleCloneError,
     UnrecognizableBaseBranchError,
 )
 from templatron.templatron import Templatron
@@ -470,6 +471,26 @@ class TestFetchRepoList(TestCase):
         """
 
         mock_build.side_effect = UnrecognizableBaseBranchError
+        mock_die.side_effect = SystemExit
+        with self.assertRaises(SystemExit):
+            self.templatron.onboard("repo")
+        mock_start.assert_called_with("onboarding")
+        mock_stop.assert_not_called()
+
+    @patch("templatron.templatron.Templatron.die")
+    @patch("templatron.templatron.Templatron.start")
+    @patch("templatron.templatron.Templatron.build_repo")
+    @patch("templatron.templatron.Templatron.stop")
+    def test_onboard_stale_clone(
+        self, mock_stop, mock_build, mock_start, mock_die
+    ):
+        """
+        Test Templatron.onboard() exits cleanly via die() when the
+        repo's update branch already exists from a prior run, rather
+        than letting the exception propagate as a raw traceback.
+        """
+
+        mock_build().onboard.side_effect = StaleCloneError("stale")
         mock_die.side_effect = SystemExit
         with self.assertRaises(SystemExit):
             self.templatron.onboard("repo")

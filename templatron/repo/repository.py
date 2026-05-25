@@ -6,7 +6,7 @@ import yaml
 from copier import run_copy, run_update
 
 from templatron.commit_template import commit_template
-from templatron.exceptions import HookFailure
+from templatron.exceptions import HookFailure, StaleCloneError
 from templatron.log_or_print import log_or_print
 from templatron.repo.base_repo import BaseRepo
 
@@ -285,6 +285,14 @@ vcs_ref={self.template.vcs_ref})""")
             return
 
         self.logger.debug(f"switch to update branch {self.update_branch_name}")
+        if self.local_branch_exists(self.update_branch_name):
+            raise StaleCloneError(
+                f"branch '{self.update_branch_name}' already exists in "
+                f"{self.clone_path} — likely left behind by a previous "
+                "run that didn't clean up. Delete the clone directory "
+                "and retry, or pass --autoclean to remove clones "
+                "automatically."
+            )
         self.git_cmd("checkout", "-b", self.update_branch_name)
 
     def update(self, operation="updating"):

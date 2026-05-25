@@ -103,6 +103,13 @@ class BaseRepo(object):
             return git(cmd, *args)
         return git(cmd, *args, _cwd=self.clone_path)
 
+    def local_branch_exists(self, branch):
+        try:
+            self.git_cmd("rev-parse", "--verify", f"refs/heads/{branch}")
+            return True
+        except ErrorReturnCode:
+            return False
+
     def maybe_switch_branch(self):
         if self.active_branch == self.base_branch:
             return

@@ -22,6 +22,10 @@ class MissingRequiredConfigError(TemplatronException):
     pass
 
 
+class StaleCloneError(TemplatronException):
+    pass
+
+
 class TemplateConfigMissingError(TemplatronException):
     pass
 
