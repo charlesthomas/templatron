@@ -125,6 +125,9 @@ runtime. The others are core to `git` and can not be changed.
 $ templatron --help
 Usage: templatron [OPTIONS] TEMPLATE COMMAND [ARGS]...
 
+  TEMPLATE is the source template repo, accepted as 'org/name', a bare name
+  (org from config), or a clone URL (SSH or HTTPS, with or without '.git').
+
 Options:
   --autoclean / --no-autoclean    remove clones from disk after running
   -r, --clone-root TEXT           path to clone repos
@@ -136,19 +139,22 @@ Options:
                                   .rej files. Unset means use copier's own
                                   default.
   -d, --dry-run                   don't push changes to cloned repos
+  -i, --interactive               run in interactive mode to be asked
+                                  onboarding questions
+  -l, --log-level TEXT
+  --logging-config FILE           path to logging_config.yaml
   -b, --template-branch TEXT      branch of the template to sync from
   -t, --template-config TEXT      path inside the template repo where its
                                   config is stored
   -e, --token-variable-name TEXT  name of the environment variable storing the
                                   GitHub token
-  -l, --log-level TEXT
-  --logging-config FILE           path to logging_config.yaml
   --config FILE                   Read configuration from FILE.
   --version                       Show the version and exit.
   --help                          Show this message and exit.
 
 Commands:
-  onboard  onboard a repo to be updated by a template
+  fix      fix an existing template PR
+  onboard  onboard a repo to be updated by a template.
   update   update repos already configured for a template
 ```
 
@@ -242,6 +248,14 @@ repos:
       org: a-different-github-org
   - a-third-github-org/some-other-repo
 ```
+
+Anywhere a repo identifier is accepted — the `TEMPLATE` argument, the `onboard` repo argument, and entries in the template config — these forms all resolve identically:
+
+- `org/name`
+- `name` (org comes from the template config default)
+- `git@github.com:org/name.git`
+- `https://github.com/org/name(.git)?`
+- `ssh://git@github.com/org/name(.git)?`
 
 ## Hooks
 
