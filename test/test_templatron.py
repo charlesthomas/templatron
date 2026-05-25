@@ -537,6 +537,20 @@ class TestFetchRepoList(TestCase):
         with self.assertRaises(MissingRequiredConfigError):
             self.templatron.split_org_and_name("fake_name")
 
+    def test_split_org_and_name_no_template(self):
+        """
+        Test Templatron.split_org_and_name() raises a clear config error
+        when called before self.template has been built — e.g. from
+        within build_template() itself when the user passed a bare
+        template name on the CLI.
+        """
+
+        self.templatron.template = None
+        with self.assertRaisesRegex(
+            MissingRequiredConfigError, "template.*has not been loaded"
+        ):
+            self.templatron.split_org_and_name("fake_name")
+
     @patch("templatron.templatron.Templatron.setup_logging")
     @patch("templatron.templatron.Templatron.maybe_log_dry_run")
     @patch("templatron.templatron.Templatron.validate_config")

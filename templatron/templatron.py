@@ -249,6 +249,13 @@ class Templatron(object):
             org = parts[0]
             name = parts[1]
         else:
+            if self.template is None:
+                raise MissingRequiredConfigError(
+                    f"Cannot determine org for '{name}': the template "
+                    "config has not been loaded yet, so there is no "
+                    "default org to fall back on. Specify the template "
+                    "as '<org>/<name>' on the command line."
+                )
             org = self.template.config.org
             if org is None:
                 raise MissingRequiredConfigError(
