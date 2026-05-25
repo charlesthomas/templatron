@@ -12,7 +12,13 @@ from templatron.config.click_yaml_provider import click_yaml_provider
 DEFAULT_CLONE_ROOT = os.path.join(gettempdir(), "templatron_clones")
 
 
-@click.group()
+@click.group(
+    help=(
+        "TEMPLATE is the source template repo, accepted as "
+        "'org/name', a bare name (org from config), or a clone URL "
+        "(SSH or HTTPS, with or without '.git')."
+    )
+)
 @click.pass_context
 @click.argument("template")
 @click.option(
@@ -99,7 +105,13 @@ def update(ctx, single_repo, cache):
     templatron.update(single_repo, cache)
 
 
-@main.command(help="onboard a repo to be updated by a template")
+@main.command(
+    help=(
+        "onboard a repo to be updated by a template. ONBOARDING_REPO "
+        "accepts the same forms as TEMPLATE: 'org/name', a bare name, "
+        "or a clone URL."
+    )
+)
 @click.pass_context
 @click.argument("onboarding_repo")
 def onboard(ctx, onboarding_repo):
