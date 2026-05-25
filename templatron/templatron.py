@@ -244,6 +244,18 @@ class Templatron(object):
         return return_list
 
     def split_org_and_name(self, name):
+        # Accept clone URLs (SSH or HTTPS) in addition to "org/name" or a
+        # bare name, since clone URLs are what GitHub's UI and `gh` print.
+        # SSH:   git@github.com:org/name(.git)?
+        # HTTPS: https://github.com/org/name(.git)?
+        # ssh:// git+ssh://git@github.com/org/name(.git)?
+        if name.startswith("git@") and ":" in name:
+            name = name.split(":", 1)[1]
+        elif "://" in name:
+            name = name.split("://", 1)[1].split("/", 1)[1]
+        if name.endswith(".git"):
+            name = name[: -len(".git")]
+
         parts = name.split("/")
         if len(parts) >= 2:
             org = parts[0]

@@ -537,6 +537,42 @@ class TestFetchRepoList(TestCase):
         with self.assertRaises(MissingRequiredConfigError):
             self.templatron.split_org_and_name("fake_name")
 
+    def test_split_org_and_name_ssh_url(self):
+        """
+        Test Templatron.split_org_and_name() accepts SSH clone URLs.
+        """
+
+        self.assertEqual(
+            self.templatron.split_org_and_name(
+                "git@github.com:fake_org/fake_name.git"
+            ),
+            ("fake_org", "fake_name"),
+        )
+
+    def test_split_org_and_name_https_url(self):
+        """
+        Test Templatron.split_org_and_name() accepts HTTPS clone URLs.
+        """
+
+        self.assertEqual(
+            self.templatron.split_org_and_name(
+                "https://github.com/fake_org/fake_name.git"
+            ),
+            ("fake_org", "fake_name"),
+        )
+
+    def test_split_org_and_name_ssh_scheme_url(self):
+        """
+        Test Templatron.split_org_and_name() accepts ssh:// scheme URLs.
+        """
+
+        self.assertEqual(
+            self.templatron.split_org_and_name(
+                "ssh://git@github.com/fake_org/fake_name.git"
+            ),
+            ("fake_org", "fake_name"),
+        )
+
     def test_split_org_and_name_no_template(self):
         """
         Test Templatron.split_org_and_name() raises a clear config error
