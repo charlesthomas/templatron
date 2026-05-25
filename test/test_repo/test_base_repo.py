@@ -7,7 +7,7 @@ Unit tests for templatron/repo/base_repo.py
 from unittest import TestCase
 from unittest.mock import MagicMock, patch
 
-from sh import ErrorReturnCode
+from sh import ErrorReturnCode, ErrorReturnCode_1
 
 from templatron.exceptions import DirtyRepoError, UnrecognizableBaseBranchError
 from templatron.repo.base_repo import BaseRepo
@@ -221,6 +221,30 @@ class TestBaseRepo(TestCase):
 
         self.test_repo.git_cmd("commit", "some args")
         mock_git.assert_called_with("commit", "some args", _cwd="/fake/root/fake repo")
+
+    @patch("templatron.repo.base_repo.BaseRepo.git_cmd")
+    def test_local_branch_exists_true(self, mock_git):
+        """
+        Test BaseRepo.local_branch_exists() returns True when
+        git rev-parse --verify succeeds.
+        """
+
+        self.assertTrue(self.test_repo.local_branch_exists("fake_branch"))
+        mock_git.assert_called_with(
+            "rev-parse", "--verify", "refs/heads/fake_branch"
+        )
+
+    @patch("templatron.repo.base_repo.BaseRepo.git_cmd")
+    def test_local_branch_exists_false(self, mock_git):
+        """
+        Test BaseRepo.local_branch_exists() returns False when
+        git rev-parse --verify exits non-zero (branch missing).
+        """
+
+        mock_git.side_effect = ErrorReturnCode_1(
+            full_cmd="git", stdout=b"", stderr=b""
+        )
+        self.assertFalse(self.test_repo.local_branch_exists("fake_branch"))
 
     @patch.object(BaseRepo, "active_branch", "fake_branch")
     @patch.object(BaseRepo, "base_branch", "fake_branch")

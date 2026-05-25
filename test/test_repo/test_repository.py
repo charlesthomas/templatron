@@ -9,7 +9,7 @@ from pathlib import Path
 from unittest import TestCase
 from unittest.mock import MagicMock, patch
 
-from templatron.exceptions import HookFailure
+from templatron.exceptions import HookFailure, StaleCloneError
 from templatron.repo.repository import Repository
 from templatron.repo.template import Template
 
@@ -572,15 +572,35 @@ class TestRepository(TestCase):
         mock_git.assert_not_called()
 
     @patch.object(Repository, "update_branch_name", "fake_branch")
+    @patch("templatron.repo.repository.Repository.local_branch_exists")
     @patch("templatron.repo.repository.Repository.git_cmd")
-    def test_switch_to_update_branch_not_fixing(self, mock_git):
+    def test_switch_to_update_branch_not_fixing(self, mock_git, mock_exists):
         """
         Docs
         """
 
+        mock_exists.return_value = False
         self.test_repo.operation = "not fixing"
         self.test_repo.switch_to_update_branch()
         mock_git.assert_called_with("checkout", "-b", "fake_branch")
+
+    @patch.object(Repository, "update_branch_name", "fake_branch")
+    @patch("templatron.repo.repository.Repository.local_branch_exists")
+    @patch("templatron.repo.repository.Repository.git_cmd")
+    def test_switch_to_update_branch_stale_branch(
+        self, mock_git, mock_exists
+    ):
+        """
+        Test switch_to_update_branch() raises StaleCloneError when the
+        target update branch already exists locally — typically from a
+        prior run that didn't clean up.
+        """
+
+        mock_exists.return_value = True
+        self.test_repo.operation = "not fixing"
+        with self.assertRaisesRegex(StaleCloneError, "fake_branch"):
+            self.test_repo.switch_to_update_branch()
+        mock_git.assert_not_called()
 
     @patch.object(Repository, "needs_update", True)
     @patch("templatron.repo.repository.Repository.clean_stale_branches")

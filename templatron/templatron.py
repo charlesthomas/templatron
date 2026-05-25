@@ -181,7 +181,7 @@ class Templatron(object):
         try:
             repo = self.build_repo(onboarding_repo)
             repo.onboard()
-        except UnrecognizableBaseBranchError as error:
+        except TemplatronException as error:
             self.die(error)
         except KeyboardInterrupt:
             self.maybe_clean()
