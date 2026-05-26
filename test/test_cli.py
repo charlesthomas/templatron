@@ -39,6 +39,51 @@ class TestUpdate(TestCase):
         self.runner.invoke(main, ["template", "update", "-1", "single_repo"])
         mock_templatron().update.assert_called_with("single_repo", None)
 
+    @patch("templatron.cli.Templatron")
+    def test_conflict_resolution_defaults_none(self, mock_templatron):
+        """
+        Without --conflict-resolution, Templatron is constructed with
+        conflict_resolution=None so copier's own default applies.
+        """
+
+        self.runner.invoke(main, ["template", "update"])
+        kwargs = mock_templatron.call_args.kwargs
+        self.assertIsNone(kwargs["conflict_resolution"])
+
+    @patch("templatron.cli.Templatron")
+    def test_conflict_resolution_overwrite(self, mock_templatron):
+        """
+        --conflict-resolution overwrite reaches Templatron(...).
+        """
+
+        self.runner.invoke(
+            main, ["--conflict-resolution", "overwrite", "template", "update"]
+        )
+        kwargs = mock_templatron.call_args.kwargs
+        self.assertEqual(kwargs["conflict_resolution"], "overwrite")
+
+    @patch("templatron.cli.Templatron")
+    def test_conflict_resolution_short_flag(self, mock_templatron):
+        """
+        -x is the short form of --conflict-resolution.
+        """
+
+        self.runner.invoke(main, ["-x", "manual", "template", "update"])
+        kwargs = mock_templatron.call_args.kwargs
+        self.assertEqual(kwargs["conflict_resolution"], "manual")
+
+    @patch("templatron.cli.Templatron")
+    def test_conflict_resolution_rejects_invalid(self, mock_templatron):
+        """
+        click rejects any value outside the manual/overwrite choice set.
+        """
+
+        res = self.runner.invoke(
+            main, ["--conflict-resolution", "nope", "template", "update"]
+        )
+        self.assertEqual(res.exit_code, 2)
+        mock_templatron().update.assert_not_called()
+
 
 class TestOnboard(TestCase):
     """

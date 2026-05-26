@@ -357,6 +357,7 @@ class Templatron(object):
             "answers_file",
             "branch_prefix",
             "branch_separator",
+            "conflict_resolution",
             "dry_run",
             "hooks",
         ]:
@@ -369,6 +370,10 @@ class Templatron(object):
         # force interactive if it's enabled globally
         if self.config.interactive:
             kwargs["interactive"] = True
+
+        # CLI --conflict-resolution overrides template/per-repo config
+        if self.config.conflict_resolution is not None:
+            kwargs["conflict_resolution"] = self.config.conflict_resolution
 
         # this doesn't actually get passed to the Repository object,
         # so pull it out of kwargs

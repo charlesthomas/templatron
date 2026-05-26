@@ -733,6 +733,7 @@ class TestFetchRepoList(TestCase):
             "answers_file",
             "branch_prefix",
             "branch_separator",
+            "conflict_resolution",
             "dry_run",
             "hooks",
         ]
@@ -740,6 +741,7 @@ class TestFetchRepoList(TestCase):
             "answers_file": "answers_file",
             "branch_prefix": "branch_prefix",
             "branch_separator": "branch_separator",
+            "conflict_resolution": "conflict_resolution",
             "dry_run": "dry_run",
             "hooks": "hooks",
         }
@@ -764,6 +766,7 @@ class TestFetchRepoList(TestCase):
             "answers_file",
             "branch_prefix",
             "branch_separator",
+            "conflict_resolution",
             "dry_run",
             "hooks",
         ]
@@ -771,6 +774,7 @@ class TestFetchRepoList(TestCase):
             "answers_file": "answers_file",
             "branch_prefix": "branch_prefix",
             "branch_separator": "branch_separator",
+            "conflict_resolution": "conflict_resolution",
             "dry_run": "dry_run",
             "hooks": "hooks",
         }
@@ -795,6 +799,26 @@ class TestFetchRepoList(TestCase):
             self.templatron.validate_repo("fake_repo")
 
     @patch("templatron.templatron.Templatron.split_org_and_name")
+    def test_validate_repo_conflict_resolution_cli_wins(self, mock_split):
+        """
+        Test Templatron.validate_repo() where --conflict-resolution on the
+        CLI overrides whatever the template config provides.
+        """
+
+        mock_split.return_value = ("fake_org", "fake_repo")
+        self.templatron.config.set("conflict_resolution", "overwrite")
+        self.templatron.template.config.get.side_effect = [
+            "answers_file",
+            "branch_prefix",
+            "branch_separator",
+            "manual",
+            "dry_run",
+            "hooks",
+        ]
+        _, _, kwargs = self.templatron.validate_repo("fake_org/fake_repo")
+        self.assertEqual(kwargs["conflict_resolution"], "overwrite")
+
+    @patch("templatron.templatron.Templatron.split_org_and_name")
     def test_validate_repo_global_force(self, mock_split):
         """
         Test Templatron.validate_repo() where dry_run or interactive
@@ -813,6 +837,7 @@ class TestFetchRepoList(TestCase):
             "answers_file",
             "branch_prefix",
             "branch_separator",
+            "conflict_resolution",
             "dry_run",
             "hooks",
         ]
@@ -820,6 +845,7 @@ class TestFetchRepoList(TestCase):
             "answers_file": "answers_file",
             "branch_prefix": "branch_prefix",
             "branch_separator": "branch_separator",
+            "conflict_resolution": "conflict_resolution",
             "dry_run": True,
             "hooks": "hooks",
             "interactive": True,
