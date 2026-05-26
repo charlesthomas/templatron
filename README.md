@@ -128,6 +128,13 @@ Usage: templatron [OPTIONS] TEMPLATE COMMAND [ARGS]...
 Options:
   --autoclean / --no-autoclean    remove clones from disk after running
   -r, --clone-root TEXT           path to clone repos
+  -x, --conflict-resolution [manual|overwrite]
+                                  how copier should resolve conflicts during
+                                  an update. 'manual' leaves diff3 conflict
+                                  markers in the files; 'overwrite' takes the
+                                  template's version and discards copier's
+                                  .rej files. Unset means use copier's own
+                                  default.
   -d, --dry-run                   don't push changes to cloned repos
   -b, --template-branch TEXT      branch of the template to sync from
   -t, --template-config TEXT      path inside the template repo where its
@@ -160,6 +167,15 @@ Anything that can be passed to `templatron` via command line options can be conf
 - `clone-root`: (default: `/tmp/templatron_clones`) is the root directory where
   repos will be cloned. You **DO NOT** want this to be `$WORKDIR`, for
   the reasons stated in `autoclean` description.
+- `conflict-resolution`: (default: unset) how copier should resolve merge
+  conflicts during an update. Set to `manual` to leave diff3 conflict markers
+  in the files for a human to resolve in the resulting PR (equivalent to
+  copier's `--conflict=inline`). Set to `overwrite` to take the template's
+  version and discard the `.rej` files copier would otherwise drop next to
+  each conflicting file (equivalent to copier's `--conflict=rej`, with the
+  `.rej` files cleaned up before the commit). When unset, copier's own
+  default applies. The CLI flag overrides the value set in either yaml
+  config layer.
 - `dry-run`: (default: `false`) enable `dry-run` mode for all repos. `dry-run`
   mode is special and has its own configuration sub-section below.
 - `template-branch`: (default: `main` or `master` depending on which the template repo uses) which branch of the template should be checked out and run to update desintation repos
@@ -176,6 +192,11 @@ Lives in the template repo (default location `templatron.yaml`). Config options:
 - `autoscan`: (default: `False`) if enabled, `autoscan` clones every repo in the default `org` that isn't a fork, and isn't archived. if that repo has an `answers-file` it is added to the list of repos that will have the template run against them.
 - `branch-prefix`: (default: `templatron`) See Branch Names above
 - `branch-separator`: (default: `/`) See Branch Names above
+- `conflict-resolution`: (default: unset) how copier should resolve merge
+  conflicts during an update. `manual` leaves diff3 conflict markers in the
+  files; `overwrite` takes the template's version and discards copier's
+  `.rej` files. See the matching CLI option above for details. Can also be
+  set under a specific repo entry to override the template-wide default.
 - `dry-run`: (default: `False`) run `templatron` in dry-run mode
 - `hooks`: hooks can run scripts at certain points during the onboarding and / or updating operations. see [hooks](#hooks) for more details
 - `old-answers-files`: this is a `list` of answersfiles that _used to be, but are no longer used_. when running autoscan, `tempaltron` will run against a repo if the current answers file is missing, but one of the `old-answers-files` is present. You'll need to include a `pre-copier` hook to `git mv` the old answers file to the current location, or else your answers **WILL NOT** be loaded during the update.

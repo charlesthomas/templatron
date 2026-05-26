@@ -24,6 +24,21 @@ DEFAULT_CLONE_ROOT = os.path.join(gettempdir(), "templatron_clones")
     "--clone-root", "-r", default=DEFAULT_CLONE_ROOT, help="path to clone repos"
 )
 @click.option(
+    "--conflict-resolution",
+    "-x",
+    type=click.Choice(["manual", "overwrite"]),
+    default=None,
+    help=(
+        "how copier should resolve conflicts during an update: "
+        "'manual' leaves diff3 conflict markers in the files for a human "
+        "to resolve (copier --conflict=inline); "
+        "'overwrite' takes the template's version and discards the .rej "
+        "files copier would otherwise drop next to it "
+        "(copier --conflict=rej, with .rej cleanup). "
+        "When unset, copier's own default applies."
+    ),
+)
+@click.option(
     "--dry-run",
     "-d",
     default=False,
@@ -63,6 +78,7 @@ def main(
     template,
     autoclean,
     clone_root,
+    conflict_resolution,
     dry_run,
     template_branch,
     template_config,
@@ -76,6 +92,7 @@ def main(
         template=template,
         autoclean=autoclean,
         clone_root=clone_root,
+        conflict_resolution=conflict_resolution,
         dry_run=dry_run,
         template_branch=template_branch,
         template_config=template_config,

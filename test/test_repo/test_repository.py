@@ -5,6 +5,7 @@ Unit tests for templatron/repo/repository.py
 # pylint: disable=protected-access,too-many-arguments,too-many-public-methods
 # pylint: disable=unused-argument
 
+from pathlib import Path
 from unittest import TestCase
 from unittest.mock import MagicMock, patch
 
@@ -404,6 +405,107 @@ class TestRepository(TestCase):
             overwrite=True,
             vcs_ref=None,
         )
+
+    @patch("templatron.repo.repository.run_update")
+    @patch("templatron.repo.template.Template.clone")
+    def test_run_copier_conflict_resolution_manual(self, mock_clone, mock_copy):
+        """
+        Test Repository.run_copier() forwards conflict='inline' to copier
+        when conflict_resolution is 'manual'.
+        """
+
+        def noop():
+            return
+
+        self.test_repo.interactive = False
+        self.test_repo.operation = "updating"
+        self.test_repo.conflict_resolution = "manual"
+        self.test_repo.pretty_print_answers_file = noop
+        self.test_repo.run_copier()
+        mock_copy.assert_called_with(
+            dst_path="/fake/root/fake repo",
+            answers_file=".copier-answers.yml",
+            defaults=True,
+            quiet=True,
+            overwrite=True,
+            vcs_ref=None,
+            conflict="inline",
+        )
+
+    @patch("templatron.repo.repository.Repository._strip_rej_files")
+    @patch("templatron.repo.repository.run_update")
+    @patch("templatron.repo.template.Template.clone")
+    def test_run_copier_conflict_resolution_overwrite(
+        self, mock_clone, mock_copy, mock_strip
+    ):
+        """
+        Test Repository.run_copier() forwards conflict='rej' to copier and
+        cleans up .rej files when conflict_resolution is 'overwrite'.
+        """
+
+        def noop():
+            return
+
+        self.test_repo.interactive = False
+        self.test_repo.operation = "updating"
+        self.test_repo.conflict_resolution = "overwrite"
+        self.test_repo.pretty_print_answers_file = noop
+        self.test_repo.run_copier()
+        mock_copy.assert_called_with(
+            dst_path="/fake/root/fake repo",
+            answers_file=".copier-answers.yml",
+            defaults=True,
+            quiet=True,
+            overwrite=True,
+            vcs_ref=None,
+            conflict="rej",
+        )
+        mock_strip.assert_called_once()
+
+    @patch("templatron.repo.repository.Repository._strip_rej_files")
+    @patch("templatron.repo.repository.run_update")
+    @patch("templatron.repo.template.Template.clone")
+    def test_run_copier_no_rej_cleanup_when_manual(
+        self, mock_clone, mock_copy, mock_strip
+    ):
+        """
+        Test Repository.run_copier() does NOT call _strip_rej_files when
+        conflict_resolution is 'manual'.
+        """
+
+        def noop():
+            return
+
+        self.test_repo.interactive = False
+        self.test_repo.operation = "updating"
+        self.test_repo.conflict_resolution = "manual"
+        self.test_repo.pretty_print_answers_file = noop
+        self.test_repo.run_copier()
+        mock_strip.assert_not_called()
+
+    def test_strip_rej_files(self):
+        """
+        Test Repository._strip_rej_files removes .rej files anywhere under
+        clone_path while leaving other files alone.
+        """
+
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp_path = Path(tmpdir)
+            (tmp_path / "keep.txt").write_text("keep me")
+            (tmp_path / "a.rej").write_text("reject a")
+            nested = tmp_path / "deeply" / "nested"
+            nested.mkdir(parents=True)
+            (nested / "b.rej").write_text("reject b")
+            (nested / "keep.py").write_text("keep me too")
+
+            self.test_repo.clone_path = str(tmp_path)
+            self.test_repo.logger = MagicMock()
+            self.test_repo._strip_rej_files()
+
+            remaining = sorted(p.name for p in tmp_path.rglob("*") if p.is_file())
+            self.assertEqual(remaining, ["keep.py", "keep.txt"])
 
     @patch("templatron.repo.repository.subprocess.run")
     def test_run_hook_successful(self, mock_run):

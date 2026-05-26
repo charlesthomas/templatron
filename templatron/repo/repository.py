@@ -1,6 +1,7 @@
 import logging
 import os.path
 import subprocess
+from pathlib import Path
 
 import yaml
 from copier import run_copy, run_update
@@ -9,6 +10,15 @@ from templatron.commit_template import commit_template
 from templatron.exceptions import HookFailure
 from templatron.log_or_print import log_or_print
 from templatron.repo.base_repo import BaseRepo
+
+# Map templatron's user-facing conflict-resolution names onto copier's
+# internal --conflict values. 'overwrite' uses copier's 'rej' mode and
+# we additionally strip the .rej files copier drops, since the templatron
+# PR workflow surfaces the diff for review on its own.
+CONFLICT_RESOLUTION_TO_COPIER = {
+    "manual": "inline",
+    "overwrite": "rej",
+}
 
 
 def string_representer(dumper, data):
@@ -40,6 +50,7 @@ class Repository(BaseRepo):
         answers_file=".copier-answers.yml",
         branch_prefix="templatron",
         branch_separator="/",
+        conflict_resolution=None,
         interactive=False,
         hooks=None,
     ):
@@ -51,6 +62,7 @@ class Repository(BaseRepo):
         self.answers_file = answers_file
         self.branch_prefix = branch_prefix
         self.branch_separator = branch_separator
+        self.conflict_resolution = conflict_resolution
         self.hooks = hooks or {}
 
         self.operation = None
@@ -222,13 +234,7 @@ class Repository(BaseRepo):
         # this is a no-op if it's already been cloned
 
         if self.operation == "updating":
-            self.logger.debug(f"""running copier to apply template...
-
-run_update({self.template.clone_path}, {self.clone_path},
-answers_file={self.answers_file}, overwrite=True, quiet={quiet},
-vcs_ref={self.template.vcs_ref})""")
-
-            run_update(
+            update_kwargs = dict(
                 dst_path=self.clone_path,
                 answers_file=self.answers_file,
                 defaults=True,
@@ -236,6 +242,22 @@ vcs_ref={self.template.vcs_ref})""")
                 quiet=quiet,
                 vcs_ref=self.template.vcs_ref,
             )
+            if self.conflict_resolution is not None:
+                update_kwargs["conflict"] = CONFLICT_RESOLUTION_TO_COPIER[
+                    self.conflict_resolution
+                ]
+
+            self.logger.debug(f"""running copier to apply template...
+
+run_update({self.template.clone_path}, {self.clone_path},
+answers_file={self.answers_file}, overwrite=True, quiet={quiet},
+vcs_ref={self.template.vcs_ref},
+conflict={update_kwargs.get("conflict")})""")
+
+            run_update(**update_kwargs)
+
+            if self.conflict_resolution == "overwrite":
+                self._strip_rej_files()
 
         else:  # onboarding or fixing
             self.logger.debug(f"""running copier to apply template...
@@ -278,6 +300,15 @@ vcs_ref={self.template.vcs_ref})""")
             raise HookFailure(
                 f"{hook_name} hook {hook} failed with exit code {res.returncode}"
             )
+
+    def _strip_rej_files(self):
+        # copier --conflict=rej drops .rej files next to any file it couldn't
+        # cleanly merge. The templatron PR carries the template's version and
+        # surfaces the diff for review on its own, so the .rej files are just
+        # noise that would otherwise be staged by `git add -A`.
+        for rej in Path(self.clone_path).rglob("*.rej"):
+            self.logger.debug(f"removing copier reject file: {rej}")
+            rej.unlink()
 
     def switch_to_update_branch(self):
         if self.fixing:
