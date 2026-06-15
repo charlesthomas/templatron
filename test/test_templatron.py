@@ -481,9 +481,7 @@ class TestFetchRepoList(TestCase):
     @patch("templatron.templatron.Templatron.start")
     @patch("templatron.templatron.Templatron.build_repo")
     @patch("templatron.templatron.Templatron.stop")
-    def test_onboard_stale_clone(
-        self, mock_stop, mock_build, mock_start, mock_die
-    ):
+    def test_onboard_stale_clone(self, mock_stop, mock_build, mock_start, mock_die):
         """
         Test Templatron.onboard() exits cleanly via die() when the
         repo's update branch already exists from a prior run, rather
@@ -564,9 +562,7 @@ class TestFetchRepoList(TestCase):
         """
 
         self.assertEqual(
-            self.templatron.split_org_and_name(
-                "git@github.com:fake_org/fake_name.git"
-            ),
+            self.templatron.split_org_and_name("git@github.com:fake_org/fake_name.git"),
             ("fake_org", "fake_name"),
         )
 
