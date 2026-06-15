@@ -587,9 +587,7 @@ class TestRepository(TestCase):
     @patch.object(Repository, "update_branch_name", "fake_branch")
     @patch("templatron.repo.repository.Repository.local_branch_exists")
     @patch("templatron.repo.repository.Repository.git_cmd")
-    def test_switch_to_update_branch_stale_branch(
-        self, mock_git, mock_exists
-    ):
+    def test_switch_to_update_branch_stale_branch(self, mock_git, mock_exists):
         """
         Test switch_to_update_branch() raises StaleCloneError when the
         target update branch already exists locally — typically from a

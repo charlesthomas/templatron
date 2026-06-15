@@ -230,9 +230,7 @@ class TestBaseRepo(TestCase):
         """
 
         self.assertTrue(self.test_repo.local_branch_exists("fake_branch"))
-        mock_git.assert_called_with(
-            "rev-parse", "--verify", "refs/heads/fake_branch"
-        )
+        mock_git.assert_called_with("rev-parse", "--verify", "refs/heads/fake_branch")
 
     @patch("templatron.repo.base_repo.BaseRepo.git_cmd")
     def test_local_branch_exists_false(self, mock_git):
@@ -241,9 +239,7 @@ class TestBaseRepo(TestCase):
         git rev-parse --verify exits non-zero (branch missing).
         """
 
-        mock_git.side_effect = ErrorReturnCode_1(
-            full_cmd="git", stdout=b"", stderr=b""
-        )
+        mock_git.side_effect = ErrorReturnCode_1(full_cmd="git", stdout=b"", stderr=b"")
         self.assertFalse(self.test_repo.local_branch_exists("fake_branch"))
 
     @patch.object(BaseRepo, "active_branch", "fake_branch")
